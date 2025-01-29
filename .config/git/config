@@ -1,5 +1,39 @@
 [user]
 	name = Michael Hedgpeth
 	email = michael@hedge-ops.com
+
 [init]
-	defaultBranch = main
+  defaultBranch = main
+
+
+[core]
+  editor = nvim
+  autocrlf = input
+
+[pull]
+  rebase = true # rebase when pulling
+  ff = only # avoid merge messes
+
+[push]
+  default = current      # Pushes current branch to matching name
+  autoSetupRemote = true # Automatically sets up remote tracking
+
+[merge]
+  conflictstyle = diff3  # Shows original content in conflicts
+  ff = false            # Prevents accidental fast-forwards
+
+[rebase]
+  autoStash = true      # Automatically stash/unstash during rebase
+
+[diff]
+  algorithm = patience  # More intuitive diff outputs
+
+[color]
+  ui = auto             # Enables color in Git output
+
+[fetch]
+  prune = true         # Cleans up deleted remote branches
+
+[help]
+  autocorrect = 1      # Automatically corrects minor command typos
+

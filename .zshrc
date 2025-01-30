@@ -8,6 +8,9 @@ plugins=(git)
 # Load Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
 
+# secrets, see template for details
+[ -f "$HOME/.env" ] && source "$HOME/.env"
+
 # homebrew
 # allows for `brew bundle install` to be run anywhere
 export HOMEBREW_BUNDLE_FILE="~/.config/homebrew/Brewfile"

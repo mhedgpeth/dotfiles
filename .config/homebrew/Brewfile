@@ -19,3 +19,5 @@ cask "font-fira-code"
 cask "font-fira-code-nerd-font"
 cask "ghostty"
 cask "visual-studio-code"
+brew "ollama", restart_service: true
+brew "luarocks"

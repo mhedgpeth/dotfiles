@@ -14,6 +14,7 @@ source $ZSH/oh-my-zsh.sh
 # homebrew
 # allows for `brew bundle install` to be run anywhere
 export HOMEBREW_BUNDLE_FILE="~/.config/homebrew/Brewfile"
+export HOMEBREW_NO_ENV_HINTS=true
 
 # aliases
 alias config='/usr/bin/git --git-dir=/Users/michaelhedgpeth/.cfg/ --work-tree=/Users/michaelhedgpeth'

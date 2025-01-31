@@ -1,7 +1,8 @@
-*
-!.config/nvim/**
-!.config/ghostty/**
-!.config/git/**
-!.config/homebrew/**
+/*
+!.config/
+.config/*
+!.config/nvim/
+!.config/ghostty/
+!.config/git/
+!.config/homebrew/
 !.zshrc
-

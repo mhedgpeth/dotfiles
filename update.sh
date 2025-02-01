@@ -44,8 +44,38 @@ ollama pull deepseek-r1:7b
 
 echo Ensuring settings are linked properly
 
-cd ~/dotfiles
-stow . --adopt
+# Create .config directory if it doesn't exist
+mkdir -p ~/.config
+
+# Define files and directories to link
+files_to_link=(
+  ".zshrc"
+  "update.sh"
+)
+
+config_dirs_to_link=(
+  "nvim"
+  "homebrew"
+  "ghostty"
+  "git"
+)
+
+# Link individual files
+for file in "${files_to_link[@]}"; do
+  if [ ! -L ~/"$file" ]; then
+    ln -s ~/dotfiles/"$file" ~/"$file"
+    echo "Created symlink for $file"
+  fi
+done
+
+# Link .config directories
+for dir in "${config_dirs_to_link[@]}"; do
+  if [ ! -L ~/.config/"$dir" ]; then
+    ln -s ~/dotfiles/.config/"$dir" ~/.config/"$dir"
+    echo "Created symlink for .config/$dir"
+  fi
+done
+
 cd "$CURRENT_DIR"
 
 echo Done!

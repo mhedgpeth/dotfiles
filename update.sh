@@ -1,3 +1,5 @@
+CURRENT_DIR=$(pwd)
+
 echo Ensuring brew is up to date
 
 brew bundle install
@@ -19,7 +21,6 @@ for plugin in "${plugins[@]}"; do
   if [ ! -d ~/.oh-my-zsh/plugins/$name ]; then
     gh repo clone $plugin ~/.oh-my-zsh/plugins/$name
   else
-    CURRENT_DIR=$(pwd)
     cd ~/.oh-my-zsh/plugins/$name && git pull
     cd "$CURRENT_DIR"
   fi
@@ -40,5 +41,11 @@ fi
 echo Setting up AI
 
 ollama pull deepseek-r1:7b
+
+echo Ensuring settings are linked properly
+
+cd ~/dotfiles
+stow . --adopt
+cd "$CURRENT_DIR"
 
 echo Done!

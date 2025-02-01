@@ -1,18 +1,14 @@
 # dotfiles
 
-Based on [these directions](https://www.atlassian.com/git/tutorials/dotfiles).
+Uses [stow](https://www.gnu.org/software/stow/) to create symlinks for
+configuration files in the home directory.
 
-Inspired by [this book](https://lazyvim-ambitious-devs.phillips.codes) on NeoVIM.
+To run, clone this repo to `~/dotfiles`.
 
-## Setup 
+Make sure `stow` is installed.
+
+From within this folder on your shell, run:
 
 ```shell
-brew install --cask ghostty
-brew install gh nvim fzf lazygit ripgrep
-brew install --cask font-fira-code-nerd-font
-```
-
-* Ghostty should use the Nerd font (File -> Settings):
-```
-font-family = "FiraCode Nerd Font Mono"
+stow .
 ```

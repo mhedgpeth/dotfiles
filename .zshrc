@@ -20,6 +20,7 @@ export HOMEBREW_NO_ENV_HINTS=true
 alias config='/usr/bin/git --git-dir=/Users/michaelhedgpeth/.cfg/ --work-tree=/Users/michaelhedgpeth'
 alias cda='cd ~/code/github.com/hedge-ops/app/'
 alias dev='cda && nvim'
+alias learn='cd ~/code/github.com/mhedgpeth/learning/ && nvim'
 alias j='just'
 alias lg='lazygit'
 alias deepseek='ollama run deepseek-r1:7b'

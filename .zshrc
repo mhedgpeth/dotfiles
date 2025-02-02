@@ -1,18 +1,17 @@
 # Define Oh-My-Zsh location
 export ZSH="$HOME/.oh-my-zsh"
 
-# Configure theme and plugins
-ZSH_THEME="eastwood"
+# Configure plugins
 plugins=(
-  git, ## included
-  brew, ## included
-  z, ## included
-  zsh-autosuggestions, # https://github.com/zsh-users/zsh-autosuggestions
-  zsh-autocomplete, # https://github.com/marlonrichert/zsh-autocomplete
-  zsh-syntax-highlighting, # https://github.com/zsh-users/zsh-syntax-highlighting
-  history-substring-search, # included
-  macos, ## included  
-  fzf, ## included
+  git ## included
+  brew ## included
+  z ## included
+  zsh-autosuggestions # https://github.com/zsh-users/zsh-autosuggestions
+  zsh-autocomplete # https://github.com/marlonrichert/zsh-autocomplete
+  zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
+  history-substring-search # included
+  macos ## included  
+  fzf ## included
   )
 
 # Load Oh-My-Zsh
@@ -54,3 +53,6 @@ alias lg='lazygit'
 
 # ai
 alias chat='ollama run deepseek-r1:7b'
+
+# starship prompt
+eval "$(starship init zsh)"

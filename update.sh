@@ -2,11 +2,13 @@ CURRENT_DIR=$(pwd)
 
 echo Ensuring brew is up to date
 
+export HOMEBREW_BUNDLE_FILE="~/dotfiles/.config/homebrew/Brewfile"
+
 brew bundle install
 
 echo Removing brew packages no longer needed
 
-brew bundle cleanup
+brew bundle cleanup --force
 
 echo Ensuring zsh plugins are installed and up to date
 

@@ -44,3 +44,16 @@ Despite all this automation, there are still manual things to do:
 9. Set up Music and disk limits
 10. Set up calendars
 11. Set up printers and scanners
+
+Finally, set up XCode development:
+
+1. Install XCode from the App Store
+2. Install Apple Developer from the App Store
+3. Generate the XCode project by running `xcodegen`
+4. Open XCode from the App Store and build
+5. To make sure swift can run, run:
+```
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+```
+
+After this you should be able to build with `just cs`

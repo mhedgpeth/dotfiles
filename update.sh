@@ -10,24 +10,6 @@ echo Removing brew packages no longer needed
 
 brew bundle cleanup --force
 
-echo Ensuring zsh plugins are installed and up to date
-
-plugins=(
-  "zsh-users/zsh-autosuggestions"
-  "marlonrichert/zsh-autocomplete"
-  "zsh-users/zsh-syntax-highlighting"
-)
-
-for plugin in "${plugins[@]}"; do
-  name=$(echo $plugin | cut -d'/' -f2)
-  if [ ! -d ~/.oh-my-zsh/plugins/$name ]; then
-    gh repo clone $plugin ~/.oh-my-zsh/plugins/$name
-  else
-    cd ~/.oh-my-zsh/plugins/$name && git pull
-    cd "$CURRENT_DIR"
-  fi
-done
-
 echo Linking ~./people to app data directory
 if [ ! -d "$HOME/Library/Application Support/io.people-work" ]; then
   mkdir -p "$HOME/Library/Application Support/io.people-work"
@@ -60,6 +42,7 @@ config_dirs_to_link=(
   "homebrew"
   "ghostty"
   "git"
+  "starship"
 )
 
 # Link individual files

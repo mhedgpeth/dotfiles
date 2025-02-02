@@ -9,6 +9,8 @@ format = """
 $directory\
 $git_branch\
 $git_status\
+$git_state\
+$git_metrics\
 $fill\
 $rust\
 $lua\
@@ -33,6 +35,9 @@ show_milliseconds = true
 
 [git_branch]
 style = "bold mauve"
+
+[git_state]
+disabled = false
 
 [fill]
 symbol = ' ' 

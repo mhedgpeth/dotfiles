@@ -2,6 +2,14 @@
 
 This repository manages the dotfiles for Michael Hedgpeth.
 
+## Reset Mac
+
+1. Shut down mac
+2. While starting up hold down `Cmd-R`
+3. Select Disk Utility
+4. Select drives, click erase
+5. In macOS Utilities select Reinstall macOS
+
 ## New Machine
 
 When setting up a new machine, get the `setup.sh` from GitHub and run it from

@@ -1,32 +1,36 @@
 CURRENT_DIR=$(pwd)
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+BLUE=$(tput setaf 4)
+RESET=$(tput sgr0)
 
-echo Ensuring brew is up to date
+echo "${GREEN}Ensuring brew is up to date${RESET}"
 
 export HOMEBREW_BUNDLE_FILE="~/dotfiles/.config/homebrew/Brewfile"
 
 brew bundle install
 
-echo Removing brew packages no longer needed
+echo "${GREEN}Removing brew packages no longer needed${RESET}"
 
 brew bundle cleanup --force
 
-echo Linking ~./people to app data directory
+echo "${GREEN}Linking ~./people to app data directory${RESET}"
 if [ ! -d "$HOME/Library/Application Support/io.people-work" ]; then
   mkdir -p "$HOME/Library/Application Support/io.people-work"
-  echo "Created io.people-work directory"
+  echo "${BLUE}Created io.people-work directory${RESET}"
 fi
 
 # Create the symlink if it doesn't exist
-if [ ! -L "$HOME/.people" ]; then
+if [ ! -L "$HOME/people" ]; then
   ln -s "$HOME/Library/Application Support/io.people-work" "$HOME/people"
-  echo "Created symlink to ~/.people"
+  echo "${BLUE}Created symlink to ~/people${RESET}"
 fi
 
-echo Setting up AI
+echo "${GREEN}Setting up AI${RESET}"
 
 ollama pull deepseek-r1:7b
 
-echo Ensuring settings are linked properly
+echo "${GREEN}Ensuring settings are linked properly${RESET}"
 
 # Create .config directory if it doesn't exist
 mkdir -p ~/.config
@@ -49,7 +53,7 @@ config_dirs_to_link=(
 for file in "${files_to_link[@]}"; do
   if [ ! -L ~/"$file" ]; then
     ln -s ~/dotfiles/"$file" ~/"$file"
-    echo "Created symlink for $file"
+    echo "${BLUE}Created symlink for $file${RESET}"
   fi
 done
 
@@ -57,10 +61,10 @@ done
 for dir in "${config_dirs_to_link[@]}"; do
   if [ ! -L ~/.config/"$dir" ]; then
     ln -s ~/dotfiles/.config/"$dir" ~/.config/"$dir"
-    echo "Created symlink for .config/$dir"
+    echo "${BLUE}Created symlink for .config/$dir${RESET}"
   fi
 done
 
 cd "$CURRENT_DIR"
 
-echo Done!
+echo "${GREEN}Done!${RESET}"

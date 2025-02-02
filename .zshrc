@@ -39,8 +39,7 @@ alias gp='git pull'
 # configuration
 alias vim='nvim'
 alias zshconfig='nvim ~/.zshconfig'
-alias reload='source ~./.zshconfig'
-alias update='./setup.sh' 
+alias update='./update.sh' 
 
 # personal 
 alias app='cd ~/code/github.com/hedge-ops/app/'
@@ -48,6 +47,7 @@ alias dev='app && nvim'
 alias learning='cd ~/code/github.com/mhedgpeth/learning/ '
 alias learn='learning && nvim'
 alias people='cd ~/people'
+alias dotfiles='cd ~/dotfiles'
 alias j='just'
 alias lg='lazygit'
 

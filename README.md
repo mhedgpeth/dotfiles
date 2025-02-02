@@ -16,9 +16,10 @@ the home directory. This will:
 Once this repository is cloned with the above process, navigate to `~/dotfiles`
 and run `./update.sh`, which:
 
+- Ensures all Apple updates are completed
 - Installs all brew packages
-- Installs all zsh plugins
 - Creates symlinks for dotfiles to their normal locations
+- Sets up AI
 
 ## Update
 
@@ -52,7 +53,8 @@ Finally, set up XCode development:
 3. Generate the XCode project by running `xcodegen`
 4. Open XCode from the App Store and build
 5. To make sure swift can run, run:
-```
+
+```sh
 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 ```
 

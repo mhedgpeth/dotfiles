@@ -1,4 +1,6 @@
-font-family = "MesloLGL Nerd Font Mono"
+# font-family = "FiraCode Nerd Font Mono"
+font-family = "JetBrains Mono Nerd Font"
+# font-family = "MesloLGL Nerd Font Mono"
 font-size = 18
 
 theme = catppuccin-macchiato

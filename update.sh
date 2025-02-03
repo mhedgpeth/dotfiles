@@ -53,16 +53,20 @@ cd "$CODE_DIR" || {
 }
 
 # List of repositories to clone
-declare -A repositories=(
-  ["mhedgpeth/app"]="$CODE_DIR/mhedgpeth/app"
-  ["redbadger/crux"]="$CODE_DIR/redbadger/crux"
-  ["mhedgpeth/learning"]="$CODE_DIR/mhedgpeth/learning"
+repositories=(
+  "hedge-ops/app"
+  "hedge-ops/product-website"
+  "hedge-ops/company-website"
+  "hedge-ops/prototyping"
+  "redbadger/crux"
+  "mhedgpeth/learning"
 )
 
 # Create necessary parent directories and clone repositories
-for repo_url in "${!repositories[@]}"; do
-  repo_path="${repositories[$repo_url]}"
+for repo_url in "${repositories[@]}"; do
+  repo_path="$CODE_DIR/$repo_url"
   parent_dir=$(dirname "$repo_path")
+
   # Create parent directory
   create_directory "$parent_dir"
 

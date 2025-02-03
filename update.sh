@@ -18,6 +18,58 @@ echo "${GREEN}Removing brew packages no longer needed${RESET}"
 
 brew bundle cleanup --force
 
+echo "${GREEN}Ensuring repositories are cloned${RESET}"
+# Base directory for code repositories
+CODE_DIR="$HOME/code/github.com"
+
+# Function to create directory if it doesn't exist
+create_directory() {
+  if [ ! -d "$1" ]; then
+    echo "${BLUE}Creating directory: $1${RESET}"
+    mkdir -p "$1"
+  fi
+}
+
+# Function to clone repository if it doesn't exist
+clone_if_not_exists() {
+  local repo_path="$1"
+  local repo_url="$2"
+
+  if [ ! -d "$repo_path" ]; then
+    echo "${BLUE}Cloning repository: $repo_url${RESET}"
+    gh repo clone "$repo_url" "$repo_path"
+  else
+    echo "${GREEN}Repository already exists: $repo_path${GREEN}"
+  fi
+}
+
+# Create base directory
+create_directory "$CODE_DIR"
+
+# Change to code directory
+cd "$CODE_DIR" || {
+  echo "Error: Could not change to directory $CODE_DIR"
+  exit 1
+}
+
+# List of repositories to clone
+declare -A repositories=(
+  ["mhedgpeth/app"]="$CODE_DIR/mhedgpeth/app"
+  ["redbadger/crux"]="$CODE_DIR/redbadger/crux"
+  ["mhedgpeth/learning"]="$CODE_DIR/mhedgpeth/learning"
+)
+
+# Create necessary parent directories and clone repositories
+for repo_url in "${!repositories[@]}"; do
+  repo_path="${repositories[$repo_url]}"
+  parent_dir=$(dirname "$repo_path")
+  # Create parent directory
+  create_directory "$parent_dir"
+
+  # Clone repository if it doesn't exist
+  clone_if_not_exists "$repo_path" "$repo_url"
+done
+
 echo "${GREEN}Linking ~./people to app data directory${RESET}"
 if [ ! -d "$HOME/Library/Application Support/io.people-work" ]; then
   mkdir -p "$HOME/Library/Application Support/io.people-work"

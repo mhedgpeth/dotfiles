@@ -46,6 +46,10 @@ as many times as you want.
 
 To configure settings, run `configure.sh` and restart your mac.
 
+## Secrets
+
+Copy `.env.template` to `~/.env` and add the appropriate values.
+
 ## Other AppStore Apps
 
 Install these apps from the App Store:

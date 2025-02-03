@@ -25,6 +25,18 @@ and run `./update.sh`, which:
 - Creates symlinks for dotfiles to their normal locations
 - Sets up AI
 
+## XCode
+
+After initial setup, XCode needs to be updated from the App Store and started.
+
+After it is started, run this command to ensure Swift tools are available on
+the terminal:
+
+```sh
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+```
+
 ## Update
 
 From here to ensure everything is proper, run `update`. It's meant to be run
@@ -34,32 +46,53 @@ as many times as you want.
 
 To configure settings, run `configure.sh` and restart your mac.
 
-## Manual
+## Other AppStore Apps
 
-Despite all this automation, there are still manual things to do:
+Install these apps from the App Store:
 
-1. Install Amazon Kindle from the App Store
-2. Install Day One from the App Store
-3. Install Todoist from the App Store
-4. Install ZSA Keymap from the App Store
-5. Set up Internet Accounts (personal, work, family, assistant)
-6. Configure profiles via Safari (?)
-7. Set up Messages for iCloud
-8. Set up Photos and disk limits
-9. Set up Music and disk limits
-10. Set up calendars
-11. Set up printers and scanners
+- Amazon Kindle  
+- Day One
+- Todoist
+- ZSA Keybindings
+- Apple Developer
 
-Finally, set up XCode development:
+## Manual Configuration
 
-1. Install XCode from the App Store
-2. Install Apple Developer from the App Store
-3. Generate the XCode project by running `xcodegen`
-4. Open XCode from the App Store and build
-5. To make sure swift can run, run:
+First, set up accounts on the computer:
 
-```sh
-sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
-```
+1. Open Passwords, from which you will get credentials.
+2. Open Safari and log into the accounts in their associated profiles.
+3. Add internet accounts (work, home, family).
+4. Open slack and add accounts to it.
 
-After this you should be able to build with `just cs`
+Then, open and configure these apps:
+
+- Safari -> Settings -> Tabs -> Tab layout: Compact
+- Messages -> Settings -> iMessage -> Enable Messages in iCloud checked
+- Photos -> Settings -> iCloud -> iCloud Photos -> Optimize Mac Storage selected
+- Music -> Settings -> General -> Automatic Downloads checked
+- Music -> Settings -> General -> Download Dolby Atmos
+- Music -> Settings -> General -> Show: -> Star Ratings checked
+- Music -> Settings -> Playback -> Lossless Audio -> Enable Lossless Audio checked
+- Podcasts -> Settings -> Automatically Download set to off
+- Calendar -> Settings -> Advanced -> Turn on time zone support checked
+- Calendar -> Settings -> Advanced -> Show week numbers checked
+- Mail -> Settings -> Junk Mail -> Junk Mail Behaviors -> Enabled junk mail
+  filtering checked
+- Mail -> Settings -> Viewing -> Move discarded messages into: -> Archive
+
+Finally, open System Settings and configure the mac:
+
+- General -> Date & Time -> 24-hour time checked
+- General -> Date & Time -> Show 24-hour time on Lock Screen checked
+- Appearance -> Appearance -> Dark
+- Control Center -> Control Center Modules -> Focus -> Always Show
+- Control Center -> Control Center Modules -> Sounds -> Always Show
+- Screen Saver -> (you choose)
+- Trackpad -> Tracking Speed -> 8/10
+- Printers & Scanners -> Add Printer, Scanner or Fax... (follow prompts)
+
+## Testing
+
+- Build `app` with `just i`
+- Open XCode and run the `app`

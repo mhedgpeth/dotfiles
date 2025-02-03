@@ -23,4 +23,6 @@ gh auth login
 echo "${GREEN}Cloning dotfiles repo${RESET}"
 gh repo clone mhedgpeth/dotfiles
 
-echo "${GREEN}Complete! Now go to ~/dotfiles and run update.sh${RESET}"
+echo "${GREEN}Complete!$RESET}"
+echo "${GREEN}1. Install XCode from the App Store and start it${RESET}"
+echo "${GREEN}2. Go to ~/dotfiles and run update.sh${RESET}"

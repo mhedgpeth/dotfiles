@@ -8,8 +8,13 @@ See [this article](https://support.apple.com/en-us/102664)
 
 ## New Machine
 
-When setting up a new machine, get the `setup.sh` from GitHub and run it from
-the home directory. This will:
+When setting up a new machine, run this command in Terminal:
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/michaelhedgpeth/dotfiles/main/setup.sh)"
+```
+
+This will:
 
 - Install brew
 - Install gh and authenticate

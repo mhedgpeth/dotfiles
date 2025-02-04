@@ -11,7 +11,7 @@ See [this article](https://support.apple.com/en-us/102664)
 When setting up a new machine, run this command in Terminal:
 
 ```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/michaelhedgpeth/dotfiles/main/setup.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mhedgpeth/dotfiles/refs/heads/main/setup.sh)"
 ```
 
 This will:

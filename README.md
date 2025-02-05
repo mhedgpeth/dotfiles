@@ -20,6 +20,8 @@ This will:
 - Install gh and authenticate
 - Clone this repository to `~/dotfiles`
 
+Restart your terminal after you run this in order for it to know brew is there.
+
 ## Initial Setup
 
 Once this repository is cloned with the above process, navigate to `~/dotfiles`

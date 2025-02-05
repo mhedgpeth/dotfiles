@@ -88,6 +88,7 @@ Then, open and configure these apps:
 - Calendar -> Settings -> Advanced -> Show week numbers checked
 - Mail -> Settings -> Junk Mail -> Junk Mail Behaviors -> Enabled junk mail
   filtering checked
+- Mail -> Settings -> Viewing -> Summarize Message Previews unchecked
 - Mail -> Settings -> Viewing -> Move discarded messages into: -> Archive
 
 Finally, open System Settings and configure the mac:

@@ -113,10 +113,11 @@ files_to_link=(
 )
 
 config_dirs_to_link=(
-  "nvim"
-  "homebrew"
+  "aerospace"
   "ghostty"
   "git"
+  "homebrew"
+  "nvim"
   "starship"
 )
 

@@ -43,5 +43,6 @@ brew "xcodegen"
 brew "xcode-build-server"
 cask "sf-symbols"
 
-# other
+# macOS
+cask "nikitabobko/tap/aerospace"
 cask "slack"

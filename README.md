@@ -100,6 +100,7 @@ Finally, open System Settings and configure the mac:
 - Appearance -> Appearance -> Dark
 - Control Center -> Control Center Modules -> Focus -> Always Show
 - Control Center -> Control Center Modules -> Sounds -> Always Show
+- Desktop & Dock -> Mission Control -> Group windows by application checked
 - Screen Saver -> (you choose)
 - Trackpad -> Tracking Speed -> 8/10
 - Printers & Scanners -> Add Printer, Scanner or Fax... (follow prompts)

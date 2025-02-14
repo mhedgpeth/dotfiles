@@ -26,8 +26,8 @@ cask "font-meslo-lg-nerd-font"
 brew "rustup"
 brew "cargo-binstall"
 brew "cargo-nextest"
-brew "diesel"
 brew "just"
+brew "bacon"
 
 # web
 brew "node"

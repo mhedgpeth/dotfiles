@@ -90,6 +90,9 @@ alias chat='ollama run deepseek-r1:7b'
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
+# Bacon
+export BACON_CONFIG="$HOME/.config/bacon/prefs.toml" 
+
 # Starship
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"

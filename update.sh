@@ -114,6 +114,7 @@ files_to_link=(
 
 config_dirs_to_link=(
   "aerospace"
+  "bacon"
   "ghostty"
   "git"
   "homebrew"

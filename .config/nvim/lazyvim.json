@@ -12,6 +12,7 @@
     "lazyvim.plugins.extras.lang.sql",
     "lazyvim.plugins.extras.lang.toml",
     "lazyvim.plugins.extras.test.core",
+    "lazyvim.plugins.extras.ui.edgy",
     "lazyvim.plugins.extras.ui.treesitter-context",
     "lazyvim.plugins.extras.util.dot",
     "lazyvim.plugins.extras.util.mini-hipatterns"
@@ -20,5 +21,5 @@
   "news": {
     "NEWS.md": "10960"
   },
-  "version": 7
+  "version": 8
 }

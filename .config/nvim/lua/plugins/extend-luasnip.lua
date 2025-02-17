@@ -1,5 +1,8 @@
 return {
   "L3MON4D3/LuaSnip",
+  config = function()
+    require("luasnip.loaders.from_lua").load({ paths = { "~/.config/nvim/lua/snippets/" } })
+  end,
   keys = {
     {
       "<C-k>",
@@ -35,12 +38,4 @@ return {
       desc = "Change choice in snippet",
     },
   },
-  config = function()
-    local ls = require("luasnip")
-    local s = ls.snippet
-    local t = ls.text_node
-    local i = ls.insert_node
-
-    -- see example: https://github.com/vimjoyer/nvim-luasnip-video
-  end,
 }

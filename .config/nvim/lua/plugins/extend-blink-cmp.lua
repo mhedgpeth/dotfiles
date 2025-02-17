@@ -2,8 +2,9 @@ return {
   "saghen/blink.cmp",
   dependencies = { "L3MON4D3/LuaSnip", version = "v2.*" },
   enabled = function()
-    local ft = vim.bo.filetype
-    return ft ~= "markdown" and vim.bo.buftype ~= "prompt" and vim.b.completion ~= false
+    return not vim.tbl_contains({ "lua", "markdown" }, vim.bo.filetype)
+      and vim.bo.buftype ~= "prompt"
+      and vim.b.completion ~= false
   end,
   opts = {
     snippets = { preset = "luasnip" },
@@ -19,7 +20,7 @@ return {
         },
         snippets = {
           name = "blink.cmp.source.snippets",
-          enabled = "true",
+          enabled = true,
           module = "blink.cmp.sources.snippets",
           score_offset = 950,
         },

@@ -5,10 +5,16 @@
 [init]
   defaultBranch = main
 
-
 [core]
   editor = nvim
   autocrlf = input
+  pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
 
 [pull]
   rebase = true # rebase when pulling
@@ -19,7 +25,7 @@
   autoSetupRemote = true # Automatically sets up remote tracking
 
 [merge]
-  conflictstyle = diff3  # Shows original content in conflicts
+  conflictstyle = zdiff3
   ff = false            # Prevents accidental fast-forwards
 
 [rebase]

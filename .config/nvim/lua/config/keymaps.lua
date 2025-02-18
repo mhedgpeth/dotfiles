@@ -5,6 +5,3 @@ vim.keymap.set("n", "<leader>bo", Snacks.bufdelete.other, { desc = "Close Other 
 vim.keymap.set("n", "<leader><CR>", "<cmd>%bd<cr>", { desc = "Close All Buffers" })
 
 vim.keymap.set("n", "<leader>os", "<cmd>OverseerToggle<cr>", { desc = "Toggle Overseer" })
-
--- use a better code action
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })

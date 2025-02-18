@@ -12,7 +12,7 @@ return {
     lazy = false,
     opts = {
       -- Catppuccin comes in four flavors: mocha (dark), macchiato (darker), frappe (light-dark), and latte (light)
-      flavour = "macchiato",
+      flavour = "mocha",
       integrations = {
         treesitter = true,
         semantic_tokens = true,

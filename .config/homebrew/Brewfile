@@ -29,6 +29,7 @@ brew "cargo-binstall"
 brew "cargo-nextest"
 brew "just"
 brew "bacon"
+brew "bacon-ls"
 
 # web
 brew "node"

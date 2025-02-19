@@ -36,7 +36,7 @@ return {
             callback = "strategies.chat.slash_commands.file",
             description = "Select a file using fzf",
             opts = {
-              provider = "fzf_lua", -- Other options include 'default', 'mini_pick', 'fzf_lua', snacks
+              provider = "snacks", -- Other options include 'default', 'mini_pick', 'fzf_lua', snacks
               contains_code = true,
             },
           },

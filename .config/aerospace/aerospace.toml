@@ -59,11 +59,11 @@ preset = 'qwerty'
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
 inner.horizontal = 0
-inner.vertical =   0
-outer.left =       0
-outer.bottom =     0
-outer.top =        0
-outer.right =      0
+inner.vertical = 0
+outer.left = 0
+outer.bottom = 0
+outer.top = 0
+outer.right = 0
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -128,6 +128,7 @@ alt-9 = 'workspace 9'
 alt-i = 'workspace I'
 alt-o = 'workspace O'
 alt-u = 'workspace U'
+alt-y = 'workspace Y'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
@@ -153,7 +154,10 @@ alt-shift-semicolon = 'mode service'
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+f = [
+  'layout floating tiling',
+  'mode main',
+] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
@@ -169,14 +173,21 @@ up = 'volume up'
 shift-down = ['volume set 0', 'mode main']
 
 [[on-window-detected]]
-if.app-id="com.mitchellh.ghostty"
+if.app-id = "com.mitchellh.ghostty"
 run = "move-node-to-workspace O"
 
 [[on-window-detected]]
-if.app-id="com.apple.Safari"
+if.app-id = "com.apple.Safari"
 run = "move-node-to-workspace I"
 
 [[on-window-detected]]
-if.app-id="com.apple.Music"
+if.app-id = "com.apple.Music"
 run = "move-node-to-workspace U"
 
+[[on-window-detected]]
+if.app-id = "com.tinyspeck.slackmacgap"
+run = "move-node-to-workspace Y"
+
+[[on-window-detected]]
+if.app-id = "com.apple.MobileSMS"
+run = "move-node-to-workspace Y"

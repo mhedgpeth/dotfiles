@@ -22,6 +22,10 @@ echo "${GREEN}Ensuring rust toolchain is up to date${RESET}"
 
 rustup install stable
 
+echo "${GREEN}Ensuring yazi flavors are installed${RESET}"
+
+ya pack -a yazi-rs/flavors:catppuccin-frappe
+
 echo "${GREEN}Ensuring repositories are cloned${RESET}"
 # Base directory for code repositories
 CODE_DIR="$HOME/code/github.com"
@@ -110,6 +114,9 @@ mkdir -p ~/.config
 files_to_link=(
   ".zshrc"
   "update.sh"
+  ".config/yazi/theme.toml"
+  ".config/yazi/keymap.toml"
+  ".config/yazi/yazi.toml"
 )
 
 config_dirs_to_link=(

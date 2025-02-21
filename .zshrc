@@ -94,6 +94,19 @@ eval "$(zoxide init --cmd cd zsh)"
 # Bacon
 export BACON_CONFIG="$HOME/.config/bacon/prefs.toml" 
 
+# Yazi
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+# NeoVim is Editor
+export EDITOR=nvim
+
 # Starship
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"

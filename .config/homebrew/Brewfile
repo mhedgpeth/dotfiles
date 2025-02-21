@@ -15,6 +15,14 @@ brew "neovim"
 cask "ghostty"
 brew "starship"
 brew "zoxide"
+# terminal - yazi
+brew "ffmpeg" # video
+brew "sevenzip" # view contents of zip
+brew "jq" # json previewer
+brew "poppler" # view pdf
+brew "imagemagick" # other image preview
+brew "xclip" # for clipboard
+brew "yazi"
 
 # fonts
 cask "font-fira-code"

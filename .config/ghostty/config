@@ -3,7 +3,7 @@ font-family = "JetBrains Mono Nerd Font"
 # font-family = "MesloLGL Nerd Font Mono"
 font-size = 18
 
-theme = catppuccin-macchiato
+theme = catppuccin-mocha
 
 keybind = global:cmd+grave_accent=toggle_quick_terminal
 keybind = cmd+up=goto_split:top

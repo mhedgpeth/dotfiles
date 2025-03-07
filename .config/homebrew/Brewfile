@@ -9,12 +9,12 @@ brew "fzf"
 brew "gh"
 brew "git"
 brew "git-delta"
-brew "lazygit"
+brew "lazygit" # git
 brew "wget"
-brew "neovim"
-cask "ghostty"
-brew "starship"
-brew "zoxide"
+brew "neovim" # editor
+cask "ghostty" # terminal
+brew "starship" # better prompt
+brew "zoxide" # better cd
 # terminal - yazi
 brew "ffmpeg" # video
 brew "sevenzip" # view contents of zip

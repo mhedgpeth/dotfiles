@@ -2,7 +2,7 @@ return {
   "Canop/nvim-bacon",
   keys = {
     { "<leader>cn", ":BaconLoad<CR>:w<CR>:BaconNext<CR>", desc = "Navigate to next bacon location" },
-    { "<leader>cl", ":BaconList<CR>", desc = "Open bacon locations list" },
+    { "<leader>co", ":BaconList<CR>", desc = "Open bacon locations list" },
   },
   config = function()
     require("bacon").setup({

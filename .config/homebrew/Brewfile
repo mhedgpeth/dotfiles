@@ -37,7 +37,7 @@ brew "cargo-binstall"
 brew "cargo-nextest"
 brew "just"
 brew "bacon"
-brew "bacon-ls"
+# brew "bacon-ls" # not ready yet
 
 # web
 brew "node"

@@ -14,6 +14,7 @@ brew "wget"
 brew "neovim" # editor
 cask "ghostty" # terminal
 brew "starship" # better prompt
+brew "zellij" # terminal multiplexor
 brew "zoxide" # better cd
 # terminal - yazi
 brew "ffmpeg" # video

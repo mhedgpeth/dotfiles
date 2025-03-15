@@ -27,8 +27,6 @@ echo "${GREEN}Ensuring yazi flavors are installed${RESET}"
 ya pack -a yazi-rs/flavors:catppuccin-frappe
 
 echo "${GREEN}Ensuring repositories are cloned${RESET}"
-# Base directory for code repositories
-CODE_DIR="$HOME/code/github.com"
 
 # Check if ~/.cargo directory exists
 if [ ! -d "$HOME/.cargo" ]; then
@@ -58,6 +56,9 @@ clone_if_not_exists() {
   fi
 }
 
+# Base directory for code repositories
+CODE_DIR="$HOME/code/github.com"
+
 # Create base directory
 create_directory "$CODE_DIR"
 
@@ -75,6 +76,7 @@ repositories=(
   "hedge-ops/prototyping"
   "redbadger/crux"
   "mhedgpeth/learning"
+  "mhedgpeth/work-vault"
 )
 
 # Create necessary parent directories and clone repositories
@@ -88,6 +90,15 @@ for repo_url in "${repositories[@]}"; do
   # Clone repository if it doesn't exist
   clone_if_not_exists "$repo_path" "$repo_url"
 done
+
+echo "${GREEN}Setting up vaults...${RESET}"
+
+VAULT_DIR="$HOME/vaults"
+create_directory "$VAULT_DIR"
+if [ ! -L "$VAULT_DIR/work" ]; then
+  ln -s "$CODE_DIR/mhedgpeth/work-vault" "$VAULT_DIR/work"
+  echo "${BLUE}Linked work vault${RESET}"
+fi
 
 echo "${GREEN}Linking ~./people to app data directory${RESET}"
 if [ ! -d "$HOME/Library/Application Support/io.people-work" ]; then

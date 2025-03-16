@@ -10,11 +10,14 @@
   autocrlf = input
   pager = delta
 
+[diff]
+  tool = vimdiff
+
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 
 [delta]
-    navigate = true  # use n and N to move between diff sections
+  navigate = true  # use n and N to move between diff sections
 
 [pull]
   rebase = true # rebase when pulling
@@ -25,8 +28,12 @@
   autoSetupRemote = true # Automatically sets up remote tracking
 
 [merge]
+  tool = vimdiff
   conflictstyle = zdiff3
   ff = false            # Prevents accidental fast-forwards
+
+[mergetool "vimdiff"]
+  cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 
 [rebase]
   autoStash = true      # Automatically stash/unstash during rebase

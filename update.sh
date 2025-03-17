@@ -75,7 +75,6 @@ repositories=(
   "hedge-ops/company-website"
   "hedge-ops/prototyping"
   "redbadger/crux"
-  "mhedgpeth/learning"
   "mhedgpeth/work-vault"
 )
 

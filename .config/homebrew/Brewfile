@@ -13,6 +13,7 @@ brew "lazygit" # git
 brew "wget"
 brew "neovim" # editor
 cask "ghostty" # terminal
+cask "wezterm" # antoher terminal
 brew "starship" # better prompt
 brew "zellij" # terminal multiplexor
 brew "zoxide" # better cd

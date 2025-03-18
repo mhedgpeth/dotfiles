@@ -10,7 +10,7 @@ softwareupdate -i -a
 
 echo "${GREEN}Ensuring brew is up to date${RESET}"
 
-export HOMEBREW_BUNDLE_FILE="~/dotfiles/.config/homebrew/Brewfile"
+export HOMEBREW_BUNDLE_FILE="$HOME/dotfiles/.config/homebrew/Brewfile"
 
 brew bundle install
 
@@ -75,6 +75,7 @@ repositories=(
   "hedge-ops/company-website"
   "hedge-ops/prototyping"
   "redbadger/crux"
+  "mhedgpeth/personal-vault"
   "mhedgpeth/work-vault"
 )
 
@@ -97,6 +98,11 @@ create_directory "$VAULT_DIR"
 if [ ! -L "$VAULT_DIR/work" ]; then
   ln -s "$CODE_DIR/mhedgpeth/work-vault" "$VAULT_DIR/work"
   echo "${BLUE}Linked work vault${RESET}"
+fi
+
+if [ ! -L "$VAULT_DIR/personal" ]; then
+  ln -s "$CODE_DIR/mhedgpeth/personal-vault" "$VAULT_DIR/personal"
+  echo "${BLUE}Linked personal vault${RESET}"
 fi
 
 echo "${GREEN}Linking ~./people to app data directory${RESET}"
@@ -155,6 +161,6 @@ for dir in "${config_dirs_to_link[@]}"; do
   fi
 done
 
-cd "$CURRENT_DIR"
+cd "$CURRENT_DIR" || exit
 
 echo "${GREEN}Done!${RESET}"

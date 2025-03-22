@@ -143,6 +143,7 @@ config_dirs_to_link=(
   "homebrew"
   "nvim"
   "starship"
+  "zellij"
 )
 
 # Link individual files

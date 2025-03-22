@@ -111,3 +111,6 @@ export EDITOR=nvim
 # Starship
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
+
+# Start zellij
+eval "$(zellij setup --generate-auto-start zsh)"

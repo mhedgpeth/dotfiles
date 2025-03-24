@@ -81,6 +81,7 @@ alias people='cd ~/people'
 alias dotfiles='cd ~/dotfiles'
 alias j='just'
 alias lg='lazygit'
+alias zs='zellij -l welcome'
 
 # ai
 alias chat='ollama run deepseek-r1:7b'

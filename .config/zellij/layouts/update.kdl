@@ -1,0 +1,10 @@
+
+layout {
+  pane split_direction="vertical" {
+    pane edit="." borderless=true size="67%"
+    pane command="~/update.sh" size="33%"
+  }
+  pane size=2 borderless=true {
+      plugin location="zellij:status-bar"
+    }
+}

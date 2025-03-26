@@ -67,21 +67,21 @@ alias gp='git pull'
 
 # configuration
 alias vim='nvim'
-alias zshconfig='nvim ~/.zshconfig'
 alias update='./update.sh' 
 
 # personal 
 alias app='cd ~/code/github.com/hedge-ops/app/'
-alias dev='app && zellij -l rust'
+alias dev='app && nvim'
+alias b='bacon'
 alias wv='cd ~/vaults/work'
-alias work='wv && zellij -l vault'
+alias mtp='aerospace move-node-to-workspace P && aerospace workspace P'
+alias work='mtp && wv && nvim dashboard.md'
 alias pv='cd ~/vaults/personal'
-alias personal='pv && zellij -l vault'
+alias life='mtp && pv && nvim dashboard.md'
 alias people='cd ~/people'
-alias dotfiles='cd ~/dotfiles'
+alias config='mtp && cd ~/dotfiles && nvim'
 alias j='just'
 alias lg='lazygit'
-alias zs='zellij -l welcome'
 
 # ai
 alias chat='ollama run deepseek-r1:7b'
@@ -112,6 +112,3 @@ export EDITOR=nvim
 # Starship
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
-
-# Start zellij
-eval "$(zellij setup --generate-auto-start zsh)"

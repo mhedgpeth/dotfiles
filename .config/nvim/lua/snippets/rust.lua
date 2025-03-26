@@ -2,6 +2,7 @@ local ls = require("luasnip")
 local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
+local c = ls.choice_node
 -- key:
 -- s: a snippet, the
 -- i: insert node with index, a snippet variable you jump through with an order, see https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md#jump-index
@@ -54,16 +55,17 @@ return {
   -- get creates a function that gets a reference type
   s("getr", {
     visibility_choice(1),
-    t("fn get"),
-    i(2),
+    t("fn "),
+    i(2, "name"),
     t("(&self) -> &"),
     i(3),
     t({ "", "  &self." }),
-    i(4),
-    t(";", "}"),
+    i(2),
+    t({ "}" }),
     i(0),
   }),
   -- getv creates a function that gets a copy value (without a reference)
+  -- TODO: fix once getr is working
   s("getv", {
     visibility_choice(1),
     t("fn get"),
@@ -76,6 +78,7 @@ return {
     i(0),
   }),
   -- geto creates a function that gets an option value
+  -- TODO: fix once getr is working
   s("geto", {
     visibility_choice(1),
     t("fn get"),
@@ -88,6 +91,7 @@ return {
     i(0),
   }),
   -- fgetos creates a function that gets an option value
+  -- TODO: fix once getr is working
   s("getos", {
     visibility_choice(1),
     t("fn get"),
@@ -99,6 +103,7 @@ return {
     i(0),
   }),
   -- fgetos creates a function that gets an option value
+  -- TODO: fix once getr is working
   s("geti", {
     visibility_choice(1),
     t("fn get"),
@@ -126,6 +131,12 @@ return {
     t({ "{" }),
     i(0),
     t({ "", "}" }),
+  }),
+  s("dern", {
+    t("#[derive(Serialize, Deserialize, Clone, Debug, PartialEq, Eq)]"),
+  }),
+  s("muu", {
+    t("#[must_use]"),
   }),
   -- iinto allows for an impl Into<T> where T is a variable you provide
   s("iinto", {

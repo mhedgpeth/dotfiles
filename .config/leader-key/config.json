@@ -1,0 +1,86 @@
+{
+  "actions" : [
+    {
+      "key" : "t",
+      "label" : "",
+      "type" : "application",
+      "value" : "/Applications/Ghostty.app"
+    },
+    {
+      "key" : "i",
+      "label" : "",
+      "type" : "application",
+      "value" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app"
+    },
+    {
+      "key" : "c",
+      "label" : "",
+      "type" : "application",
+      "value" : "/Applications/Claude.app"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "l",
+          "label" : "",
+          "type" : "application",
+          "value" : "/System/Applications/Mail.app"
+        },
+        {
+          "key" : "s",
+          "label" : "",
+          "type" : "application",
+          "value" : "/System/Applications/Messages.app"
+        }
+      ],
+      "key" : "m",
+      "label" : "",
+      "type" : "group"
+    },
+    {
+      "key" : "s",
+      "label" : "",
+      "type" : "application",
+      "value" : "/Applications/Slack.app"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "p",
+          "label" : "https://github.com/hedge-ops/app/pulls",
+          "type" : "url",
+          "value" : "Pull Requests"
+        },
+        {
+          "key" : "w",
+          "label" : "https://github.com/orgs/hedge-ops/projects/1",
+          "type" : "url",
+          "value" : "My Work"
+        },
+        {
+          "key" : "r",
+          "label" : "https://github.com/hedge-ops/app",
+          "type" : "url",
+          "value" : "Repository"
+        }
+      ],
+      "key" : "a",
+      "label" : "App",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "c",
+          "label" : "https://crux-community.zulipchat.com",
+          "type" : "url",
+          "value" : "Community"
+        }
+      ],
+      "key" : "x",
+      "label" : "Crux",
+      "type" : "group"
+    }
+  ],
+  "type" : "group"
+}

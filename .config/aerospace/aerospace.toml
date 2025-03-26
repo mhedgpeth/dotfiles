@@ -182,6 +182,10 @@ if.app-id = "com.apple.Safari"
 run = "move-node-to-workspace I"
 
 [[on-window-detected]]
+if.app-id = "com.anthropic.claudefordesktop"
+run = "move-node-to-workspace I"
+
+[[on-window-detected]]
 if.app-id = "com.apple.Music"
 run = "move-node-to-workspace U"
 
@@ -191,4 +195,8 @@ run = "move-node-to-workspace Y"
 
 [[on-window-detected]]
 if.app-id = "com.apple.MobileSMS"
+run = "move-node-to-workspace Y"
+
+[[on-window-detected]]
+if.app-id = "com.apple.mail"
 run = "move-node-to-workspace Y"

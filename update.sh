@@ -141,6 +141,7 @@ config_dirs_to_link=(
   "ghostty"
   "git"
   "homebrew"
+  "leader-key"
   "nvim"
   "starship"
   "zellij"

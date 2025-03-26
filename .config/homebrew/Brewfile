@@ -15,7 +15,8 @@ brew "neovim" # editor
 cask "ghostty" # terminal
 brew "starship" # better prompt
 brew "zoxide" # better cd
-brew "zellij" # terminal multiplexor
+# brew "zellij" # terminal multiplexor - trying tmux next
+brew "cloc" # count lines of code
 # terminal - yazi
 brew "ffmpeg" # video
 brew "sevenzip" # view contents of zip
@@ -56,7 +57,9 @@ cask "sf-symbols"
 
 # macOS
 tap "nikitabobko/tap"
-# cask "aerospace" # seeing if zellij works better with raycast driving
+cask "aerospace" # seeing if zellij works better with raycast driving
 cask "slack"
 cask "anki"
 cask "raycast"
+cask "leader-key"
+cask "claude"

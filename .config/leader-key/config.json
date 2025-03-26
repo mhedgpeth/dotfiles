@@ -47,21 +47,21 @@
       "actions" : [
         {
           "key" : "p",
-          "label" : "https://github.com/hedge-ops/app/pulls",
+          "label" : "Pull Requests",
           "type" : "url",
-          "value" : "Pull Requests"
+          "value" : "https://github.com/hedge-ops/app/pulls"
         },
         {
           "key" : "w",
-          "label" : "https://github.com/orgs/hedge-ops/projects/1",
+          "label" : "My Work",
           "type" : "url",
-          "value" : "My Work"
+          "value" : "https://github.com/orgs/hedge-ops/projects/1"
         },
         {
           "key" : "r",
-          "label" : "https://github.com/hedge-ops/app",
+          "label" : "Repostiory",
           "type" : "url",
-          "value" : "Repository"
+          "value" : "https://github.com/hedge-ops/app"
         }
       ],
       "key" : "a",

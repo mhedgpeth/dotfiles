@@ -1,49 +1,6 @@
 {
   "actions" : [
     {
-      "key" : "t",
-      "label" : "",
-      "type" : "application",
-      "value" : "/Applications/Ghostty.app"
-    },
-    {
-      "key" : "i",
-      "label" : "",
-      "type" : "application",
-      "value" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app"
-    },
-    {
-      "key" : "c",
-      "label" : "",
-      "type" : "application",
-      "value" : "/Applications/Claude.app"
-    },
-    {
-      "actions" : [
-        {
-          "key" : "l",
-          "label" : "",
-          "type" : "application",
-          "value" : "/System/Applications/Mail.app"
-        },
-        {
-          "key" : "t",
-          "label" : "",
-          "type" : "application",
-          "value" : "/System/Applications/Messages.app"
-        },
-        {
-          "key" : "s",
-          "label" : "",
-          "type" : "application",
-          "value" : "/Applications/Slack.app"
-        }
-      ],
-      "key" : "m",
-      "label" : "Messaging",
-      "type" : "group"
-    },
-    {
       "actions" : [
         {
           "key" : "p",
@@ -52,16 +9,16 @@
           "value" : "https://github.com/hedge-ops/app/pulls"
         },
         {
-          "key" : "w",
-          "label" : "My Work",
-          "type" : "url",
-          "value" : "https://github.com/orgs/hedge-ops/projects/1"
-        },
-        {
           "key" : "r",
           "label" : "Repostiory",
           "type" : "url",
           "value" : "https://github.com/hedge-ops/app"
+        },
+        {
+          "key" : "w",
+          "label" : "My Work",
+          "type" : "url",
+          "value" : "https://github.com/orgs/hedge-ops/projects/1"
         },
         {
           "key" : "x",
@@ -75,57 +32,19 @@
       "type" : "group"
     },
     {
-      "actions" : [
-        {
-          "key" : "c",
-          "label" : "https://crux-community.zulipchat.com",
-          "type" : "url",
-          "value" : "Community"
-        },
-        {
-          "key" : "r",
-          "label" : "https://github.com/redbadger/crux",
-          "type" : "url",
-          "value" : "Repository"
-        },
-        {
-          "key" : "b",
-          "label" : "https://redbadger.github.io/crux/",
-          "type" : "url",
-          "value" : "Book"
-        },
-        {
-          "key" : "d",
-          "label" : "https://docs.rs/crux_core/latest/crux_core/",
-          "type" : "url",
-          "value" : "Documentation"
-        }
-      ],
-      "key" : "x",
-      "label" : "Crux",
-      "type" : "group"
+      "key" : "c",
+      "label" : "",
+      "type" : "application",
+      "value" : "/Applications/Claude.app"
     },
     {
       "actions" : [
         {
-          "key" : "y",
-          "label" : "YNAB",
+          "key" : "n",
+          "label" : "Rust Nomicon",
           "type" : "url",
-          "value" : "https://app.ynab.com"
+          "value" : "https://doc.rust-lang.org/nomicon/"
         },
-        {
-          "key" : "c",
-          "label" : "Chase",
-          "type" : "url",
-          "value" : "https://secure.chase.com/web/auth/dashboard#/dashboard/index/index"
-        }
-      ],
-      "key" : "f",
-      "label" : "Finances",
-      "type" : "group"
-    },
-    {
-      "actions" : [
         {
           "key" : "r",
           "label" : "Rust Reference",
@@ -138,17 +57,98 @@
           "type" : "url",
           "value" : "https://docs.rs/winnow/latest/winnow/"
         },
-        {
-          "key" : "n",
-          "label" : "Rust Nomicon",
-          "type" : "url",
-          "value" : "https://doc.rust-lang.org/nomicon/"
-        }
       ],
       "key" : "d",
       "label" : "Documentation",
       "type" : "group"
-    }
+    },
+    {
+      "actions" : [
+        {
+          "key" : "c",
+          "label" : "Chase",
+          "type" : "url",
+          "value" : "https://secure.chase.com/web/auth/dashboard#/dashboard/index/index"
+        },
+        {
+          "key" : "y",
+          "label" : "YNAB",
+          "type" : "url",
+          "value" : "https://app.ynab.com"
+        },
+      ],
+      "key" : "f",
+      "label" : "Finances",
+      "type" : "group"
+    },
+    {
+      "key" : "i",
+      "label" : "",
+      "type" : "application",
+      "value" : "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "s",
+          "label" : "",
+          "type" : "application",
+          "value" : "/Applications/Slack.app"
+        },
+        {
+          "key" : "l",
+          "label" : "",
+          "type" : "application",
+          "value" : "/System/Applications/Mail.app"
+        },
+        {
+          "key" : "t",
+          "label" : "",
+          "type" : "application",
+          "value" : "/System/Applications/Messages.app"
+        },
+      ],
+      "key" : "m",
+      "label" : "Messaging",
+      "type" : "group"
+    },
+    {
+      "key" : "t",
+      "label" : "",
+      "type" : "application",
+      "value" : "/Applications/Ghostty.app"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "b",
+          "label" : "https://redbadger.github.io/crux/",
+          "type" : "url",
+          "value" : "Book"
+        },
+        {
+          "key" : "c",
+          "label" : "https://crux-community.zulipchat.com",
+          "type" : "url",
+          "value" : "Community"
+        },
+        {
+          "key" : "d",
+          "label" : "https://docs.rs/crux_core/latest/crux_core/",
+          "type" : "url",
+          "value" : "Documentation"
+        },
+        {
+          "key" : "r",
+          "label" : "https://github.com/redbadger/crux",
+          "type" : "url",
+          "value" : "Repository"
+        }
+      ],
+      "key" : "x",
+      "label" : "Crux",
+      "type" : "group"
+    },
   ],
   "type" : "group"
 }

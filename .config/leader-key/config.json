@@ -27,21 +27,21 @@
           "value" : "/System/Applications/Mail.app"
         },
         {
-          "key" : "s",
+          "key" : "t",
           "label" : "",
           "type" : "application",
           "value" : "/System/Applications/Messages.app"
+        },
+        {
+          "key" : "s",
+          "label" : "",
+          "type" : "application",
+          "value" : "/Applications/Slack.app"
         }
       ],
       "key" : "m",
-      "label" : "",
+      "label" : "Messaging",
       "type" : "group"
-    },
-    {
-      "key" : "s",
-      "label" : "",
-      "type" : "application",
-      "value" : "/Applications/Slack.app"
     },
     {
       "actions" : [
@@ -62,6 +62,12 @@
           "label" : "Repostiory",
           "type" : "url",
           "value" : "https://github.com/hedge-ops/app"
+        },
+        {
+          "key" : "x",
+          "label" : "",
+          "type" : "application",
+          "value" : "/Applications/Xcode.app"
         }
       ],
       "key" : "a",
@@ -75,10 +81,72 @@
           "label" : "https://crux-community.zulipchat.com",
           "type" : "url",
           "value" : "Community"
+        },
+        {
+          "key" : "r",
+          "label" : "https://github.com/redbadger/crux",
+          "type" : "url",
+          "value" : "Repository"
+        },
+        {
+          "key" : "b",
+          "label" : "https://redbadger.github.io/crux/",
+          "type" : "url",
+          "value" : "Book"
+        },
+        {
+          "key" : "d",
+          "label" : "https://docs.rs/crux_core/latest/crux_core/",
+          "type" : "url",
+          "value" : "Documentation"
         }
       ],
       "key" : "x",
       "label" : "Crux",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "y",
+          "label" : "YNAB",
+          "type" : "url",
+          "value" : "https://app.ynab.com"
+        },
+        {
+          "key" : "c",
+          "label" : "Chase",
+          "type" : "url",
+          "value" : "https://secure.chase.com/web/auth/dashboard#/dashboard/index/index"
+        }
+      ],
+      "key" : "f",
+      "label" : "Finances",
+      "type" : "group"
+    },
+    {
+      "actions" : [
+        {
+          "key" : "r",
+          "label" : "Rust Reference",
+          "type" : "url",
+          "value" : "https://doc.rust-lang.org/reference/"
+        },
+        {
+          "key" : "w",
+          "label" : "winnow crate",
+          "type" : "url",
+          "value" : "https://docs.rs/winnow/latest/winnow/"
+        },
+        {
+          "key" : "n",
+          "label" : "Rust Nomicon",
+          "type" : "url",
+          "value" : "https://doc.rust-lang.org/nomicon/"
+        }
+      ],
+      "key" : "d",
+      "label" : "Documentation",
       "type" : "group"
     }
   ],

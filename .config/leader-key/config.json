@@ -56,7 +56,7 @@
           "label" : "winnow crate",
           "type" : "url",
           "value" : "https://docs.rs/winnow/latest/winnow/"
-        },
+        }
       ],
       "key" : "d",
       "label" : "Documentation",
@@ -75,7 +75,7 @@
           "label" : "YNAB",
           "type" : "url",
           "value" : "https://app.ynab.com"
-        },
+        }
       ],
       "key" : "f",
       "label" : "Finances",
@@ -106,7 +106,7 @@
           "label" : "",
           "type" : "application",
           "value" : "/System/Applications/Messages.app"
-        },
+        }
       ],
       "key" : "m",
       "label" : "Messaging",
@@ -148,7 +148,7 @@
       "key" : "x",
       "label" : "Crux",
       "type" : "group"
-    },
+    }
   ],
   "type" : "group"
 }

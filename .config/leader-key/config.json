@@ -148,6 +148,12 @@
       "key" : "x",
       "label" : "Crux",
       "type" : "group"
+    },
+    {
+      "key" : "u",
+      "label" : "",
+      "type" : "application",
+      "value" : "/System/Applications/Music.app"
     }
   ],
   "type" : "group"

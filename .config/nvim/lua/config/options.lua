@@ -8,4 +8,4 @@ vim.o.exrc = true
 vim.o.secure = true
 
 -- turn on bacon, instructions: https://dystroy.org/bacon/community/bacon-ls/#neovim-lazyvim
--- vim.g.lazyvim_rust_diagnostics = "bacon-ls"
+vim.g.lazyvim_rust_diagnostics = "rust-analyzer" --"bacon-ls"

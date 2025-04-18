@@ -7,6 +7,7 @@ brew "luarocks"
 brew "fd"
 brew "fzf"
 brew "gh"
+cask "github"
 brew "git"
 brew "git-delta"
 brew "lazygit" # git

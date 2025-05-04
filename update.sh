@@ -22,6 +22,16 @@ echo "${GREEN}Ensuring rust toolchain is up to date${RESET}"
 
 rustup install stable
 
+echo "${GREEN}Ensuring required cargo packages are installed${RESET}"
+
+# Check if mdbook-admonish is installed
+if ! cargo install --list | grep -q "^mdbook-admonish"; then
+  echo "${BLUE}Installing mdbook-admonish...${RESET}"
+  cargo install mdbook-admonish
+else
+  echo "${GREEN}mdbook-admonish is already installed${RESET}"
+fi
+
 echo "${GREEN}Ensuring yazi flavors are installed${RESET}"
 
 ya pack -a yazi-rs/flavors:catppuccin-frappe

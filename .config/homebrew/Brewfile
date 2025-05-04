@@ -16,7 +16,6 @@ brew "neovim" # editor
 cask "ghostty" # terminal
 brew "starship" # better prompt
 brew "zoxide" # better cd
-# brew "zellij" # terminal multiplexor - trying tmux next
 brew "cloc" # count lines of code
 # terminal - yazi
 brew "ffmpeg" # video
@@ -41,6 +40,7 @@ brew "cargo-nextest"
 brew "just"
 brew "bacon"
 # brew "bacon-ls" # not ready yet
+brew "mdbook"
 
 # web
 brew "node"
@@ -64,3 +64,4 @@ cask "anki"
 cask "raycast"
 cask "leader-key"
 cask "claude"
+cask "linear-linear"

@@ -36,7 +36,7 @@ cask "font-meslo-lg-nerd-font"
 # rust toolchain
 brew "rustup"
 brew "cargo-binstall"
-# brew "cargo-nextest" # through cargo until fixed: https://github.com/Canop/bacon/issues/350
+brew "cargo-nextest"
 brew "just"
 brew "bacon"
 # brew "bacon-ls" # not ready yet

@@ -151,6 +151,9 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
 
+# Custom: toggle floating, so I can test my own app
+alt-shift-space = 'layout floating tiling'
+
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
@@ -210,7 +213,7 @@ run = "move-node-to-workspace M"
 
 [[on-window-detected]]
 if.app-id = "io.people-work.peoplework"
-run = ["layout floating", "move-node-to-workspace P"]
+run = ["move-node-to-workspace P"]
 
 [[on-window-detected]]
 if.app-id = "com.microsoft.VSCode"

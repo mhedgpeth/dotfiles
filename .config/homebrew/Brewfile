@@ -56,7 +56,7 @@ cask "sf-symbols"
 
 # macOS
 tap "nikitabobko/tap"
-cask "aerospace" # seeing if zellij works better with raycast driving
+cask "aerospace" 
 cask "slack"
 cask "anki"
 cask "raycast"
@@ -64,3 +64,4 @@ cask "leader-key"
 cask "claude"
 cask "linear-linear"
 cask "visual-studio-code"
+cask "spotify"

@@ -151,7 +151,7 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
 
-# Custom: toggle floating, so I can test my own app
+# Custom: toggle floating,
 alt-shift-space = 'layout floating tiling'
 
 # 'service' binding mode declaration.
@@ -193,6 +193,10 @@ run = "move-node-to-workspace I"
 
 [[on-window-detected]]
 if.app-id = "com.apple.Music"
+run = "move-node-to-workspace U"
+
+[[on-window-detected]]
+if.app-id = "com.spotify.client"
 run = "move-node-to-workspace U"
 
 [[on-window-detected]]

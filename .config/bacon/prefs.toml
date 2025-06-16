@@ -34,8 +34,8 @@ line_format = "{kind} {path}:{line}:{column} {message}"
 #    on_success = "play-sound(name=90s-game-ui-6,volume=50)"
 #    on_failure = "play-sound(name=beep-warning,volume=100)"
 [sound]
-enabled = true # set true to allow sound
-base_volume = "100%" # global volume multiplier
+enabled = true                                          # set true to allow sound
+base_volume = "100%"                                    # global volume multiplier
 on_success = "play-sound(name=90s-game-ui-6,volume=50)"
 on_failure = "play-sound(name=beep-warning,volume=100)"
 
@@ -71,3 +71,62 @@ on_failure = "play-sound(name=beep-warning,volume=100)"
 # ctrl-e = "export:analysis"
 # ctrl-c = "copy-unstyled-output"
 
+# Catppuccin Mocha theme for Bacon
+[skin]
+# Status line - using base background with text foreground
+status_fg = 205 # text (catppuccin mocha text - #cdd6f4)
+status_bg = 235 # base (catppuccin mocha base - #1e1e2e)
+
+# Key shortcuts - using mauve for emphasis
+key_fg = 183        # mauve (#cba6f7)
+status_key_fg = 183 # mauve (#cba6f7)
+
+# Project name badge - using lavender on surface0
+project_name_badge_fg = 183 # lavender (#b4befe)
+project_name_badge_bg = 236 # surface0 (#313244)
+
+# Job label badge - using base on mauve
+job_label_badge_fg = 235 # base (#1e1e2e)
+job_label_badge_bg = 183 # mauve (#cba6f7)
+
+# Error badges - using base on red
+errors_badge_fg = 235 # base (#1e1e2e)
+errors_badge_bg = 203 # red (#f38ba8)
+
+# Test fail badges - using base on peach
+test_fails_badge_fg = 235 # base (#1e1e2e)
+test_fails_badge_bg = 215 # peach (#fab387)
+
+# Test pass badges - using base on green
+test_pass_badge_fg = 235 # base (#1e1e2e)
+test_pass_badge_bg = 151 # green (#a6e3a1)
+
+# Warning badges - using base on yellow
+warnings_badge_fg = 235 # base (#1e1e2e)
+warnings_badge_bg = 227 # yellow (#f9e2af)
+
+# Command error badges - using base on red
+command_error_badge_fg = 235 # base (#1e1e2e)
+command_error_badge_bg = 203 # red (#f38ba8)
+
+# Change badges - using base on teal
+change_badge_fg = 235 # base (#1e1e2e)
+change_badge_bg = 152 # teal (#94e2d5)
+
+# Computing stripe - using base on sky
+computing_fg = 235 # base (#1e1e2e)
+computing_bg = 117 # sky (#89dceb)
+
+# Search highlighting - using peach
+found_fg = 215               # peach (#fab387)
+found_selected_bg = 215      # peach (#fab387)
+search_input_prefix_fg = 215 # peach (#fab387)
+search_summary_fg = 215      # peach (#fab387)
+
+# Menu colors - using catppuccin surfaces
+menu_border = 237           # surface1 (#45475a)
+menu_bg = 235               # base (#1e1e2e)
+menu_item_bg = 235          # base (#1e1e2e)
+menu_item_selected_bg = 236 # surface0 (#313244)
+menu_item_fg = 245          # subtext1 (#bac2de)
+menu_item_selected_fg = 205 # text (#cdd6f4)

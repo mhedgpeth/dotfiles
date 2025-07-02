@@ -54,6 +54,10 @@ brew "xcodegen"
 brew "xcode-build-server"
 cask "sf-symbols"
 
+# people
+tap "hedge-ops/homebrew-tap"
+cask "people-work"
+
 # macOS
 tap "nikitabobko/tap"
 cask "aerospace" 
@@ -65,3 +69,4 @@ cask "claude"
 cask "linear-linear"
 cask "visual-studio-code"
 cask "spotify"
+

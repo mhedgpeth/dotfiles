@@ -15,6 +15,7 @@ brew "starship" # better prompt
 brew "zoxide" # better cd
 brew "cloc" # count lines of code
 brew "fswatch"
+cask "balenaetcher"
 # terminal - yazi
 brew "ffmpeg" # video
 brew "sevenzip" # view contents of zip

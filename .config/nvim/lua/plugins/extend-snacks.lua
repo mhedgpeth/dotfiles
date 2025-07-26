@@ -35,7 +35,7 @@ return {
       },
     },
     image = {
-      enabled = true,
+      enabled = false,
     },
   },
 }

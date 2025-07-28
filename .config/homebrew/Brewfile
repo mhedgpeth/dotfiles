@@ -45,6 +45,9 @@ brew "mdbook"
 brew "node"
 brew "pnpm"
 brew "eslint"
+tap "oven-sh/bun"
+brew "bun"
+brew "zola"
 
 #swift
 brew "rbenv"

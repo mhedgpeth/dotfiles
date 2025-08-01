@@ -154,7 +154,7 @@ config_dirs_to_link=(
   "leader-key"
   "nvim"
   "starship"
-  "zellij"
+  "zed"
 )
 
 # Link individual files

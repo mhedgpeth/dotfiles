@@ -24,6 +24,7 @@ brew "poppler" # view pdf
 brew "imagemagick" # other image preview
 brew "xclip" # for clipboard
 brew "yazi"
+brew "tree"
 
 # fonts
 cask "font-fira-code"
@@ -74,3 +75,4 @@ cask "linear-linear"
 cask "visual-studio-code"
 cask "spotify"
 cask "zed"
+cask "google-chrome"

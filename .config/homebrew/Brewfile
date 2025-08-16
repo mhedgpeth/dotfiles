@@ -41,6 +41,7 @@ brew "just"
 brew "bacon"
 # brew "bacon-ls" # not ready yet
 brew "mdbook"
+brew "lychee"
 
 # web
 brew "node"

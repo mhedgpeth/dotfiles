@@ -42,6 +42,12 @@ brew "bacon"
 # brew "bacon-ls" # not ready yet
 brew "mdbook"
 
+# cloud
+tap "hashicorp/tap"
+brew "hashicorp/tap/terraform"
+brew "tflint"
+brew "doctl"
+
 # web
 brew "node"
 brew "pnpm"

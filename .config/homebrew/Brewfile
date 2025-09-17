@@ -25,6 +25,8 @@ brew "imagemagick" # other image preview
 brew "xclip" # for clipboard
 brew "yazi"
 brew "tree"
+brew "tree-sitter"
+brew "tree-sitter-cli"
 
 # fonts
 cask "font-fira-code"

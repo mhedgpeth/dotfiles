@@ -47,6 +47,12 @@ tap "hashicorp/tap"
 brew "hashicorp/tap/terraform"
 brew "tflint"
 brew "doctl"
+brew "kubernetes-cli"
+brew "kustomize"
+cask "pgadmin4"
+brew "derailed/k9s/k9s"
+cask "docker"
+brew "sqlx-cli"
 
 # web
 brew "node"

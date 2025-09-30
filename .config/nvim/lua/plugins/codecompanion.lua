@@ -23,6 +23,7 @@ return {
     strategies = {
       chat = {
         adapter = "anthropic",
+        model = "claude-sonnet-4-5-20250929",
         keymaps = {
           send = {
             modes = { n = "<C-s>", i = "<C-s>" },

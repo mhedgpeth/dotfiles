@@ -54,8 +54,10 @@ brew "kubernetes-cli"
 brew "kustomize"
 cask "pgadmin4"
 brew "derailed/k9s/k9s"
-cask "docker"
+cask "docker-desktop"
 brew "sqlx-cli"
+cask "postman"
+cask "ngrok"
 
 # web
 brew "node"

@@ -83,14 +83,20 @@ cask "people-work"
 # macOS
 tap "nikitabobko/tap"
 cask "aerospace" 
-cask "slack"
 cask "anki"
 cask "raycast"
 cask "leader-key"
+
+# AI
 cask "claude"
-cask "linear-linear"
+brew "gemini-cli"
+
+# Other editors
 cask "visual-studio-code"
 cask "spotify"
 cask "zed"
+
+# collaboration
+cask "slack"
 cask "google-chrome"
 cask "discord"

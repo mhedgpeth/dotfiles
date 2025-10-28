@@ -58,6 +58,7 @@ cask "docker-desktop"
 brew "sqlx-cli"
 cask "postman"
 cask "ngrok"
+brew "stripe-cli"
 
 # web
 brew "node"

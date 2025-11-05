@@ -4,9 +4,9 @@ GREEN=$(tput setaf 2)
 BLUE=$(tput setaf 4)
 RESET=$(tput sgr0)
 
-# echo "${GREEN}Checking for Apple Software updates${RESET}"
+echo "${GREEN}Checking for Apple Software updates${RESET}"
 
-# softwareupdate -i -a
+softwareupdate -i -a
 
 echo "${GREEN}Ensuring brew is up to date${RESET}"
 

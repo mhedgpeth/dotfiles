@@ -32,6 +32,14 @@ else
   echo "${GREEN}mdbook-admonish is already installed${RESET}"
 fi
 
+# Check if semantic-release-cargo is installed
+if ! cargo install --list | grep -q "^semantic-release-cargo"; then
+  echo "${BLUE}Installing semantic-release-cargo...${RESET}"
+  cargo install semantic-release-cargo
+else
+  echo "${GREEN}semantic-release-cargo is already installed${RESET}"
+fi
+
 echo "${GREEN}Ensuring yazi flavors are installed${RESET}"
 
 ya pack -a yazi-rs/flavors:catppuccin-frappe

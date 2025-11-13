@@ -93,7 +93,6 @@ brew "gemini-cli"
 
 # Other editors
 cask "visual-studio-code"
-cask "spotify"
 cask "zed"
 
 # collaboration

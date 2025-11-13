@@ -85,7 +85,6 @@ cask "people-work"
 tap "nikitabobko/tap"
 cask "aerospace" 
 cask "anki"
-cask "raycast"
 cask "leader-key"
 
 # AI

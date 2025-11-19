@@ -224,5 +224,9 @@ if.app-id = "com.microsoft.VSCode"
 run = "move-node-to-workspace 0"
 
 [[on-window-detected]]
+if.app-id = "com.google.antigravity"
+run = "move-node-to-workspace 0"
+
+[[on-window-detected]]
 if.app-id = "com.apple.dt.Xcode"
 run = "move-node-to-workspace 0"

@@ -113,3 +113,6 @@ export EDITOR=nvim
 # Starship
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
+
+# Added by Antigravity
+export PATH="/Users/michaelhedgpeth/.antigravity/antigravity/bin:$PATH"

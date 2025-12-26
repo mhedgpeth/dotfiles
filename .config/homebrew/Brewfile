@@ -77,6 +77,9 @@ brew "xcodegen"
 brew "xcode-build-server"
 cask "sf-symbols"
 
+# java
+brew "openjdk"
+
 # people
 tap "hedge-ops/homebrew-tap"
 cask "people-work"

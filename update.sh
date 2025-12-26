@@ -42,7 +42,7 @@ fi
 
 echo "${GREEN}Ensuring yazi flavors are installed${RESET}"
 
-ya pack -a yazi-rs/flavors:catppuccin-frappe
+ya pkg add yazi-rs/flavors:catppuccin-frappe
 
 echo "${GREEN}Ensuring repositories are cloned${RESET}"
 

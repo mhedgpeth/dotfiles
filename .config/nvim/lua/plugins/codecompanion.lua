@@ -20,7 +20,7 @@ return {
     { "<leader>ae", "<cmd>CodeCompanion /explain<cr>", mode = { "v" }, desc = "AI [E]xplain" },
   },
   opts = {
-    strategies = {
+    interactions = {
       chat = {
         adapter = "anthropic",
         model = "claude-sonnet-4-5-20250929",

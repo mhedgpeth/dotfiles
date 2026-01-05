@@ -116,3 +116,4 @@ eval "$(starship init zsh)"
 
 # Added by Antigravity
 export PATH="/Users/michaelhedgpeth/.antigravity/antigravity/bin:$PATH"
+export PATH="/opt/homebrew/opt/node@24/bin:$PATH"

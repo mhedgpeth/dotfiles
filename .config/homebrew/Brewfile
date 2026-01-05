@@ -61,7 +61,7 @@ cask "ngrok"
 brew "stripe-cli"
 
 # web
-brew "node"
+brew "node@24"
 brew "pnpm"
 brew "eslint"
 tap "oven-sh/bun"

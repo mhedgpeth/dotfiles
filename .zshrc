@@ -64,6 +64,7 @@ alias c='clear'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ls='eza -lah --icons --git'
+alias cat='bat'
 alias ~='cd ~'
 
 # git

@@ -1,4 +1,5 @@
 # terminal
+brew "bat" # better cat with syntax highlighting
 brew "eza" # modern ls replacement
 brew "ripgrep"
 brew "luarocks"

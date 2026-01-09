@@ -59,6 +59,13 @@ to configuration files. Do not run or test configurations; the user will run
 scripts separately to avoid chicken-and-egg situations. Suggest what should be
 run next in another terminal.
 
+## Source Control
+
+The repo is hosted on GitHub, utilize `gh` when possible to simplify, and `git`
+when needed.
+
+Run all commands from the root of this repository, to enable allow listing.
+
 ## Issues
 
 Outstanding work is located in [TODO.md](./TODO.md). Use this file to see

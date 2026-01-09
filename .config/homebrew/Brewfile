@@ -3,6 +3,7 @@ tap "hashicorp/tap"
 tap "hedge-ops/homebrew-tap"
 tap "nikitabobko/tap"
 tap "oven-sh/bun"
+tap "steveyegge/beads"
 
 # terminal
 brew "bat" # better cat with syntax highlighting
@@ -100,6 +101,7 @@ cask "postman"
 
 # ai
 brew "gemini-cli"
+brew "steveyegge/beads/bd" # ai task automation
 cask "claude"
 
 # editors

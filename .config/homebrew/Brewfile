@@ -27,14 +27,14 @@ cask "ghostty" # terminal emulator
 # git
 brew "gh" # github cli
 brew "git"
-brew "git-delta" # better git diff
+brew "git-delta" # syntax-highlighted diffs
 brew "lazygit" # git tui
 cask "github" # github desktop
 
 # editor
-brew "luarocks" # lua package manager
+brew "luarocks" # lua packages for neovim plugins
 brew "neovim"
-brew "tree-sitter"
+brew "tree-sitter" # syntax parsing for neovim
 brew "tree-sitter-cli"
 
 # yazi (file manager + preview deps)
@@ -42,9 +42,9 @@ brew "ffmpeg" # video preview
 brew "imagemagick" # image preview
 brew "poppler" # pdf preview
 brew "sevenzip" # archive preview
-brew "yazi"
+brew "yazi" # terminal file manager
 
-# fonts
+# fonts (nerd fonts include icons for terminal)
 cask "font-fira-code-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-meslo-lg-nerd-font"
@@ -54,25 +54,25 @@ brew "bacon" # background rust checker
 # brew "bacon-ls" # not ready yet
 brew "cargo-binstall" # binary installer
 brew "cargo-nextest" # better test runner
-brew "just" # command runner
-brew "lychee" # link checker
-brew "mdbook" # documentation
+brew "just" # make alternative
+brew "lychee" # check links in markdown/docs
+brew "mdbook" # rust book-style documentation
 brew "rustup" # rust toolchain
 
 # swift
 brew "fastlane" # ios automation
 brew "swiftformat"
 brew "swiftlint"
-brew "xcode-build-server"
-brew "xcodegen"
-cask "sf-symbols"
+brew "xcode-build-server" # lsp for xcode projects
+brew "xcodegen" # generate xcodeproj from yaml
+cask "sf-symbols" # browse apple sf symbols
 
 # web
-brew "bun"
+brew "bun" # fast js runtime/bundler
 brew "eslint"
 brew "node@24"
 brew "pnpm"
-brew "zola" # static site generator
+brew "zola" # rust static site generator
 
 # ruby (for fastlane)
 brew "rbenv"
@@ -85,17 +85,17 @@ brew "derailed/k9s/k9s" # kubernetes tui
 brew "doctl" # digitalocean cli
 brew "hashicorp/tap/terraform"
 brew "kubernetes-cli"
-brew "kustomize"
+brew "kustomize" # kubernetes yaml templating
 brew "tflint" # terraform linter
 cask "docker-desktop"
 
 # database
-brew "sqlx-cli"
+brew "sqlx-cli" # rust sql migrations/checks
 cask "pgadmin4"
 
 # api
 brew "stripe-cli"
-cask "ngrok"
+cask "ngrok" # expose localhost publicly
 cask "postman"
 
 # ai
@@ -103,7 +103,7 @@ brew "gemini-cli"
 cask "claude"
 
 # editors
-cask "antigravity"
+cask "antigravity" # google's ai code editor
 cask "visual-studio-code"
 cask "zed"
 

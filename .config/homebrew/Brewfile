@@ -1,7 +1,10 @@
 # terminal
 brew "bat" # better cat with syntax highlighting
+brew "btop" # process/system monitor
 brew "eza" # modern ls replacement
+brew "hyperfine" # CLI benchmarking tool
 brew "ripgrep"
+brew "tldr" # simplified man pages with examples
 brew "luarocks"
 brew "fd"
 brew "fzf"
@@ -26,17 +29,14 @@ brew "sevenzip" # view contents of zip
 brew "jq" # json previewer
 brew "poppler" # view pdf
 brew "imagemagick" # other image preview
-brew "xclip" # for clipboard
 brew "yazi"
 brew "tree"
 brew "tree-sitter"
 brew "tree-sitter-cli"
 
 # fonts
-cask "font-fira-code"
 cask "font-fira-code-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
-brew "ollama", restart_service: true
 cask "font-meslo-lg-nerd-font"
 
 # rust toolchain
@@ -72,8 +72,10 @@ tap "oven-sh/bun"
 brew "bun"
 brew "zola"
 
-#swift
+# ruby (for fastlane)
 brew "rbenv"
+
+# swift
 brew "fastlane"
 brew "swiftformat"
 brew "swiftlint"

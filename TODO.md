@@ -1,6 +1,6 @@
 # Tasks
 
-- [ ] Review tooling installed in Brewfile to make sure I'm not missing anything, or including duplicate tools or being dumb
+- [x] Review tooling installed in Brewfile to make sure I'm not missing anything, or including duplicate tools or being dumb
 - [ ] Ensure that Brewfile are in sections that make sense and are maintainable
 - [ ] Ensure that Brewfile tooling is properly documented with comments after each line
 - [ ] Install `beads` for task management in automation - Homebrew: brew install steveyegge/beads/bd

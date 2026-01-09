@@ -65,6 +65,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ls='eza -lah --icons --git'
 alias cat='bat'
+alias tree='eza --tree --icons'
 alias ~='cd ~'
 
 # git

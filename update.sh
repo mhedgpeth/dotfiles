@@ -137,10 +137,6 @@ if [ ! -L "$HOME/people" ]; then
   echo "${BLUE}Created symlink to ~/people${RESET}"
 fi
 
-echo "${GREEN}Setting up AI${RESET}"
-
-ollama pull deepseek-r1:7b
-
 echo "${GREEN}Ensuring settings are linked properly${RESET}"
 
 # Create .config directory if it doesn't exist

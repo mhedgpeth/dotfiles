@@ -23,8 +23,13 @@ zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::kubectl
 
-# Load completions
-autoload -U compinit && compinit
+# Load completions with caching (regenerate once per day)
+autoload -Uz compinit
+if [[ ! -f ~/.zcompdump ]] || [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
 zinit cdreplay -q
 
 # Keybindings

@@ -2,7 +2,7 @@
 
 ## High Priority (Bugs/Issues)
 
-- [ ] Fix hardcoded username in setup.sh (line 10-11) - uses `/Users/anniehedgpeth/` instead of `$HOME`
+- [x] Fix hardcoded username in setup.sh (line 10-11) - uses `/Users/anniehedgpeth/` instead of `$HOME`
 - [ ] Fix duplicate ls alias in .zshrc (lines 55, 62) - second alias overwrites first without `--color`
 - [ ] Add `set -euo pipefail` to setup.sh and update.sh for safer script execution
 - [ ] Fix duplicate [diff] section in git/config (lines 13, 41)

@@ -152,6 +152,9 @@ echo "${GREEN}Ensuring settings are linked properly${RESET}"
 # Create .config directory if it doesn't exist
 mkdir -p ~/.config
 
+# Create ~/.claude directory if it doesn't exist
+mkdir -p ~/.claude
+
 # Define files and directories to link
 files_to_link=(
   ".zshrc"
@@ -189,6 +192,12 @@ for dir in "${config_dirs_to_link[@]}"; do
     echo "${BLUE}Created symlink for .config/$dir${RESET}"
   fi
 done
+
+# Link Claude Code settings
+if [ ! -L ~/.claude/settings.json ]; then
+  ln -s ~/dotfiles/.config/claude/settings.json ~/.claude/settings.json
+  echo "${BLUE}Created symlink for Claude Code settings${RESET}"
+fi
 
 cd "$CURRENT_DIR" || exit
 

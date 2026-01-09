@@ -22,6 +22,6 @@
 - [x] Add bat for better cat (syntax highlighting)
 - [x] Consider atuin for shell history (sync, better search) - skipped, not needed
 - [x] Consider direnv for per-project environment variables
-- [ ] Add tmux to Brewfile or remove .config/tmux from structure
+- [x] Add tmux to Brewfile or remove .config/tmux from structure
 - [ ] Add git rerere config for automatic merge conflict resolution
 - [ ] Add git branch sort by recent commits

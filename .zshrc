@@ -98,6 +98,7 @@ alias chat='ollama run deepseek-r1:7b'
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd z zsh)"
+eval "$(direnv hook zsh)"
 
 # Bacon
 export BACON_CONFIG="$HOME/.config/bacon/prefs.toml" 

@@ -20,8 +20,8 @@
 
 - [x] Add eza as modern ls replacement (better icons, git integration)
 - [x] Add bat for better cat (syntax highlighting)
-- [ ] Consider atuin for shell history (sync, better search)
-- [ ] Consider direnv for per-project environment variables
+- [x] Consider atuin for shell history (sync, better search) - skipped, not needed
+- [x] Consider direnv for per-project environment variables
 - [ ] Add tmux to Brewfile or remove .config/tmux from structure
 - [ ] Add git rerere config for automatic merge conflict resolution
 - [ ] Add git branch sort by recent commits

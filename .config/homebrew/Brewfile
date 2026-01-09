@@ -15,6 +15,7 @@ brew "neovim" # editor
 cask "ghostty" # terminal
 brew "starship" # better prompt
 brew "zoxide" # better cd
+brew "direnv" # per-directory env vars
 brew "cloc" # count lines of code
 brew "fswatch"
 cask "balenaetcher"

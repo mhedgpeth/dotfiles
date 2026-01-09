@@ -97,6 +97,7 @@ brew "gemini-cli"
 # Other editors
 cask "visual-studio-code"
 cask "zed"
+cask "antigravity"
 
 # collaboration
 cask "slack"

@@ -33,6 +33,7 @@ brew "lazygit" # git tui
 cask "github" # github desktop
 
 # editor
+brew "lua-language-server" # lsp for lua/neovim configs
 brew "luarocks" # lua packages for neovim plugins
 brew "neovim"
 brew "tree-sitter" # syntax parsing for neovim

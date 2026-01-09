@@ -109,3 +109,33 @@ Finally, open System Settings and configure the mac:
 
 - Build `app` with `just i`
 - Open XCode and run the `app`
+
+## Issue Tracking
+
+This repo uses [beads](https://github.com/steveyegge/beads) for issue tracking.
+Issues are stored on a separate `beads-sync` branch to keep `main` clean.
+
+### Fresh Clone Setup
+
+After cloning, fetch the sync branch and import issues:
+
+```sh
+git fetch origin beads-sync
+bd sync --no-push
+```
+
+### Daily Workflow
+
+```sh
+bd ready              # Find available work
+bd show <id>          # View issue details
+bd update <id> --status in_progress  # Claim work
+bd close <id>         # Complete work
+bd sync               # Sync with remote (run at session start/end)
+```
+
+### How It Works
+
+- The daemon auto-commits issue changes to `beads-sync` branch
+- Run `bd sync` to push/pull changes with collaborators
+- The `main` branch stays clean (code changes only)

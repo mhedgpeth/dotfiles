@@ -1,111 +1,124 @@
+# taps
+tap "hashicorp/tap"
+tap "hedge-ops/homebrew-tap"
+tap "nikitabobko/tap"
+tap "oven-sh/bun"
+
 # terminal
 brew "bat" # better cat with syntax highlighting
 brew "btop" # process/system monitor
-brew "eza" # modern ls replacement
-brew "hyperfine" # CLI benchmarking tool
-brew "ripgrep"
-brew "tldr" # simplified man pages with examples
-brew "luarocks"
-brew "fd"
-brew "fzf"
-brew "gh"
-cask "github"
-brew "git"
-brew "git-delta"
-brew "lazygit" # git
-brew "wget"
-brew "neovim" # editor
-cask "ghostty" # terminal
-brew "starship" # better prompt
-brew "zoxide" # better cd
-brew "direnv" # per-directory env vars
-brew "tmux" # terminal multiplexer
 brew "cloc" # count lines of code
-brew "fswatch"
-cask "balenaetcher"
-# terminal - yazi
-brew "ffmpeg" # video
-brew "sevenzip" # view contents of zip
-brew "jq" # json previewer
-brew "poppler" # view pdf
-brew "imagemagick" # other image preview
-brew "yazi"
-brew "tree"
+brew "direnv" # per-directory env vars
+brew "eza" # modern ls replacement
+brew "fd" # better find
+brew "fswatch" # file watcher
+brew "fzf" # fuzzy finder
+brew "hyperfine" # CLI benchmarking tool
+brew "jq" # json processor
+brew "ripgrep" # better grep
+brew "starship" # better prompt
+brew "tldr" # simplified man pages with examples
+brew "tmux" # terminal multiplexer
+brew "tree" # directory tree
+brew "wget" # download files
+brew "zoxide" # better cd
+cask "ghostty" # terminal emulator
+
+# git
+brew "gh" # github cli
+brew "git"
+brew "git-delta" # better git diff
+brew "lazygit" # git tui
+cask "github" # github desktop
+
+# editor
+brew "luarocks" # lua package manager
+brew "neovim"
 brew "tree-sitter"
 brew "tree-sitter-cli"
+
+# yazi (file manager + preview deps)
+brew "ffmpeg" # video preview
+brew "imagemagick" # image preview
+brew "poppler" # pdf preview
+brew "sevenzip" # archive preview
+brew "yazi"
 
 # fonts
 cask "font-fira-code-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-meslo-lg-nerd-font"
 
-# rust toolchain
-brew "rustup"
-brew "cargo-binstall"
-brew "cargo-nextest"
-brew "just"
-brew "bacon"
+# rust
+brew "bacon" # background rust checker
 # brew "bacon-ls" # not ready yet
-brew "mdbook"
-brew "lychee"
+brew "cargo-binstall" # binary installer
+brew "cargo-nextest" # better test runner
+brew "just" # command runner
+brew "lychee" # link checker
+brew "mdbook" # documentation
+brew "rustup" # rust toolchain
 
-# cloud
-tap "hashicorp/tap"
-brew "hashicorp/tap/terraform"
-brew "tflint"
-brew "doctl"
-brew "kubernetes-cli"
-brew "kustomize"
-cask "pgadmin4"
-brew "derailed/k9s/k9s"
-cask "docker-desktop"
-brew "sqlx-cli"
-cask "postman"
-cask "ngrok"
-brew "stripe-cli"
+# swift
+brew "fastlane" # ios automation
+brew "swiftformat"
+brew "swiftlint"
+brew "xcode-build-server"
+brew "xcodegen"
+cask "sf-symbols"
 
 # web
+brew "bun"
+brew "eslint"
 brew "node@24"
 brew "pnpm"
-brew "eslint"
-tap "oven-sh/bun"
-brew "bun"
-brew "zola"
+brew "zola" # static site generator
 
 # ruby (for fastlane)
 brew "rbenv"
 
-# swift
-brew "fastlane"
-brew "swiftformat"
-brew "swiftlint"
-brew "xcodegen"
-brew "xcode-build-server"
-cask "sf-symbols"
-
 # java
 brew "openjdk"
 
-# people
-tap "hedge-ops/homebrew-tap"
-cask "people-work"
+# cloud
+brew "derailed/k9s/k9s" # kubernetes tui
+brew "doctl" # digitalocean cli
+brew "hashicorp/tap/terraform"
+brew "kubernetes-cli"
+brew "kustomize"
+brew "tflint" # terraform linter
+cask "docker-desktop"
 
-# macOS
-tap "nikitabobko/tap"
-cask "aerospace" 
-cask "anki"
-cask "leader-key"
+# database
+brew "sqlx-cli"
+cask "pgadmin4"
 
-# AI
-cask "claude"
+# api
+brew "stripe-cli"
+cask "ngrok"
+cask "postman"
+
+# ai
 brew "gemini-cli"
+cask "claude"
 
-# Other editors
+# editors
+cask "antigravity"
 cask "visual-studio-code"
 cask "zed"
-cask "antigravity"
+
+# macos
+cask "aerospace" # window manager
+cask "leader-key" # keyboard shortcuts
 
 # collaboration
-cask "slack"
-cask "google-chrome"
 cask "discord"
+cask "google-chrome"
+cask "slack"
+
+# utilities
+cask "anki" # flashcards
+cask "balenaetcher" # usb flashing
+
+# people
+cask "people-work"

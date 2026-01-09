@@ -20,6 +20,13 @@ echo "${GREEN}Removing brew packages no longer needed${RESET}"
 
 brew bundle cleanup --force
 
+# Check if ~/.cargo directory exists
+if [ ! -d "$HOME/.cargo" ]; then
+  echo "${BLUE}Cargo directory not found. Installing Rust...${RESET}"
+  # Run rustup-init
+  rustup-init
+fi
+
 echo "${GREEN}Ensuring rust toolchain is up to date${RESET}"
 
 rustup install stable
@@ -47,13 +54,6 @@ echo "${GREEN}Ensuring yazi flavors are installed${RESET}"
 ya pkg add yazi-rs/flavors:catppuccin-frappe
 
 echo "${GREEN}Ensuring repositories are cloned${RESET}"
-
-# Check if ~/.cargo directory exists
-if [ ! -d "$HOME/.cargo" ]; then
-  echo "${BLUE}Cargo directory not found. Installing Rust...${RESET}"
-  # Run rustup-init
-  rustup-init
-fi
 
 # Function to create directory if it doesn't exist
 create_directory() {

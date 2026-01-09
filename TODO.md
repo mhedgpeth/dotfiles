@@ -7,7 +7,7 @@
 - [x] Add `set -euo pipefail` to setup.sh and update.sh for safer script execution
 - [x] Fix duplicate [diff] section in git/config (lines 13, 41)
 - [x] Fix duplicate Xcode rule in aerospace.toml (lines 215, 230) - assigns to both workspace M and 0
-- [ ] Move cargo directory check earlier in update.sh (before rustup install)
+- [x] Move cargo directory check earlier in update.sh (before rustup install)
 
 ## Medium Priority (Optimizations)
 

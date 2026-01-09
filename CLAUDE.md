@@ -4,7 +4,8 @@ This is a repository for managing my dotfiles on both my macOS and Windows
 machines, primarily used as development machines for PeopleWork.
 
 Tasks within this repository will be focused on ensuring the right configuration
-exists in order to maximize efficiency and fit the style of a terminal-first NeoVim rust and swift developer.
+exists in order to maximize efficiency and fit the style of a terminal-first
+NeoVim rust and swift developer.
 
 ## Background
 
@@ -26,7 +27,8 @@ folder. Symlinking is handled by `update.sh`, which links individual files
 
 On a macOS machine, the user should regularly run the `update.sh` script.
 
-To set up, the user will view this repository README.md, run the appropriate steps, then run `setup.sh`, which is meant to be only ran once.
+To set up, the user will view this repository README.md, run the appropriate
+steps, then run `setup.sh`, which is meant to be only ran once.
 
 ## Windows
 
@@ -54,7 +56,14 @@ Windows equivalents for macOS configurations when requested.
 
 Claude should help configure this repository by suggesting and making changes
 to configuration files. Do not run or test configurations; the user will run
-scripts separately to avoid chicken-and-egg situations. Suggest what should be run next in another terminal.
+scripts separately to avoid chicken-and-egg situations. Suggest what should be
+run next in another terminal.
+
+## Issues
+
+Outstanding work is located in [TODO.md](./TODO.md). Use this file to see
+what needs to be done and to check things off. I will clean up the list when I
+feel the need, so never remove from this list.
 
 ## Commit Conventions
 

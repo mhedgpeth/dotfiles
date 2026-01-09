@@ -1,27 +1,8 @@
 # Tasks
 
-## High Priority (Bugs/Issues)
-
-- [x] Fix hardcoded username in setup.sh (line 10-11) - uses `/Users/anniehedgpeth/` instead of `$HOME`
-- [x] Fix duplicate ls alias in .zshrc (lines 55, 62) - second alias overwrites first without `--color`
-- [x] Add `set -euo pipefail` to setup.sh and update.sh for safer script execution
-- [x] Fix duplicate [diff] section in git/config (lines 13, 41)
-- [x] Fix duplicate Xcode rule in aerospace.toml (lines 215, 230) - assigns to both workspace M and 0
-- [x] Move cargo directory check earlier in update.sh (before rustup install)
-
-## Medium Priority (Optimizations)
-
-- [x] Add `zinit cdreplay -q` after compinit in .zshrc for faster completion loading
-- [x] Add completion caching to .zshrc to speed up shell startup
-- [x] Consider zinit turbo/wait mode for plugins (lazy loading) - skipped, not worth complexity
-- [x] Add `--locked` flag to cargo install commands in update.sh for reproducible builds
-
-## Low Priority (Enhancements)
-
-- [x] Add eza as modern ls replacement (better icons, git integration)
-- [x] Add bat for better cat (syntax highlighting)
-- [x] Consider atuin for shell history (sync, better search) - skipped, not needed
-- [x] Consider direnv for per-project environment variables
-- [x] Add tmux to Brewfile or remove .config/tmux from structure
-- [x] Add git rerere config for automatic merge conflict resolution
-- [x] Add git branch sort by recent commits
+- [ ] Review tooling installed in Brewfile to make sure I'm not missing anything, or including duplicate tools or being dumb
+- [ ] Ensure that Brewfile are in sections that make sense and are maintainable
+- [ ] Ensure that Brewfile tooling is properly documented with comments after each line
+- [ ] Install `beads` for task management in automation - Homebrew: brew install steveyegge/beads/bd
+- [ ] Get started with tmux with NeoVim friendly configuration and proper tooling and create a learning plan for tmux that aligns with configuration and tools.
+- [ ] Research: Troubleshoot why code companion stopped working for LSP

@@ -50,8 +50,7 @@ else
 fi
 
 echo "${GREEN}Ensuring yazi flavors are installed${RESET}"
-
-ya pkg add yazi-rs/flavors:catppuccin-frappe
+ya pkg add yazi-rs/flavors:catppuccin-frappe || true
 
 echo "${GREEN}Ensuring tmux plugin manager (TPM) is installed${RESET}"
 
@@ -194,9 +193,17 @@ for dir in "${config_dirs_to_link[@]}"; do
 done
 
 # Link Claude Code settings
-if [ ! -L ~/.claude/settings.json ]; then
-  ln -s ~/dotfiles/.config/claude/settings.json ~/.claude/settings.json
-  echo "${BLUE}Created symlink for Claude Code settings${RESET}"
+# Check if the file/link DOES NOT exist at the target location
+if [ ! -e ~/.claude/settings.json ]; then
+  # Ensure the source file actually exists before trying to link it
+  if [ -f ~/dotfiles/.config/claude/settings.json ]; then
+    ln -s ~/dotfiles/.config/claude/settings.json ~/.claude/settings.json
+    echo "${BLUE}Created symlink for Claude Code settings${RESET}"
+  else
+    echo "${RED}Warning: Source file ~/dotfiles/.config/claude/settings.json not found.${RESET}"
+  fi
+else
+  echo "${GREEN}Claude settings already exist at target location${RESET}"
 fi
 
 cd "$CURRENT_DIR" || exit

@@ -1,4 +1,21 @@
 {
+
+  "enabledPlugins": {
+    "beads@beads-marketplace": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "swift-lsp@claude-plugins-official": true
+  },
+  "permissions": {
+    "allow": [
+      "Bash(bd ready *)",
+      "Bash(bd list *)",
+      "Bash(bd show *)",
+      "Bash(bd sync *)",
+      "Bash(bd update *)",
+      "Bash(bd comments *)",
+      "Bash(bd close *)"
+    ]
+  },
   "hooks": {
     "PreCompact": [
       {
@@ -23,9 +40,5 @@
       }
     ]
   },
-  "enabledPlugins": {
-    "rust-analyzer-lsp@claude-plugins-official": true,
-    "swift-lsp@claude-plugins-official": true
-  },
-  "model": "haiku"
+  "model": "opus"
 }

@@ -12,6 +12,7 @@
 
 [diff]
   tool = vimdiff
+  algorithm = patience  # More intuitive diff outputs
 
 [interactive]
   diffFilter = delta --color-only
@@ -37,9 +38,6 @@
 
 [rebase]
   autoStash = true      # Automatically stash/unstash during rebase
-
-[diff]
-  algorithm = patience  # More intuitive diff outputs
 
 [color]
   ui = auto             # Enables color in Git output

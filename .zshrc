@@ -52,14 +52,12 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab-complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='ls --color'
 alias c='clear'
 
-# aliases
 # navigation
 alias ..='cd ..'
 alias ...='cd ../..'
-alias ls='ls -lah'
+alias ls='ls -lah --color'
 alias ~='cd ~'
 
 # git

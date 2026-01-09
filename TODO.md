@@ -3,9 +3,9 @@
 ## High Priority (Bugs/Issues)
 
 - [x] Fix hardcoded username in setup.sh (line 10-11) - uses `/Users/anniehedgpeth/` instead of `$HOME`
-- [ ] Fix duplicate ls alias in .zshrc (lines 55, 62) - second alias overwrites first without `--color`
-- [ ] Add `set -euo pipefail` to setup.sh and update.sh for safer script execution
-- [ ] Fix duplicate [diff] section in git/config (lines 13, 41)
+- [x] Fix duplicate ls alias in .zshrc (lines 55, 62) - second alias overwrites first without `--color`
+- [x] Add `set -euo pipefail` to setup.sh and update.sh for safer script execution
+- [x] Fix duplicate [diff] section in git/config (lines 13, 41)
 - [ ] Fix duplicate Xcode rule in aerospace.toml (lines 215, 230) - assigns to both workspace M and 0
 - [ ] Move cargo directory check earlier in update.sh (before rustup install)
 

@@ -13,6 +13,10 @@ Every `bd` command is explicitly categorized.
 
 ## Allow List
 
+### Common
+
+- All web searches
+
 ### Core Workflow Commands
 
 | Command | Rationale |

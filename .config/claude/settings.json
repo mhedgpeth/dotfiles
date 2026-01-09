@@ -48,7 +48,8 @@
       "Bash(bd cook *)",
       "Bash(bd export *)",
       "Bash(bd restore *)",
-      "Bash(bd completion *)"
+      "Bash(bd completion *)",
+      "WebSearch(*)"
     ],
     "ask": [
       "Bash(bd close *)",

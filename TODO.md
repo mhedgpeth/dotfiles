@@ -18,7 +18,7 @@
 
 ## Low Priority (Enhancements)
 
-- [ ] Add eza as modern ls replacement (better icons, git integration)
+- [x] Add eza as modern ls replacement (better icons, git integration)
 - [ ] Add bat for better cat (syntax highlighting)
 - [ ] Consider atuin for shell history (sync, better search)
 - [ ] Consider direnv for per-project environment variables

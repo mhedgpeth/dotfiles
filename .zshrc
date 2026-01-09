@@ -63,7 +63,7 @@ alias c='clear'
 # navigation
 alias ..='cd ..'
 alias ...='cd ../..'
-alias ls='ls -lah --color'
+alias ls='eza -lah --icons --git'
 alias ~='cd ~'
 
 # git

@@ -1,4 +1,5 @@
 # terminal
+brew "eza" # modern ls replacement
 brew "ripgrep"
 brew "luarocks"
 brew "fd"

@@ -1,0 +1,14 @@
+{
+  "enabledPlugins": {
+    "beads@beads-marketplace": true
+  },
+  "permissions": {
+    "allow": [
+      "Bash(bd ready)",
+      "Bash(bd list)",
+      "Bash(bd update dotfiles-avn --status in_progress)",
+      "Bash(bd show)",
+      "Bash(bd sync)"
+    ]
+  }
+}

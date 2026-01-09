@@ -45,6 +45,9 @@
 [fetch]
   prune = true         # Cleans up deleted remote branches
 
+[branch]
+  sort = -committerdate  # Sort branches by most recent commit
+
 [help]
   autocorrect = 1      # Automatically corrects minor command typos
 

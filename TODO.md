@@ -24,4 +24,4 @@
 - [x] Consider direnv for per-project environment variables
 - [x] Add tmux to Brewfile or remove .config/tmux from structure
 - [ ] Add git rerere config for automatic merge conflict resolution
-- [ ] Add git branch sort by recent commits
+- [x] Add git branch sort by recent commits

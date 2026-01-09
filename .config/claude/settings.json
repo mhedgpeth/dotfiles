@@ -1,13 +1,7 @@
 {
-
-  "enabledPlugins": {
-    "beads@beads-marketplace": true,
-    "rust-analyzer-lsp@claude-plugins-official": true,
-    "swift-lsp@claude-plugins-official": true
-  },
   "permissions": {
     "allow": [
-      "Bash(bd ready *)",
+      "Bash(bd ready)",
       "Bash(bd list *)",
       "Bash(bd show *)",
       "Bash(bd sync *)",
@@ -40,5 +34,9 @@
       }
     ]
   },
-  "model": "opus"
+  "enabledPlugins": {
+    "beads@beads-marketplace": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "swift-lsp@claude-plugins-official": true
+  }
 }

@@ -39,6 +39,9 @@
 [rebase]
   autoStash = true      # Automatically stash/unstash during rebase
 
+[rerere]
+  enabled = true        # Remember conflict resolutions for reuse
+
 [color]
   ui = auto             # Enables color in Git output
 

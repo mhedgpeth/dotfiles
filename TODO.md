@@ -23,5 +23,5 @@
 - [x] Consider atuin for shell history (sync, better search) - skipped, not needed
 - [x] Consider direnv for per-project environment variables
 - [x] Add tmux to Brewfile or remove .config/tmux from structure
-- [ ] Add git rerere config for automatic merge conflict resolution
+- [x] Add git rerere config for automatic merge conflict resolution
 - [x] Add git branch sort by recent commits

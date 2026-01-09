@@ -36,7 +36,7 @@ echo "${GREEN}Ensuring required cargo packages are installed${RESET}"
 # Check if mdbook-admonish is installed
 if ! cargo install --list | grep -q "^mdbook-admonish"; then
   echo "${BLUE}Installing mdbook-admonish...${RESET}"
-  cargo install mdbook-admonish
+  cargo install --locked mdbook-admonish
 else
   echo "${GREEN}mdbook-admonish is already installed${RESET}"
 fi
@@ -44,7 +44,7 @@ fi
 # Check if semantic-release-cargo is installed
 if ! cargo install --list | grep -q "^semantic-release-cargo"; then
   echo "${BLUE}Installing semantic-release-cargo...${RESET}"
-  cargo install semantic-release-cargo
+  cargo install --locked semantic-release-cargo
 else
   echo "${GREEN}semantic-release-cargo is already installed${RESET}"
 fi

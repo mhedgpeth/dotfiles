@@ -13,8 +13,8 @@
 
 - [x] Add `zinit cdreplay -q` after compinit in .zshrc for faster completion loading
 - [x] Add completion caching to .zshrc to speed up shell startup
-- [ ] Consider zinit turbo/wait mode for plugins (lazy loading)
-- [ ] Add `--locked` flag to cargo install commands in update.sh for reproducible builds
+- [x] Consider zinit turbo/wait mode for plugins (lazy loading) - skipped, not worth complexity
+- [x] Add `--locked` flag to cargo install commands in update.sh for reproducible builds
 
 ## Low Priority (Enhancements)
 

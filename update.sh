@@ -53,6 +53,16 @@ echo "${GREEN}Ensuring yazi flavors are installed${RESET}"
 
 ya pkg add yazi-rs/flavors:catppuccin-frappe
 
+echo "${GREEN}Ensuring tmux plugin manager (TPM) is installed${RESET}"
+
+TPM_DIR="$HOME/.config/tmux/plugins/tpm"
+if [ ! -d "$TPM_DIR" ]; then
+  echo "${BLUE}Installing TPM...${RESET}"
+  git clone https://github.com/tmux-plugins/tpm "$TPM_DIR"
+else
+  echo "${GREEN}TPM already installed${RESET}"
+fi
+
 echo "${GREEN}Ensuring repositories are cloned${RESET}"
 
 # Function to create directory if it doesn't exist
@@ -160,6 +170,7 @@ config_dirs_to_link=(
   "leader-key"
   "nvim"
   "starship"
+  "tmux"
   "zed"
 )
 

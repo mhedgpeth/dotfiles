@@ -25,6 +25,7 @@ zinit snippet OMZP::kubectl
 
 # Load completions
 autoload -U compinit && compinit
+zinit cdreplay -q
 
 # Keybindings
 bindkey -e

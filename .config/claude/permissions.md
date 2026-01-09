@@ -23,7 +23,6 @@ Every `bd` command is explicitly categorized.
 | `bd search *` | Read-only. Searches issues by text. |
 | `bd create *` | Core workflow. Creating issues is the primary way to track work. |
 | `bd update *` | Core workflow. Updating status/priority is routine. |
-| `bd close *` | Core workflow. Closing completed work. |
 | `bd comments *` | Low-risk. Adding/viewing comments on issues. |
 | `bd sync *` | Standard git sync. Already integrated with hooks. |
 | `bd dep *` | Core workflow. Managing dependencies between issues. |
@@ -90,6 +89,7 @@ These commands require explicit user approval before execution.
 
 | Command | Risk | Rationale |
 |---------|------|-----------|
+| `bd close *` | Core workflow. Closing completed work. For now I want to approve of an issue being closed |
 | `bd delete *` | **High** | Permanently deletes issues. Irreversible. |
 | `bd admin *` | **High** | Administrative database operations. |
 | `bd migrate *` | **High** | Database schema migrations. Could break things. |
@@ -131,6 +131,7 @@ These commands are blocked. They involve external integrations or are unnecessar
 ## Updating This Document
 
 When modifying `settings.json` permissions:
+
 1. Update the corresponding section in this file
 2. Include rationale for the change
 3. Consider the risk level (read-only < low-risk < medium < high)

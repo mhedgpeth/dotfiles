@@ -7,7 +7,6 @@
       "Bash(bd search *)",
       "Bash(bd create *)",
       "Bash(bd update *)",
-      "Bash(bd close *)",
       "Bash(bd comments *)",
       "Bash(bd sync *)",
       "Bash(bd dep *)",
@@ -52,6 +51,7 @@
       "Bash(bd completion *)"
     ],
     "ask": [
+      "Bash(bd close *)",
       "Bash(bd delete *)",
       "Bash(bd admin *)",
       "Bash(bd migrate *)",

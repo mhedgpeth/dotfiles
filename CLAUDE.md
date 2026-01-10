@@ -51,6 +51,17 @@ Windows equivalents for macOS configurations when requested.
 `.config/starship` - terminal prompt
 `.config/tmux` - terminal multiplexer
 `.config/yazi` - file explorer
+`.config/moonlander` - ZSA Moonlander keyboard (QMK source from Oryx)
+
+## Keyboard
+
+The user has a ZSA Moonlander split keyboard. Config is in `.config/moonlander/keymap.c`.
+Oryx URL: https://configure.zsa.io/moonlander/layouts/p6XyD/latest/0
+
+When suggesting keybindings or shortcuts, read `keymap.c` first to understand:
+- What keys are available on each layer
+- Existing modifier combinations (Hyper keys on Layer 2)
+- Thumb cluster layout (Esc/Ctrl/Cmd left, Space/Tab/Layer right)
 
 ## Working with Claude
 

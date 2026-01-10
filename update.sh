@@ -214,6 +214,16 @@ else
   echo "${GREEN}Claude settings already exist at target location${RESET}"
 fi
 
+# Link Claude Code commands directory
+if [ ! -L ~/.claude/commands ]; then
+  if [ -d ~/dotfiles/.config/claude/commands ]; then
+    ln -s ~/dotfiles/.config/claude/commands ~/.claude/commands
+    echo "${BLUE}Created symlink for Claude Code commands${RESET}"
+  fi
+else
+  echo "${GREEN}Claude commands already linked${RESET}"
+fi
+
 cd "$CURRENT_DIR" || exit
 
 echo "${GREEN}Done!${RESET}"

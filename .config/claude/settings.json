@@ -50,6 +50,12 @@
       "Bash(bd restore *)",
       "Bash(bd completion *)"
     ],
+    "deny": [
+      "Bash(bd jira *)",
+      "Bash(bd linear *)",
+      "Bash(bd mail *)",
+      "Bash(bd create-form)"
+    ],
     "ask": [
       "Bash(bd close *)",
       "Bash(bd delete *)",
@@ -74,12 +80,6 @@
       "Bash(bd daemon *)",
       "Bash(bd repo *)",
       "Bash(bd ship *)"
-    ],
-    "deny": [
-      "Bash(bd jira *)",
-      "Bash(bd linear *)",
-      "Bash(bd mail *)",
-      "Bash(bd create-form)"
     ]
   },
   "hooks": {
@@ -109,6 +109,7 @@
   "enabledPlugins": {
     "beads@beads-marketplace": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
-    "swift-lsp@claude-plugins-official": true
+    "swift-lsp@claude-plugins-official": true,
+    "lua-lsp@claude-plugins-official": true
   }
 }

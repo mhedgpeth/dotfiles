@@ -49,6 +49,14 @@ else
   echo "${GREEN}semantic-release-cargo is already installed${RESET}"
 fi
 
+echo "${GREEN}Ensuring bv (beads viewer) is installed${RESET}"
+if ! command -v bv &>/dev/null; then
+  echo "${BLUE}Installing bv...${RESET}"
+  curl -fsSL "https://raw.githubusercontent.com/Dicklesworthstone/beads_viewer/main/install.sh" | bash
+else
+  echo "${GREEN}bv is already installed${RESET}"
+fi
+
 echo "${GREEN}Ensuring yazi flavors are installed${RESET}"
 ya pkg add yazi-rs/flavors:catppuccin-frappe || true
 

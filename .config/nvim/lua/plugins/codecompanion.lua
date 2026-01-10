@@ -31,5 +31,39 @@ return {
       chat = { adapter = "anthropic" },
       inline = { adapter = "anthropic" },
     },
+    prompt_library = {
+      ["Diagnose errors"] = {
+        strategy = "workflow",
+        description = "Explain LSP diagnostics with source code context",
+        opts = {
+          index = 1,
+          is_default = true,
+          short_name = "lspx",
+        },
+        prompts = {
+          {
+            {
+              role = "system",
+              content = function(context)
+                return string.format(
+                  [[You are an expert coder and helpful assistant who can help debug code diagnostics, such as warning and error messages. When appropriate, give solutions with code snippets as fenced codeblocks with a language identifier to enable syntax highlighting.
+
+The programming language is %s.]],
+                  context.filetype
+                )
+              end,
+              opts = { visible = false },
+            },
+            {
+              role = "user",
+              content = [[Please explain the following LSP diagnostics and suggest fixes:
+
+#{lsp}]],
+              opts = { auto_submit = true },
+            },
+          },
+        },
+      },
+    },
   },
 }

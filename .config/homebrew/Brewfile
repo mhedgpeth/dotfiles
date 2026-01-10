@@ -105,6 +105,7 @@ cask "postman"
 brew "gemini-cli"
 brew "steveyegge/beads/bd" # ai task automation
 cask "claude"
+cask "superwhisper" # voice dictation for ai prompts
 
 # editors
 cask "antigravity" # google's ai code editor

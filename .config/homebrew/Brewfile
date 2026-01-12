@@ -77,6 +77,9 @@ brew "node@24"
 brew "pnpm"
 brew "zola" # rust static site generator
 
+# python
+brew "uv" # manages python, packages, and virtual environments
+
 # ruby (for fastlane)
 brew "rbenv"
 

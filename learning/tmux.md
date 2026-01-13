@@ -11,21 +11,27 @@ You already have a solid tmux config. Here's what to do:
 
 Your prefix is `C-Space`. All commands start with that.
 
-## What's Already Configured
+## What's Already Configured (HERO Status)
 
 Your current setup includes:
 - [x] Install tmux
 - [x] C-Space as prefix (ergonomic for Moonlander)
 - [x] True color support for Ghostty
+- [x] Undercurl support for nvim diagnostics
 - [x] NeoVim compatibility (escape-time 0)
 - [x] Mouse support
 - [x] Vim-style pane navigation (prefix + hjkl)
 - [x] Seamless nvim/tmux navigation with C-h/j/k/l
-- [x] Catppuccin mocha theme
-- [x] Status bar on top
+- [x] Catppuccin mocha theme with custom status bar
+- [x] Status bar on top (directory, session, date/time)
 - [x] Intuitive splits with | and -
-- [x] Cmd+S works (mapped in Moonlander already)
+- [x] Cmd+S works (Ghostty passes through to nvim)
 - [x] nvim integration (both ways - vim-tmux-navigator on both sides)
+- [x] System clipboard integration (y copies to macOS clipboard)
+- [x] fzf session switcher (C-Space s)
+- [x] Session persistence (resurrect + continuum)
+- [x] Auto window naming (shows current directory)
+- [x] JetBrains Mono Nerd Font (icons work)
 
 ## Basics to Learn
 
@@ -58,15 +64,7 @@ Your current setup includes:
 
 ## Session Persistence
 
-Add these plugins to survive reboots (add to tmux.conf before the TPM run line):
-
-```tmux
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-set -g @plugin 'tmux-plugins/tmux-continuum'
-set -g @continuum-restore 'on'
-```
-
-Then `C-Space I` to install.
+Already configured! Just use:
 
 - Save session: `C-Space C-s`
 - Restore session: `C-Space C-r`
@@ -126,13 +124,35 @@ You can put `.tmuxinator.yml` in your monorepo root:
 
 This is the "config as code" approach - your terminal layout is version controlled with your project.
 
+## Quick Reference (Your Keybindings)
+
+| Key | Action |
+|-----|--------|
+| `C-Space` | Prefix (all commands start with this) |
+| `C-h/j/k/l` | Navigate between panes AND nvim splits |
+| `C-Space \|` | Split vertical |
+| `C-Space -` | Split horizontal |
+| `C-Space c` | New window |
+| `C-Space n/p` | Next/previous window |
+| `C-Space s` | fzf session switcher popup |
+| `C-Space S` | Create new named session |
+| `C-Space d` | Detach from session |
+| `C-Space X` | Kill current session |
+| `C-Space [` | Enter copy mode |
+| `v` / `y` | Select / copy (in copy mode) |
+| `C-Space p` | Paste from clipboard |
+| `C-Space C-s` | Save session (resurrect) |
+| `C-Space C-r` | Restore session (resurrect) |
+| `C-Space r` | Reload config |
+| `C-Space I` | Install plugins (TPM) |
+
 ## Customization Ideas
 
 Once comfortable, consider:
-- [ ] Customize catppuccin status bar modules
-- [ ] Add session switcher keybinding
-- [ ] Add tmux-fzf for fuzzy finding
-- [ ] Create project-specific session scripts
+- [x] Customize catppuccin status bar modules
+- [x] Add session switcher keybinding (C-Space s)
+- [ ] Add tmux-fzf for fuzzy finding windows/panes
+- [ ] Create project-specific tmuxinator configs
 
 ## Socratic Tango
 

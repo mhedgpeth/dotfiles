@@ -20,6 +20,7 @@ brew "ripgrep" # better grep
 brew "starship" # better prompt
 brew "tldr" # simplified man pages with examples
 brew "tmux" # terminal multiplexer
+brew "tmuxinator" # tmux session manager
 brew "tree" # directory tree
 brew "wget" # download files
 brew "zoxide" # better cd

@@ -169,6 +169,7 @@ files_to_link=(
   ".config/yazi/theme.toml"
   ".config/yazi/keymap.toml"
   ".config/yazi/yazi.toml"
+  ".config/tmux/tmux.conf"
 )
 
 config_dirs_to_link=(
@@ -180,7 +181,6 @@ config_dirs_to_link=(
   "leader-key"
   "nvim"
   "starship"
-  "tmux"
   "zed"
 )
 

@@ -171,6 +171,8 @@ mkdir -p ~/.config
 mkdir -p ~/.config/tmuxinator
 
 # Create ~/.config/tmux directory if it doesn't exist (for individual file symlinks)
+# Remove if it's a symlink (prevents self-referential symlinks in the dotfiles repo)
+[ -L ~/.config/tmux ] && rm ~/.config/tmux
 mkdir -p ~/.config/tmux
 
 # Create ~/.claude directory if it doesn't exist

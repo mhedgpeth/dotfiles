@@ -72,34 +72,59 @@ Then `C-Space I` to install.
 - Restore session: `C-Space C-r`
 - Continuum auto-saves every 15 minutes
 
-## Dev Mode Sessions
+## Dev Mode with tmuxinator
 
-- [ ] Create dev script for automated session setup
-- [ ] Test with one project first
-- [ ] Apply to: app, api, lib, cloud, platform, openspec, website, agents
+tmuxinator lets you define project layouts in YAML files that can live in your repo.
 
-Create `~/.local/bin/dev` script:
+### Setup
 
-```bash
-#!/bin/bash
-PROJECT=$1
-DIR=~/Projects/peopleofnow/$PROJECT
+- [ ] Install: `brew install tmuxinator`
+- [ ] Create first config: `tmuxinator new peopleofnow`
+- [ ] Test it: `tmuxinator start peopleofnow`
 
-if ! tmux has-session -t "$PROJECT" 2>/dev/null; then
-    tmux new-session -d -s "$PROJECT" -c "$DIR"
-    tmux send-keys -t "$PROJECT" "nvim" Enter
-    tmux split-window -h -t "$PROJECT" -c "$DIR"
-    tmux send-keys -t "$PROJECT" "bacon" Enter
-    tmux select-pane -t "$PROJECT:0.0"
-fi
+### Example Config
 
-tmux attach -t "$PROJECT"
+`~/.config/tmuxinator/peopleofnow.yml` (or `.tmuxinator.yml` in your monorepo):
+
+```yaml
+name: peopleofnow
+root: ~/Projects/peopleofnow
+
+windows:
+  - app:
+      root: ~/Projects/peopleofnow/app
+      layout: main-vertical
+      panes:
+        - nvim .
+        - bacon
+  - api:
+      root: ~/Projects/peopleofnow/api
+      layout: main-vertical
+      panes:
+        - nvim .
+        - bacon
+  - lib:
+      root: ~/Projects/peopleofnow/lib
+      layout: main-vertical
+      panes:
+        - nvim .
+        - bacon
 ```
 
-Usage:
-- `dev app` - opens nvim + bacon for app
-- `dev api` - opens nvim + bacon for api
-- etc.
+### Commands
+
+- `tmuxinator start peopleofnow` - Start the session
+- `tmuxinator stop peopleofnow` - Stop the session
+- `tmuxinator edit peopleofnow` - Edit the config
+- `mux start peopleofnow` - Short alias (add `alias mux=tmuxinator` to .zshrc)
+
+### Project-local configs
+
+You can put `.tmuxinator.yml` in your monorepo root:
+- [ ] Create `.tmuxinator.yml` in peopleofnow repo
+- [ ] Run `tmuxinator local` from that directory to use it
+
+This is the "config as code" approach - your terminal layout is version controlled with your project.
 
 ## Customization Ideas
 

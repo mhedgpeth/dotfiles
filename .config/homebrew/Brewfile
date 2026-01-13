@@ -120,7 +120,6 @@ cask "zed"
 
 # macos
 cask "aerospace" # window manager
-cask "leader-key" # keyboard shortcuts
 
 # collaboration
 cask "discord"

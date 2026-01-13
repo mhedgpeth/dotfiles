@@ -162,6 +162,9 @@ mkdir -p ~/.config
 # Create ~/.config/tmuxinator directory if it doesn't exist
 mkdir -p ~/.config/tmuxinator
 
+# Create ~/.config/tmux directory if it doesn't exist (for individual file symlinks)
+mkdir -p ~/.config/tmux
+
 # Create ~/.claude directory if it doesn't exist
 mkdir -p ~/.claude
 
@@ -172,6 +175,7 @@ files_to_link=(
   ".config/yazi/theme.toml"
   ".config/yazi/keymap.toml"
   ".config/yazi/yazi.toml"
+  ".config/tmux/tmux.conf"
   ".config/tmuxinator/dotfiles.yml"
 )
 
@@ -184,7 +188,6 @@ config_dirs_to_link=(
   "leader-key"
   "nvim"
   "starship"
-  "tmux"
   "zed"
 )
 

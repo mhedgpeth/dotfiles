@@ -6,5 +6,5 @@ windows:
       layout: main-vertical
       panes:
         - nvim .
-        - claude
+        - sleep 1 && claude
         -   # shell

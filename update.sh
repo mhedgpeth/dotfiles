@@ -159,6 +159,9 @@ echo "${GREEN}Ensuring settings are linked properly${RESET}"
 # Create .config directory if it doesn't exist
 mkdir -p ~/.config
 
+# Create ~/.config/tmuxinator directory if it doesn't exist
+mkdir -p ~/.config/tmuxinator
+
 # Create ~/.claude directory if it doesn't exist
 mkdir -p ~/.claude
 
@@ -169,7 +172,7 @@ files_to_link=(
   ".config/yazi/theme.toml"
   ".config/yazi/keymap.toml"
   ".config/yazi/yazi.toml"
-  ".config/tmux/tmux.conf"
+  ".config/tmuxinator/dotfiles.yml"
 )
 
 config_dirs_to_link=(
@@ -181,49 +184,30 @@ config_dirs_to_link=(
   "leader-key"
   "nvim"
   "starship"
+  "tmux"
   "zed"
 )
 
-# Link individual files
+# Link individual files (force recreates broken/wrong symlinks)
 for file in "${files_to_link[@]}"; do
-  if [ ! -L ~/"$file" ]; then
-    ln -s ~/dotfiles/"$file" ~/"$file"
-    echo "${BLUE}Created symlink for $file${RESET}"
-  fi
+  ln -sf ~/dotfiles/"$file" ~/"$file"
 done
+echo "${GREEN}Linked individual files${RESET}"
 
-# Link .config directories
+# Link .config directories (force recreates broken/wrong symlinks)
 for dir in "${config_dirs_to_link[@]}"; do
-  if [ ! -L ~/.config/"$dir" ]; then
-    ln -s ~/dotfiles/.config/"$dir" ~/.config/"$dir"
-    echo "${BLUE}Created symlink for .config/$dir${RESET}"
-  fi
+  ln -sfn ~/dotfiles/.config/"$dir" ~/.config/"$dir"
 done
+echo "${GREEN}Linked .config directories${RESET}"
 
-# Link Claude Code settings
-# Check if the file/link DOES NOT exist at the target location
-if [ ! -e ~/.claude/settings.json ]; then
-  # Ensure the source file actually exists before trying to link it
-  if [ -f ~/dotfiles/.config/claude/settings.json ]; then
-    ln -s ~/dotfiles/.config/claude/settings.json ~/.claude/settings.json
-    echo "${BLUE}Created symlink for Claude Code settings${RESET}"
-  else
-    echo "${RED}Warning: Source file ~/dotfiles/.config/claude/settings.json not found.${RESET}"
-  fi
-else
-  echo "${GREEN}Claude settings already exist at target location${RESET}"
+# Link Claude Code settings and commands
+if [ -f ~/dotfiles/.config/claude/settings.json ]; then
+  ln -sf ~/dotfiles/.config/claude/settings.json ~/.claude/settings.json
 fi
-
-# Link Claude Code commands directory
-if [ ! -L ~/.claude/commands ]; then
-  if [ -d ~/dotfiles/.config/claude/commands ]; then
-    ln -s ~/dotfiles/.config/claude/commands ~/.claude/commands
-    echo "${BLUE}Created symlink for Claude Code commands${RESET}"
-  fi
-else
-  echo "${GREEN}Claude commands already linked${RESET}"
+if [ -d ~/dotfiles/.config/claude/commands ]; then
+  ln -sfn ~/dotfiles/.config/claude/commands ~/.claude/commands
 fi
-
-cd "$CURRENT_DIR" || exit
+echo "${GREEN}Linked Claude Code config${RESET}"
 
 echo "${GREEN}Done!${RESET}"
+cd "$CURRENT_DIR" || exit

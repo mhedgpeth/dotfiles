@@ -8,6 +8,18 @@ One tmux session per project, defined declaratively in tmuxinator YAML files. Se
 
 No session persistence plugins (resurrect/continuum). Instead, `tmuxinator start <session>` recreates the exact layout every time. Deterministic > magical.
 
+## Windowing
+
+Here are the roles:
+
+- [Aerospace](../aerospace/) - for navigating workspaces, `Alt-O` is the terminal workspace, we are meant to only have one terminal session in this window.
+- [Ghostty](../ghostty/) - renders the terminal service, in a full window
+- tmux - what runs in the terminal, in a full Ghostty window, on the `o` aerospace worksapce, with defined `tmuxinator` sessions.
+
+## Runtime
+
+The user should run `tmuxinator` with the alias `t`.
+
 ## Session Organization
 
 ```
@@ -37,7 +49,7 @@ TPM manages plugins. Install with `C-Space I`.
 ## Daily Workflow
 
 ```bash
-tmuxinator start dotfiles   # or dev, etc.
+t start dotfiles   # or dev, etc.
 # work...
 # C-Space s to switch sessions
 # C-Space d to detach

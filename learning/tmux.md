@@ -1,51 +1,51 @@
 # tmux Learning
 
-Practice tasks and notes for building tmux muscle memory.
+The approach to tmux is documented in [CLAUDE.md](/.config/tmux/CLAUDE.md).
+Configuration for [tmux](../.config/tmux/tmux.conf).
+
+Main goal - zero to hero with tmux driving a rolls royce, delightful tmux car into the bold new future.
+
+## Progress
+
+- Jan 12-13: getting tmux configured properly
+- Next: practicing, incorporating it into the workflow
 
 ## Tasks to Practice
 
-### Session Management
-- [ ] Create a named session: `tmux new -s myproject`
-- [ ] Detach from session: `C-Space d`
-- [ ] List sessions: `tmux ls`
-- [ ] Attach to session: `tmux attach -t myproject`
-- [ ] Kill session: `tmux kill-session -t myproject`
+### Session Flow (Priority 1)
 
-### Window Management
-- [ ] Create window: `C-Space c`
-- [ ] Next window: `C-Space n`
-- [ ] Previous window: `C-Space p`
-- [ ] Rename window: `C-Space ,`
-- [ ] Close window: `C-Space &`
+- [ ] Start session: `t start dotfiles`
+- [ ] Switch sessions: `C-Space s` (fzf popup)
+- [ ] Detach: `C-Space d`
+- [ ] Create new session: `C-Space S`
+- [ ] Kill session: `C-Space X`
 
-### Pane Management
+### Pane Navigation (Priority 2)
+
+- [ ] Navigate between nvim splits and tmux panes: `C-h/j/k/l`
 - [ ] Split vertical: `C-Space |`
 - [ ] Split horizontal: `C-Space -`
-- [ ] Navigate panes: `C-h/j/k/l` (works in nvim too!)
 - [ ] Resize panes: `C-Space C-h/j/k/l`
 - [ ] Close pane: `C-Space x`
 
+### Window Management (Priority 3)
+
+- [ ] Create window: `C-Space c`
+- [ ] Next/Previous window: `C-Space n/p`
+- [ ] Rename window: `C-Space ,`
+- [ ] Close window: `C-Space &`
+
 ### Copy Mode (vim-style)
+
 - [ ] Enter copy mode: `C-Space [`
 - [ ] Start selection: `v`
 - [ ] Copy and exit: `y`
-- [ ] Paste: `C-Space ]`
+- [ ] Paste: `C-Space p` (from system clipboard)
 
-### tmuxinator
-- [ ] Test it: `tmuxinator start dotfiles`
-- [ ] Create project-local config in app repo
+## Next Steps
 
-## Ideas to Explore
-
-- [ ] Add tmux-fzf for fuzzy finding windows/panes
-- [ ] Create more project-specific tmuxinator configs
-
-## Questions to Consider
-
-- When do I use tmux windows vs Aerospace windows?
-- Should I run one tmux session per project or one big session?
-- How do I quickly switch between projects?
-- What belongs in my status bar?
+- [ ] Create tmuxinator config for PeopleWork dev environment
+- [ ] Practice nvim + bacon pane workflow (the flow state goal)
 
 ---
 
@@ -80,6 +80,7 @@ He uses vimtest and vimux but bacon is better.
 [Source](https://www.youtube.com/watch?v=jaI3Hcw-ZaA&t=21s)
 
 Notes:
+
 - Set mouse support on (so I can resize panes with mouse)
 - TPM the plugin manager - clone it, install with prefix I
 - catpuccin makes tmux look great

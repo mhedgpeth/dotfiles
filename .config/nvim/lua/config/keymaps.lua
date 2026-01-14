@@ -6,4 +6,4 @@ vim.keymap.set("n", "<leader><CR>", "<cmd>%bd<cr>", { desc = "Close All Buffers"
 
 vim.keymap.set("n", "<leader>os", "<cmd>OverseerToggle<cr>", { desc = "Toggle Overseer" })
 
-vim.keymap.set({ "n", "i", "v" }, "<D-s>", "<cmd>w<cr>", { desc = "Save file" })
+vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>", { desc = "Save file" })

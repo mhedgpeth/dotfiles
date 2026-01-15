@@ -1,6 +1,7 @@
 # taps
 tap "hashicorp/tap"
 tap "hedge-ops/homebrew-tap"
+tap "minorole/tap"
 tap "nikitabobko/tap"
 tap "oven-sh/bun"
 tap "steveyegge/beads"
@@ -19,8 +20,6 @@ brew "jq" # json processor
 brew "ripgrep" # better grep
 brew "starship" # better prompt
 brew "tldr" # simplified man pages with examples
-brew "tmux" # terminal multiplexer
-brew "tmuxinator" # tmux session manager
 brew "pandoc" # document converter (markdown to pdf, etc)
 cask "basictex" # minimal latex for pandoc pdf output
 brew "tree" # directory tree

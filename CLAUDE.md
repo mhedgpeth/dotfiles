@@ -49,7 +49,6 @@ Windows equivalents for macOS configurations when requested.
 `.config/nvim` - my primary text editor
 `.config/nvim-debug` - for debugging NeoVim while making issues
 `.config/starship` - terminal prompt
-`.config/tmux` - terminal multiplexer
 `.config/yazi` - file explorer
 `.config/moonlander` - ZSA Moonlander keyboard (QMK source from Oryx)
 

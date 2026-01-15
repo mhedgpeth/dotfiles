@@ -1,7 +1,6 @@
 .DS_Store
 .config/zed/prompts*
 .config/nvim-debug/
-.config/tmux/plugins/
 
 # bv (beads viewer) local config and caches
 .bv/

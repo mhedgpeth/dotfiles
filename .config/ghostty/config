@@ -3,13 +3,39 @@ font-family = "JetBrains Mono Nerd Font"
 # font-family = "MesloLGL Nerd Font Mono"
 font-size = 18
 
-theme = catppuccin-mocha
+theme = "Catppuccin Mocha"
+auto-update = download
 
 keybind = global:cmd+grave_accent=toggle_quick_terminal
 keybind = shift+enter=text:\x1b\n
+# Tabs and titlebar
+macos-titlebar-style = tabs
+window-save-state = always
+
+# Cmd+S sends Ctrl+S for Neovim save
 keybind = cmd+s=text:\x13
 
-macos-titlebar-style = hidden
+# Tab navigation
+keybind = cmd+shift+left_bracket=previous_tab
+keybind = cmd+shift+right_bracket=next_tab
+keybind = cmd+one=goto_tab:1
+keybind = cmd+two=goto_tab:2
+keybind = cmd+three=goto_tab:3
+keybind = cmd+four=goto_tab:4
+keybind = cmd+five=goto_tab:5
 window-padding-x = 0
 window-padding-y = 0
 window-padding-balance = true
+
+# Split appearance (Catppuccin Mocha Overlay0)
+split-divider-color = #6c7086
+
+# Pane navigation (vim-style)
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:down
+keybind = ctrl+k=goto_split:up
+keybind = ctrl+l=goto_split:right
+
+# Start maximized (AeroSpace floats Ghostty, so we maximize it ourselves)
+window-width = 9999
+window-height = 9999

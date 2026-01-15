@@ -16,6 +16,10 @@ export HOMEBREW_BUNDLE_FILE="$HOME/dotfiles/.config/homebrew/Brewfile"
 
 brew bundle install
 
+echo "${GREEN}Upgrading outdated packages${RESET}"
+
+brew upgrade
+
 echo "${GREEN}Removing brew packages no longer needed${RESET}"
 
 brew bundle cleanup --force
@@ -67,16 +71,6 @@ fi
 
 echo "${GREEN}Ensuring yazi flavors are installed${RESET}"
 ya pkg add yazi-rs/flavors:catppuccin-frappe || true
-
-echo "${GREEN}Ensuring tmux plugin manager (TPM) is installed${RESET}"
-
-TPM_DIR="$HOME/.config/tmux/plugins/tpm"
-if [ ! -d "$TPM_DIR" ]; then
-  echo "${BLUE}Installing TPM...${RESET}"
-  git clone https://github.com/tmux-plugins/tpm "$TPM_DIR"
-else
-  echo "${GREEN}TPM already installed${RESET}"
-fi
 
 echo "${GREEN}Ensuring repositories are cloned${RESET}"
 
@@ -167,14 +161,6 @@ echo "${GREEN}Ensuring settings are linked properly${RESET}"
 # Create .config directory if it doesn't exist
 mkdir -p ~/.config
 
-# Create ~/.config/tmuxinator directory if it doesn't exist
-mkdir -p ~/.config/tmuxinator
-
-# Create ~/.config/tmux directory if it doesn't exist (for individual file symlinks)
-# Remove if it's a symlink (prevents self-referential symlinks in the dotfiles repo)
-[ -L ~/.config/tmux ] && rm ~/.config/tmux
-mkdir -p ~/.config/tmux
-
 # Create ~/.claude directory if it doesn't exist
 mkdir -p ~/.claude
 
@@ -185,8 +171,6 @@ files_to_link=(
   ".config/yazi/theme.toml"
   ".config/yazi/keymap.toml"
   ".config/yazi/yazi.toml"
-  ".config/tmux/tmux.conf"
-  ".config/tmuxinator/dotfiles.yml"
 )
 
 config_dirs_to_link=(

@@ -16,6 +16,10 @@ export HOMEBREW_BUNDLE_FILE="$HOME/dotfiles/.config/homebrew/Brewfile"
 
 brew bundle install
 
+echo "${GREEN}Upgrading outdated packages${RESET}"
+
+brew upgrade
+
 echo "${GREEN}Removing brew packages no longer needed${RESET}"
 
 brew bundle cleanup --force

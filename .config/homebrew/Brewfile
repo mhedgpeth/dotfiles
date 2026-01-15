@@ -1,6 +1,7 @@
 # taps
 tap "hashicorp/tap"
 tap "hedge-ops/homebrew-tap"
+tap "minorole/tap"
 tap "nikitabobko/tap"
 tap "oven-sh/bun"
 tap "steveyegge/beads"

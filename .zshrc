@@ -76,17 +76,12 @@ alias gp='git pull'
 alias vim='nvim'
 alias update='./update.sh' 
 
-# personal 
-alias app='cd ~/code/github.com/hedge-ops/app/'
-alias dev='app && nvim'
-alias b='bacon'
+# shortcuts
+alias pw='cd ~/code/github.com/hedge-ops/people'
 alias wv='cd ~/vaults/work'
-alias mtp='aerospace move-node-to-workspace P && aerospace workspace P'
-alias work='mtp && wv && nvim dashboard.md'
 alias pv='cd ~/vaults/personal'
-alias life='mtp && pv && nvim dashboard.md'
-alias people='cd ~/people'
-alias config='mtp && cd ~/dotfiles && nvim'
+alias df='cd ~/dotfiles'
+alias b='bacon'
 alias j='just'
 alias lg='lazygit'
 

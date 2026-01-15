@@ -7,9 +7,18 @@ theme = catppuccin-mocha
 
 keybind = global:cmd+grave_accent=toggle_quick_terminal
 keybind = shift+enter=text:\x1b\n
-keybind = cmd+s=text:\x13
+# Tabs and titlebar
+macos-titlebar-style = tabs
+window-save-state = always
 
-macos-titlebar-style = hidden
+# Tab navigation
+keybind = cmd+shift+left_bracket=previous_tab
+keybind = cmd+shift+right_bracket=next_tab
+keybind = cmd+one=goto_tab:1
+keybind = cmd+two=goto_tab:2
+keybind = cmd+three=goto_tab:3
+keybind = cmd+four=goto_tab:4
+keybind = cmd+five=goto_tab:5
 window-padding-x = 0
 window-padding-y = 0
 window-padding-balance = true

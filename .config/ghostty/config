@@ -24,6 +24,15 @@ window-padding-x = 0
 window-padding-y = 0
 window-padding-balance = true
 
+# Split appearance (Catppuccin Mocha Overlay0)
+split-divider-color = #6c7086
+
+# Pane navigation (vim-style)
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:down
+keybind = ctrl+k=goto_split:up
+keybind = ctrl+l=goto_split:right
+
 # Start maximized (AeroSpace floats Ghostty, so we maximize it ourselves)
 window-width = 9999
 window-height = 9999

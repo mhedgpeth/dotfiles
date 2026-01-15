@@ -109,10 +109,7 @@ cd "$CODE_DIR" || {
 
 # List of repositories to clone
 repositories=(
-  "hedge-ops/app"
-  "hedge-ops/product-website"
-  "hedge-ops/company-website"
-  "hedge-ops/prototyping"
+  "hedge-ops/people"
   "redbadger/crux"
   "mhedgpeth/personal-vault"
   "mhedgpeth/work-vault"

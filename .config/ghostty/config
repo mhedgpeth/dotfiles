@@ -12,6 +12,9 @@ keybind = shift+enter=text:\x1b\n
 macos-titlebar-style = tabs
 window-save-state = always
 
+# Cmd+S sends Ctrl+S for Neovim save
+keybind = cmd+s=text:\x13
+
 # Tab navigation
 keybind = cmd+shift+left_bracket=previous_tab
 keybind = cmd+shift+right_bracket=next_tab

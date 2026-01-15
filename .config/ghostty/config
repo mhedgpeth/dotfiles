@@ -22,3 +22,7 @@ keybind = cmd+five=goto_tab:5
 window-padding-x = 0
 window-padding-y = 0
 window-padding-balance = true
+
+# Start maximized (AeroSpace floats Ghostty, so we maximize it ourselves)
+window-width = 9999
+window-height = 9999

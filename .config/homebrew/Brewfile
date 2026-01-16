@@ -88,6 +88,9 @@ brew "rbenv"
 # java
 brew "openjdk"
 
+# c#/.net
+cask "dotnet-sdk"
+
 # cloud
 brew "derailed/k9s/k9s" # kubernetes tui
 brew "doctl" # digitalocean cli

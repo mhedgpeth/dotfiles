@@ -5,6 +5,7 @@ tap "minorole/tap"
 tap "nikitabobko/tap"
 tap "oven-sh/bun"
 tap "steveyegge/beads"
+tap "vicentereig/tap"
 
 # terminal
 brew "bat" # better cat with syntax highlighting
@@ -131,6 +132,9 @@ cask "slack"
 # utilities
 cask "anki" # flashcards
 cask "balenaetcher" # usb flashing
+
+# analytics
+brew "vicentereig/tap/plausible" # privacy-friendly analytics cli
 
 # people
 cask "people-work"

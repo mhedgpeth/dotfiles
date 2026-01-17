@@ -32,6 +32,7 @@ cask "ghostty" # terminal emulator
 brew "gh" # github cli
 brew "git"
 brew "git-delta" # syntax-highlighted diffs
+brew "git-filter-repo" # rewrite git history
 brew "lazygit" # git tui
 cask "github" # github desktop
 

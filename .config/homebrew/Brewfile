@@ -94,6 +94,7 @@ brew "openjdk"
 cask "dotnet-sdk"
 
 # cloud
+brew "actionlint" # github actions linter
 brew "derailed/k9s/k9s" # kubernetes tui
 brew "doctl" # digitalocean cli
 brew "hashicorp/tap/terraform"

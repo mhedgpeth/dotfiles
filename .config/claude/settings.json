@@ -1,4 +1,34 @@
 {
+  "enabledPlugins": {
+    "beads@beads-marketplace": true,
+    "lua-lsp@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "swift-lsp@claude-plugins-official": true
+  },
+  "hooks": {
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "command": "bd prime",
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "bd prime",
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ]
+  },
   "permissions": {
     "allow": [
       "Bash(bd ready)",
@@ -50,12 +80,6 @@
       "Bash(bd restore *)",
       "Bash(bd completion *)"
     ],
-    "deny": [
-      "Bash(bd jira *)",
-      "Bash(bd linear *)",
-      "Bash(bd mail *)",
-      "Bash(bd create-form)"
-    ],
     "ask": [
       "Bash(bd close *)",
       "Bash(bd delete *)",
@@ -80,36 +104,12 @@
       "Bash(bd daemon *)",
       "Bash(bd repo *)",
       "Bash(bd ship *)"
-    ]
-  },
-  "hooks": {
-    "PreCompact": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bd prime"
-          }
-        ]
-      }
     ],
-    "SessionStart": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "bd prime"
-          }
-        ]
-      }
+    "deny": [
+      "Bash(bd jira *)",
+      "Bash(bd linear *)",
+      "Bash(bd mail *)",
+      "Bash(bd create-form)"
     ]
-  },
-  "enabledPlugins": {
-    "lua-lsp@claude-plugins-official": true,
-    "rust-analyzer-lsp@claude-plugins-official": true,
-    "swift-lsp@claude-plugins-official": true,
-    "beads@beads-marketplace": true
   }
 }

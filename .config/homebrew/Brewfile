@@ -130,4 +130,4 @@ cask "balenaetcher" # usb flashing
 brew "vicentereig/tap/plausible" # privacy-friendly analytics cli
 
 # people
-cask "people-work"
+cask "hedge-ops/homebrew-tap/people-work"

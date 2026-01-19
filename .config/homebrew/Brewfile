@@ -3,7 +3,7 @@ tap "hashicorp/tap"
 tap "hedge-ops/homebrew-tap"
 tap "minorole/tap"
 tap "nikitabobko/tap"
-tap "oven-sh/bun"
+tap "aquaproj/aqua"
 tap "steveyegge/beads"
 tap "vicentereig/tap"
 
@@ -62,7 +62,6 @@ brew "cargo-binstall" # binary installer
 brew "cargo-nextest" # better test runner
 brew "just" # make alternative
 brew "lychee" # check links in markdown/docs
-brew "mdbook" # rust book-style documentation
 brew "rustup" # rust toolchain
 
 # swift
@@ -74,12 +73,10 @@ brew "xcodegen" # generate xcodeproj from yaml
 cask "sf-symbols" # browse apple sf symbols
 
 # web
-brew "bun" # fast js runtime/bundler
 brew "dprint" # fast code formatter
 brew "eslint"
 brew "node@24"
 brew "pnpm"
-brew "zola" # rust static site generator
 
 # python
 brew "uv" # manages python, packages, and virtual environments
@@ -94,7 +91,7 @@ brew "openjdk"
 cask "dotnet-sdk"
 
 # cloud
-brew "actionlint" # github actions linter
+brew "aquaproj/aqua/aqua" # per-project CLI tool manager
 brew "derailed/k9s/k9s" # kubernetes tui
 brew "doctl" # digitalocean cli
 brew "hashicorp/tap/terraform"

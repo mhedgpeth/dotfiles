@@ -1,5 +1,4 @@
 # taps
-tap "hashicorp/tap"
 tap "hedge-ops/homebrew-tap"
 tap "minorole/tap"
 tap "nikitabobko/tap"
@@ -59,9 +58,7 @@ cask "font-meslo-lg-nerd-font"
 brew "bacon" # background rust checker
 # brew "bacon-ls" # not ready yet
 brew "cargo-binstall" # binary installer
-brew "cargo-nextest" # better test runner
 brew "just" # make alternative
-brew "lychee" # check links in markdown/docs
 brew "rustup" # rust toolchain
 
 # swift
@@ -94,10 +91,7 @@ cask "dotnet-sdk"
 brew "aquaproj/aqua/aqua" # per-project CLI tool manager
 brew "derailed/k9s/k9s" # kubernetes tui
 brew "doctl" # digitalocean cli
-brew "hashicorp/tap/terraform"
 brew "kubernetes-cli"
-brew "kustomize" # kubernetes yaml templating
-brew "tflint" # terraform linter
 cask "docker-desktop"
 
 # database

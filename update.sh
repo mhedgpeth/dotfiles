@@ -61,14 +61,6 @@ else
   echo "${GREEN}bv is already installed${RESET}"
 fi
 
-echo "${GREEN}Ensuring openspec is installed${RESET}"
-if ! command -v openspec &>/dev/null; then
-  echo "${BLUE}Installing openspec...${RESET}"
-  bun install -g @fission-ai/openspec@latest
-else
-  echo "${GREEN}openspec is already installed${RESET}"
-fi
-
 echo "${GREEN}Ensuring yazi flavors are installed${RESET}"
 ya pkg add yazi-rs/flavors:catppuccin-frappe || true
 

@@ -115,7 +115,7 @@ cask "visual-studio-code"
 cask "zed"
 
 # macos
-cask "aerospace" # window manager
+cask "nikitabobko/tap/aerospace" # window manager
 
 # collaboration
 cask "discord"

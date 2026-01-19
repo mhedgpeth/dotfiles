@@ -2,7 +2,6 @@
 tap "hedge-ops/homebrew-tap"
 tap "minorole/tap"
 tap "nikitabobko/tap"
-tap "aquaproj/aqua"
 tap "steveyegge/beads"
 tap "vicentereig/tap"
 
@@ -88,7 +87,7 @@ brew "openjdk"
 cask "dotnet-sdk"
 
 # cloud
-brew "aquaproj/aqua/aqua" # per-project CLI tool manager
+brew "aqua" # per-project CLI tool manager
 brew "derailed/k9s/k9s" # kubernetes tui
 brew "doctl" # digitalocean cli
 brew "kubernetes-cli"

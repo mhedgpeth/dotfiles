@@ -234,3 +234,7 @@ run = "move-node-to-workspace P"
 [[on-window-detected]]
 if.app-id = "com.electron.dockerdesktop"
 run = "move-node-to-workspace 0"
+
+[[on-window-detected]]
+if.app-id = "com.apple.ScreenSharing"
+run = "layout floating"

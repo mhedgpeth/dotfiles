@@ -1,0 +1,20 @@
+# aqua - CLI tool version manager
+# https://aquaproj.github.io/
+#
+# Install: brew install aqua
+# Usage: aqua install
+
+---
+checksum:
+  enabled: false
+
+registries:
+  - type: standard
+    ref: v4.458.0  # https://github.com/aquaproj/aqua-registry/releases
+  - name: local
+    type: local
+    path: aqua-registry.yaml
+
+packages:
+  - name: steveyegge/beads@v0.47.1
+    registry: local

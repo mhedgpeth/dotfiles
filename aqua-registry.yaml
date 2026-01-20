@@ -1,0 +1,19 @@
+# Local aqua registry for packages not in the standard registry
+# https://aquaproj.github.io/docs/guides/local-registry
+
+packages:
+  - type: github_release
+    repo_owner: steveyegge
+    repo_name: beads
+    description: AI-supervised issue tracker for coding workflows
+    asset: beads_{{trimV .Version}}_{{.OS}}_{{.Arch}}.tar.gz
+    format: tar.gz
+    files:
+      - name: bd
+    supported_envs:
+      - darwin
+      - linux
+    overrides:
+      - goos: windows
+        asset: beads_{{trimV .Version}}_{{.OS}}_{{.Arch}}.zip
+        format: zip

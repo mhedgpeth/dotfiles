@@ -24,35 +24,6 @@ echo "${GREEN}Removing brew packages no longer needed${RESET}"
 
 brew bundle cleanup --force
 
-# Check if ~/.cargo directory exists
-if [ ! -d "$HOME/.cargo" ]; then
-  echo "${BLUE}Cargo directory not found. Installing Rust...${RESET}"
-  # Run rustup-init
-  rustup-init
-fi
-
-echo "${GREEN}Ensuring rust toolchain is up to date${RESET}"
-
-rustup install stable
-
-echo "${GREEN}Ensuring required cargo packages are installed${RESET}"
-
-# Check if mdbook-admonish is installed
-if ! cargo install --list | grep -q "^mdbook-admonish"; then
-  echo "${BLUE}Installing mdbook-admonish...${RESET}"
-  cargo install --locked mdbook-admonish
-else
-  echo "${GREEN}mdbook-admonish is already installed${RESET}"
-fi
-
-# Check if semantic-release-cargo is installed
-if ! cargo install --list | grep -q "^semantic-release-cargo"; then
-  echo "${BLUE}Installing semantic-release-cargo...${RESET}"
-  cargo install --locked semantic-release-cargo
-else
-  echo "${GREEN}semantic-release-cargo is already installed${RESET}"
-fi
-
 echo "${GREEN}Ensuring bv (beads viewer) is installed${RESET}"
 if ! command -v bv &>/dev/null; then
   echo "${BLUE}Installing bv...${RESET}"

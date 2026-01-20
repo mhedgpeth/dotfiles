@@ -1,15 +1,16 @@
+# development CLI tools are managed by aqua per project.
+# this handles everything else.
+
 # taps
 tap "hedge-ops/homebrew-tap"
 tap "minorole/tap"
 tap "nikitabobko/tap"
-tap "steveyegge/beads"
-tap "vicentereig/tap"
 
 # terminal
 brew "bat" # better cat with syntax highlighting
 brew "btop" # process/system monitor
 brew "cloc" # count lines of code
-brew "direnv" # per-directory env vars
+brew "direnv" # per-directory env vars (shell hook needs global install)
 brew "eza" # modern ls replacement
 brew "fd" # better find
 brew "fswatch" # file watcher
@@ -27,7 +28,6 @@ brew "zoxide" # better cd
 cask "ghostty" # terminal emulator
 
 # git
-brew "gh" # github cli
 brew "git"
 brew "git-delta" # syntax-highlighted diffs
 brew "git-filter-repo" # rewrite git history
@@ -56,29 +56,13 @@ cask "font-meslo-lg-nerd-font"
 # rust
 brew "bacon" # background rust checker
 # brew "bacon-ls" # not ready yet
-brew "cargo-binstall" # binary installer
-brew "just" # make alternative
-brew "rustup" # rust toolchain
 
-# swift
-brew "fastlane" # ios automation
-brew "swiftformat"
-brew "swiftlint"
+# swift (tooling managed by aqua in project repos)
 brew "xcode-build-server" # lsp for xcode projects
-brew "xcodegen" # generate xcodeproj from yaml
 cask "sf-symbols" # browse apple sf symbols
 
 # web
-brew "dprint" # fast code formatter
-brew "eslint"
-brew "node@24"
-brew "pnpm"
-
-# python
-brew "uv" # manages python, packages, and virtual environments
-
-# ruby (for fastlane)
-brew "rbenv"
+brew "node@24" # needed for claude
 
 # java
 brew "openjdk"
@@ -86,25 +70,19 @@ brew "openjdk"
 # c#/.net
 cask "dotnet-sdk"
 
-# cloud
+# cloud (project-specific tools managed by aqua)
 brew "aqua" # per-project CLI tool manager
-brew "derailed/k9s/k9s" # kubernetes tui
-brew "doctl" # digitalocean cli
-brew "kubernetes-cli"
 cask "docker-desktop"
 
 # database
-brew "sqlx-cli" # rust sql migrations/checks
 cask "pgadmin4"
 
 # api
-brew "stripe-cli"
 cask "ngrok" # expose localhost publicly
 cask "postman"
 
 # ai
 brew "gemini-cli"
-brew "steveyegge/beads/bd" # ai task automation
 cask "claude"
 cask "superwhisper" # voice dictation for ai prompts
 
@@ -124,9 +102,6 @@ cask "slack"
 # utilities
 cask "anki" # flashcards
 cask "balenaetcher" # usb flashing
-
-# analytics
-brew "vicentereig/tap/plausible" # privacy-friendly analytics cli
 
 # people
 cask "hedge-ops/homebrew-tap/people-work"

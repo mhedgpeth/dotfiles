@@ -6,12 +6,17 @@ tap "hedge-ops/homebrew-tap"
 tap "minorole/tap"
 tap "nikitabobko/tap"
 
+# people work dependencies
+brew "aqua" # per-project CLI tool manager
+brew "libyaml" # yaml parsing for ruby gems
+brew "mise" # polyglot tool version manager
+brew "rustup" # rust toolchain manager
+
 # terminal
 brew "bat" # better cat with syntax highlighting
 brew "btop" # process/system monitor
 brew "cloc" # count lines of code
 brew "direnv" # per-directory env vars (shell hook needs global install)
-brew "mise" # polyglot tool version manager
 brew "eza" # modern ls replacement
 brew "fd" # better find
 brew "fswatch" # file watcher
@@ -71,8 +76,7 @@ brew "openjdk"
 # c#/.net
 cask "dotnet-sdk"
 
-# cloud (project-specific tools managed by aqua)
-brew "aqua" # per-project CLI tool manager
+# cloud
 cask "docker-desktop"
 
 # database

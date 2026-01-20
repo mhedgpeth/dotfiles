@@ -11,6 +11,7 @@ brew "bat" # better cat with syntax highlighting
 brew "btop" # process/system monitor
 brew "cloc" # count lines of code
 brew "direnv" # per-directory env vars (shell hook needs global install)
+brew "mise" # polyglot tool version manager
 brew "eza" # modern ls replacement
 brew "fd" # better find
 brew "fswatch" # file watcher

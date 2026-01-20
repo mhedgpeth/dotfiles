@@ -116,7 +116,8 @@ export EDITOR=nvim
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
 
-# Added by Antigravity
-export PATH="/Users/michaelhedgpeth/.antigravity/antigravity/bin:$PATH"
-export PATH="/opt/homebrew/opt/node@24/bin:$PATH"
+# Also look at bun (for bunx), then .local (for claude)
 export PATH="$HOME/.bun/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+# Aqua gets priority
+export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"

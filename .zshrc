@@ -120,5 +120,6 @@ eval "$(starship init zsh)"
 # Also look at bun (for bunx), then .local (for claude)
 export PATH="$HOME/.bun/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 # Aqua gets priority
 export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"

@@ -98,7 +98,10 @@ eval "$(direnv hook zsh)"
 eval "$(mise activate zsh)"
 
 # Bacon
-export BACON_CONFIG="$HOME/.config/bacon/prefs.toml" 
+export BACON_CONFIG="$HOME/.config/bacon/prefs.toml"
+
+# Docker (via Colima)
+export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock" 
 
 # Yazi
 function y() {

@@ -1,0 +1,18 @@
+# Language runtimes and version managers (cross-platform)
+
+actions:
+  # Version manager
+  - action: package.install
+    name: mise
+
+  # Node (needed for Claude Code, LSPs)
+  - action: package.install
+    name: node
+
+  # Java
+  - action: package.install
+    name: openjdk
+
+  # Ruby dependencies
+  - action: package.install
+    name: libyaml

@@ -1,0 +1,136 @@
+# GUI Applications (macOS casks)
+# Only runs on macOS
+
+where: os.name == "macos"
+
+actions:
+  # Terminal
+  - action: package.install
+    name: ghostty
+    extra_args:
+      - "--cask"
+
+  # Fonts (Nerd Fonts for terminal icons)
+  - action: package.install
+    name: font-fira-code-nerd-font
+    extra_args:
+      - "--cask"
+
+  - action: package.install
+    name: font-jetbrains-mono-nerd-font
+    extra_args:
+      - "--cask"
+
+  - action: package.install
+    name: font-meslo-lg-nerd-font
+    extra_args:
+      - "--cask"
+
+  # Git
+  - action: package.install
+    name: github
+    extra_args:
+      - "--cask"
+
+  # Swift/Apple development
+  - action: package.install
+    name: sf-symbols
+    extra_args:
+      - "--cask"
+
+  # Document conversion
+  - action: package.install
+    name: basictex
+    extra_args:
+      - "--cask"
+
+  # .NET
+  - action: package.install
+    name: dotnet-sdk
+    extra_args:
+      - "--cask"
+
+  # Database
+  - action: package.install
+    name: pgadmin4
+    extra_args:
+      - "--cask"
+
+  # API tools
+  - action: package.install
+    name: ngrok
+    extra_args:
+      - "--cask"
+
+  - action: package.install
+    name: postman
+    extra_args:
+      - "--cask"
+
+  # AI
+  - action: package.install
+    name: claude
+    extra_args:
+      - "--cask"
+
+  - action: package.install
+    name: superwhisper
+    extra_args:
+      - "--cask"
+
+  # Editors
+  - action: package.install
+    name: antigravity
+    extra_args:
+      - "--cask"
+
+  - action: package.install
+    name: visual-studio-code
+    extra_args:
+      - "--cask"
+
+  - action: package.install
+    name: zed
+    extra_args:
+      - "--cask"
+
+  # macOS utilities
+  - action: package.install
+    name: deskflow
+    repository: deskflow/tap
+    extra_args:
+      - "--cask"
+
+  # Collaboration
+  - action: package.install
+    name: discord
+    extra_args:
+      - "--cask"
+
+  - action: package.install
+    name: google-chrome
+    extra_args:
+      - "--cask"
+
+  - action: package.install
+    name: slack
+    extra_args:
+      - "--cask"
+
+  # Utilities
+  - action: package.install
+    name: anki
+    extra_args:
+      - "--cask"
+
+  - action: package.install
+    name: balenaetcher
+    extra_args:
+      - "--cask"
+
+  # PeopleWork
+  - action: package.install
+    name: people-work
+    repository: hedge-ops/homebrew-tap
+    extra_args:
+      - "--cask"

@@ -1,0 +1,57 @@
+# CLI tools (cross-platform)
+# These are installed via platform package managers
+
+actions:
+  # Shell integration tools
+  - action: package.install
+    name: fzf
+
+  - action: package.install
+    name: zoxide
+
+  - action: package.install
+    name: starship
+
+  - action: package.install
+    name: direnv
+
+  # Better coreutils
+  - action: package.install
+    name: eza
+
+  - action: package.install
+    name: bat
+
+  - action: package.install
+    name: fd
+
+  - action: package.install
+    name: ripgrep
+
+  # Utilities
+  - action: package.install
+    name: jq
+
+  - action: package.install
+    name: git-delta
+
+  - action: package.install
+    name: btop
+
+  - action: package.install
+    name: tldr
+
+  - action: package.install
+    name: tree
+
+  - action: package.install
+    name: wget
+
+  - action: package.install
+    name: hyperfine
+
+  - action: package.install
+    name: cloc
+
+  - action: package.install
+    name: fswatch

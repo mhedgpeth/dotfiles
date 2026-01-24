@@ -16,15 +16,28 @@ _install-macos:
     brew bundle --file=packages/Brewfile
 
 _install-windows:
-    @if (Test-Path packages/scoopfile.json) { scoop import packages/scoopfile.json }
+    scoop import packages/scoopfile.json
+    winget import -i packages/winget.json --ignore-unavailable --accept-source-agreements --accept-package-agreements
 
 _install-linux:
-    @if [ -f packages/archlinux.txt ]; then yay -S --needed - < packages/archlinux.txt; fi
+    yay -S --needed - < packages/archlinux.txt
 
 # Initialize chezmoi (run once after clone)
 init:
     @echo '{{ style("command") }}init:{{ NORMAL }}'
     chezmoi init --source=home
+    @just _init-{{os()}}
+
+_init-macos:
+    @true
+
+_init-windows:
+    scoop bucket add extras
+    scoop bucket add nerd-fonts
+    scoop bucket add versions
+
+_init-linux:
+    @true
 
 # Apply dotfiles via chezmoi
 apply:

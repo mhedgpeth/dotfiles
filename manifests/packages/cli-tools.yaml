@@ -1,7 +1,12 @@
-# CLI tools that need shell integration (must be global)
+# CLI tools (cross-platform)
 # These are installed via platform package managers
 
 actions:
+  # GitHub
+  - action: package.install
+    name: gh
+
+  # Shell integration tools
   - action: package.install
     name: fzf
 
@@ -14,6 +19,7 @@ actions:
   - action: package.install
     name: direnv
 
+  # Better coreutils
   - action: package.install
     name: eza
 
@@ -26,8 +32,27 @@ actions:
   - action: package.install
     name: ripgrep
 
+  # Utilities
   - action: package.install
     name: jq
 
   - action: package.install
     name: git-delta
+
+  - action: package.install
+    name: btop
+
+  - action: package.install
+    name: tldr
+
+  - action: package.install
+    name: tree
+
+  - action: package.install
+    name: wget
+
+  - action: package.install
+    name: hyperfine
+
+  - action: package.install
+    name: cloc

@@ -1,0 +1,25 @@
+# macOS-specific packages
+# TODO: Add OS conditionals once we figure out correct comtrya syntax
+
+actions:
+  # Docker (via Colima on macOS)
+  - action: package.install
+    name: colima
+
+  - action: package.install
+    name: docker
+
+  - action: package.install
+    name: docker-compose
+
+  # Window manager
+  - action: package.install
+    name: aerospace
+
+  # Swift development
+  - action: package.install
+    name: xcode-build-server
+
+  # Document conversion
+  - action: package.install
+    name: pandoc

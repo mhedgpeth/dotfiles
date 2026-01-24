@@ -1,0 +1,49 @@
+# Development tools (cross-platform)
+
+actions:
+  # Git
+  - action: package.install
+    name: git
+
+  - action: package.install
+    name: lazygit
+
+  - action: package.install
+    name: git-filter-repo
+
+  # Editor
+  - action: package.install
+    name: neovim
+
+  - action: package.install
+    name: tree-sitter
+
+  # Neovim dependencies
+  - action: package.install
+    name: lua-language-server
+
+  - action: package.install
+    name: luarocks
+
+  # File manager
+  - action: package.install
+    name: yazi
+
+  - action: package.install
+    name: ffmpeg
+
+  - action: package.install
+    name: imagemagick
+
+  - action: package.install
+    name: poppler
+
+  - action: package.install
+    name: sevenzip
+
+  # Rust
+  - action: package.install
+    name: rustup
+
+  - action: package.install
+    name: bacon

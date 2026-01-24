@@ -98,7 +98,7 @@ cask "visual-studio-code"
 cask "zed"
 
 # macos
-cask "deskflow" # software KVM - share keyboard/mouse across machines
+cask "deskflow/tap/deskflow" # software KVM - share keyboard/mouse across machines
 cask "nikitabobko/tap/aerospace" # window manager
 
 # collaboration

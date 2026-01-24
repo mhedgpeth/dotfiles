@@ -21,11 +21,10 @@ _install-windows:
 _install-linux:
     @if [ -f packages/archlinux.txt ]; then yay -S --needed - < packages/archlinux.txt; fi
 
-# Initialize chezmoi + extras (run once after clone)
+# Initialize chezmoi (run once after clone)
 init:
     @echo '{{ style("command") }}init:{{ NORMAL }}'
     chezmoi init --source=home
-    -ya pkg add yazi-rs/flavors:catppuccin-frappe
 
 # Apply dotfiles via chezmoi
 apply:
@@ -96,8 +95,13 @@ _deskflow-linux:
     @echo '{{ style("command") }}deskflow:{{ NORMAL }}'
     @./scripts/configure-deskflow.sh
 
-# Full setup: init + install packages + apply dotfiles (first time)
-setup: init install apply
+# One-time finishing touches (after packages installed)
+finish:
+    @echo '{{ style("command") }}finish:{{ NORMAL }}'
+    -ya pkg add yazi-rs/flavors:catppuccin-frappe
+
+# Full setup: init + install + apply + finish (first time)
+setup: init install apply finish
 
 # Regular dev workflow: install, upgrade, cleanup, apply, configure
 dev: install upgrade cleanup apply configure

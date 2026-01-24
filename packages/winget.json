@@ -4,7 +4,7 @@
     {
       "Packages": [
         {
-          "PackageIdentifier": "Microsoft.VisualStudio.2022.Community"
+          "PackageIdentifier": "Microsoft.VisualStudio.2026.Community"
         },
         {
           "PackageIdentifier": "Microsoft.WindowsTerminal"

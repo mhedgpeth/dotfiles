@@ -49,7 +49,6 @@
 
 
     { "Name": "nodejs", "Source": "main" },
-    { "Name": "temurin-jdk", "Source": "main" },
     { "Name": "dotnet-sdk", "Source": "main" },
 
     { "Name": "ngrok", "Source": "main" },

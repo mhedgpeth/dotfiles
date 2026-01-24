@@ -110,6 +110,71 @@ Finally, open System Settings and configure the mac:
 - Build `app` with `just i`
 - Open XCode and run the `app`
 
+## Windows Setup
+
+For minimal PeopleWork development on Windows.
+
+### Prerequisites
+
+1. Install [Scoop](https://scoop.sh/) (package manager):
+   ```powershell
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+   ```
+
+2. Install aqua via Scoop:
+   ```powershell
+   scoop install aqua
+   ```
+
+3. Install comtrya via aqua (add to PATH first):
+   ```powershell
+   # Add aqua to PATH (add to PowerShell profile for persistence)
+   $env:PATH = "$env:USERPROFILE\scoop\shims;$env:USERPROFILE\.local\share\aquaproj-aqua\bin;$env:PATH"
+   aqua install -g comtrya
+   ```
+
+### Clone and Apply
+
+```powershell
+git clone https://github.com/mhedgpeth/dotfiles ~/dotfiles
+cd ~/dotfiles
+comtrya apply
+```
+
+### Post-Install Steps
+
+1. **Docker Desktop**: Open Settings → General → Enable "Start Docker Desktop when you sign in"
+
+2. **Visual Studio**: Launch and install workloads:
+   - Desktop development with C++
+   - .NET Desktop development (for WinUI)
+
+3. **Restart PowerShell** to load the new profile with starship prompt
+
+4. **Clone PeopleWork**:
+   ```powershell
+   mkdir -p ~/code/github.com/hedge-ops
+   cd ~/code/github.com/hedge-ops
+   git clone https://github.com/hedge-ops/people
+   cd people/main
+   aqua install
+   ```
+
+### What Gets Installed
+
+| Package | Purpose |
+|---------|---------|
+| Visual Studio 2022 | C++ build tools, WinUI development |
+| Git | Version control |
+| Rustup | Rust toolchain |
+| Docker Desktop | Container runtime |
+| mise | Tool version manager |
+| Windows Terminal | Modern terminal |
+| ripgrep, fd | Code search |
+| Starship | Shell prompt |
+| VS Code | Editor |
+
 ## Deskflow (Software KVM)
 
 Deskflow shares keyboard/mouse across machines. The Mac Mini is the server.

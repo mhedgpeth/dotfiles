@@ -11,7 +11,6 @@
     { "Name": "rustup", "Source": "main" },
 
     { "Name": "bat", "Source": "main" },
-    { "Name": "btop", "Source": "extras" },
     { "Name": "cloc", "Source": "main" },
     { "Name": "direnv", "Source": "main" },
     { "Name": "eza", "Source": "main" },
@@ -23,10 +22,8 @@
     { "Name": "starship", "Source": "main" },
     { "Name": "tldr", "Source": "main" },
     { "Name": "pandoc", "Source": "main" },
-    { "Name": "tree", "Source": "main" },
     { "Name": "wget", "Source": "main" },
     { "Name": "zoxide", "Source": "main" },
-    { "Name": "ghostty", "Source": "extras" },
 
     { "Name": "gh", "Source": "main" },
     { "Name": "git", "Source": "main" },
@@ -50,13 +47,11 @@
     { "Name": "JetBrainsMono-NF", "Source": "nerd-fonts" },
     { "Name": "Meslo-NF", "Source": "nerd-fonts" },
 
-    { "Name": "bacon", "Source": "main" },
 
     { "Name": "nodejs", "Source": "main" },
-    { "Name": "openjdk", "Source": "main" },
+    { "Name": "temurin-jdk", "Source": "main" },
     { "Name": "dotnet-sdk", "Source": "main" },
 
-    { "Name": "pgadmin4", "Source": "extras" },
     { "Name": "ngrok", "Source": "main" },
     { "Name": "postman", "Source": "extras" },
 
@@ -70,7 +65,6 @@
     { "Name": "googlechrome", "Source": "extras" },
     { "Name": "slack", "Source": "extras" },
 
-    { "Name": "anki", "Source": "extras" },
-    { "Name": "balenaetcher", "Source": "extras" }
+    { "Name": "anki", "Source": "extras" }
   ]
 }

@@ -1,0 +1,34 @@
+# .config directory symlinks
+
+actions:
+  - action: file.link
+    source: "{{ user.home_dir }}/dotfiles/.config/nvim"
+    target: "{{ user.home_dir }}/.config/nvim"
+
+  - action: file.link
+    source: "{{ user.home_dir }}/dotfiles/.config/git"
+    target: "{{ user.home_dir }}/.config/git"
+
+  - action: file.link
+    source: "{{ user.home_dir }}/dotfiles/.config/starship"
+    target: "{{ user.home_dir }}/.config/starship"
+
+  - action: file.link
+    source: "{{ user.home_dir }}/dotfiles/.config/ghostty"
+    target: "{{ user.home_dir }}/.config/ghostty"
+
+  - action: file.link
+    source: "{{ user.home_dir }}/dotfiles/.config/bacon"
+    target: "{{ user.home_dir }}/.config/bacon"
+
+  - action: file.link
+    source: "{{ user.home_dir }}/dotfiles/.config/yazi"
+    target: "{{ user.home_dir }}/.config/yazi"
+
+  - action: file.link
+    source: "{{ user.home_dir }}/dotfiles/.config/homebrew"
+    target: "{{ user.home_dir }}/.config/homebrew"
+
+  - action: file.link
+    source: "{{ user.home_dir }}/dotfiles/.config/aerospace"
+    target: "{{ user.home_dir }}/.config/aerospace"

@@ -1,0 +1,33 @@
+# CLI tools that need shell integration (must be global)
+# These are installed via platform package managers
+
+actions:
+  - action: package.install
+    name: fzf
+
+  - action: package.install
+    name: zoxide
+
+  - action: package.install
+    name: starship
+
+  - action: package.install
+    name: direnv
+
+  - action: package.install
+    name: eza
+
+  - action: package.install
+    name: bat
+
+  - action: package.install
+    name: fd
+
+  - action: package.install
+    name: ripgrep
+
+  - action: package.install
+    name: jq
+
+  - action: package.install
+    name: git-delta

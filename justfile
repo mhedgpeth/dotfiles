@@ -38,5 +38,34 @@ diff:
 add file:
     chezmoi add --source=home {{file}}
 
-# Full setup: init + install packages + apply dotfiles
+# Upgrade installed packages
+upgrade:
+    @just _upgrade-{{os()}}
+
+_upgrade-macos:
+    brew upgrade
+
+_upgrade-windows:
+    scoop update *
+
+_upgrade-linux:
+    yay -Syu
+
+# Remove packages not in manifest
+cleanup:
+    @just _cleanup-{{os()}}
+
+_cleanup-macos:
+    brew bundle cleanup --force --file=packages/Brewfile
+
+_cleanup-windows:
+    @echo "Scoop doesn't have automatic cleanup of unlisted packages"
+
+_cleanup-linux:
+    @echo "Manual cleanup: pacman -Qdtq | pacman -Rns -"
+
+# Full setup: init + install packages + apply dotfiles (first time)
 setup: init install apply
+
+# Regular dev workflow: install, upgrade, cleanup, apply
+dev: install upgrade cleanup apply

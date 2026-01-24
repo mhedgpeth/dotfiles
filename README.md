@@ -110,6 +110,35 @@ Finally, open System Settings and configure the mac:
 - Build `app` with `just i`
 - Open XCode and run the `app`
 
+## Deskflow (Software KVM)
+
+Deskflow shares keyboard/mouse across machines. The Mac Mini is the server.
+
+### Server Setup (Mac Mini)
+
+1. Open Deskflow
+2. Change "This computer's name" to `mac-mini`
+3. Select "Use this computer's keyboard and mouse" (server mode)
+4. Start the server
+
+### Client Setup (MacBook Air, Windows, Arch)
+
+1. Install Deskflow on the client machine
+2. Change "This computer's name" to match the config (`macbook-air`, `windows`, or `arch`)
+3. Select "Use another computer's mouse and keyboard" (client mode)
+4. Enter the Mac Mini's IP address
+5. Start the client
+
+### Screen Layout
+
+```
+MacBook Air <-> Mac Mini <-> Windows
+                              ↕
+                            Arch
+```
+
+The config is at `~/.config/deskflow/deskflow.conf` (symlinked from dotfiles).
+
 ## Issue Tracking
 
 This repo uses [beads](https://github.com/steveyegge/beads) for issue tracking.

@@ -140,6 +140,7 @@ files_to_link=(
   ".config/yazi/theme.toml"
   ".config/yazi/keymap.toml"
   ".config/yazi/yazi.toml"
+  ".config/deskflow/deskflow.conf"
 )
 
 config_dirs_to_link=(
@@ -156,6 +157,9 @@ config_dirs_to_link=(
 
 # Link individual files (force recreates broken/wrong symlinks)
 for file in "${files_to_link[@]}"; do
+  # Create parent directory if needed
+  parent_dir=$(dirname ~/"$file")
+  mkdir -p "$parent_dir"
   ln -sf ~/dotfiles/"$file" ~/"$file"
 done
 echo "${GREEN}Linked individual files${RESET}"
@@ -174,6 +178,14 @@ if [ -d ~/dotfiles/.config/claude/commands ]; then
   ln -sfn ~/dotfiles/.config/claude/commands ~/.claude/commands
 fi
 echo "${GREEN}Linked Claude Code config${RESET}"
+
+echo "${GREEN}Starting Deskflow (if not running)${RESET}"
+if pgrep -f "Deskflow" > /dev/null; then
+  echo "${GREEN}Deskflow is already running${RESET}"
+else
+  open -a Deskflow
+  echo "${BLUE}Started Deskflow${RESET}"
+fi
 
 echo "${GREEN}Done!${RESET}"
 cd "$CURRENT_DIR" || exit

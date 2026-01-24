@@ -16,5 +16,6 @@ registries:
     path: aqua-registry.yaml
 
 packages:
+  - name: cli/cli@v2.85.0  # GitHub CLI (gh)
   - name: steveyegge/beads@v0.47.1
     registry: local

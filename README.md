@@ -110,6 +110,39 @@ Finally, open System Settings and configure the mac:
 - Build `app` with `just i`
 - Open XCode and run the `app`
 
+## Windows Setup
+
+Windows support uses [comtrya](https://github.com/comtrya/comtrya) with winget for package management.
+
+### Prerequisites
+
+1. **Enable Developer Mode** (required for symlinks):
+   - Search "Developer settings" in Start menu, or run `start ms-settings:developers`
+   - Turn on "Developer Mode"
+
+2. **Install Scoop** (to bootstrap aqua):
+   ```powershell
+   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+   Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+   ```
+
+3. **Install aqua**:
+   ```powershell
+   scoop install aqua
+   ```
+
+### Setup
+
+Clone the repository and run:
+
+```powershell
+cd ~/dotfiles
+aqua install
+just apply
+```
+
+This will install packages via winget and create config symlinks.
+
 ## Deskflow (Software KVM)
 
 Deskflow shares keyboard/mouse across machines. The Mac Mini is the server.

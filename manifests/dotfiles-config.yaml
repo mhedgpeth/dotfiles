@@ -3,37 +3,37 @@
 actions:
   # Cross-platform configs
   - action: file.link
-    source: "{{ user.home_dir }}/dotfiles/.config/nvim"
-    target: "{{ user.home_dir }}/.config/nvim"
+    source: '{{ user.home_dir }}/dotfiles/.config/nvim'
+    target: '{{ user.home_dir }}/.config/nvim'
 
   - action: file.link
-    source: "{{ user.home_dir }}/dotfiles/.config/git"
-    target: "{{ user.home_dir }}/.config/git"
+    source: '{{ user.home_dir }}/dotfiles/.config/git'
+    target: '{{ user.home_dir }}/.config/git'
 
   - action: file.link
-    source: "{{ user.home_dir }}/dotfiles/.config/starship"
-    target: "{{ user.home_dir }}/.config/starship"
+    source: '{{ user.home_dir }}/dotfiles/.config/starship'
+    target: '{{ user.home_dir }}/.config/starship'
 
   - action: file.link
-    source: "{{ user.home_dir }}/dotfiles/.config/bacon"
-    target: "{{ user.home_dir }}/.config/bacon"
+    source: '{{ user.home_dir }}/dotfiles/.config/bacon'
+    target: '{{ user.home_dir }}/.config/bacon'
 
   - action: file.link
-    source: "{{ user.home_dir }}/dotfiles/.config/yazi"
-    target: "{{ user.home_dir }}/.config/yazi"
+    source: '{{ user.home_dir }}/dotfiles/.config/yazi'
+    target: '{{ user.home_dir }}/.config/yazi'
 
   # macOS-specific configs
   - action: file.link
     where: os.name == "macos"
-    source: "{{ user.home_dir }}/dotfiles/.config/ghostty"
-    target: "{{ user.home_dir }}/.config/ghostty"
+    source: '{{ user.home_dir }}/dotfiles/.config/ghostty'
+    target: '{{ user.home_dir }}/.config/ghostty'
 
   - action: file.link
     where: os.name == "macos"
-    source: "{{ user.home_dir }}/dotfiles/.config/homebrew"
-    target: "{{ user.home_dir }}/.config/homebrew"
+    source: '{{ user.home_dir }}/dotfiles/.config/homebrew'
+    target: '{{ user.home_dir }}/.config/homebrew'
 
   - action: file.link
     where: os.name == "macos"
-    source: "{{ user.home_dir }}/dotfiles/.config/aerospace"
-    target: "{{ user.home_dir }}/.config/aerospace"
+    source: '{{ user.home_dir }}/dotfiles/.config/aerospace'
+    target: '{{ user.home_dir }}/.config/aerospace'

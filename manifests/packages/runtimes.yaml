@@ -1,18 +1,37 @@
-# Language runtimes and version managers (cross-platform)
+# Language runtimes and version managers
 
 actions:
-  # Version manager
+  # === macOS (Homebrew) ===
   - action: package.install
     name: mise
+    where: os.name == "macos"
 
-  # Node (needed for Claude Code, LSPs)
   - action: package.install
     name: node
+    where: os.name == "macos"
 
-  # Java
   - action: package.install
     name: openjdk
+    where: os.name == "macos"
 
-  # Ruby dependencies
   - action: package.install
     name: libyaml
+    where: os.name == "macos"
+
+  # === Windows (winget) ===
+  - action: package.install
+    name: jdx.mise
+    provider: winget
+    where: os.name == "windows"
+
+  - action: package.install
+    name: OpenJS.NodeJS
+    provider: winget
+    where: os.name == "windows"
+
+  - action: package.install
+    name: EclipseAdoptium.Temurin.21.JDK
+    provider: winget
+    where: os.name == "windows"
+
+  # libyaml not needed on Windows (Ruby dependency for native extensions)

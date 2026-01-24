@@ -3,5 +3,5 @@
 
 actions:
   - action: file.link
-    source: "{{ user.home_dir }}/dotfiles/.zshrc"
-    target: "{{ user.home_dir }}/.zshrc"
+    source: '{{ user.home_dir }}/dotfiles/.zshrc'
+    target: '{{ user.home_dir }}/.zshrc'

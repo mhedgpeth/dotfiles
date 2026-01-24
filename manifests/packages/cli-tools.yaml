@@ -1,57 +1,140 @@
-# CLI tools (cross-platform)
+# CLI tools
 # These are installed via platform package managers
 
 actions:
-  # Shell integration tools
+  # === macOS (Homebrew) ===
   - action: package.install
     name: fzf
+    where: os.name == "macos"
 
   - action: package.install
     name: zoxide
+    where: os.name == "macos"
 
   - action: package.install
     name: starship
+    where: os.name == "macos"
 
   - action: package.install
     name: direnv
+    where: os.name == "macos"
 
-  # Better coreutils
   - action: package.install
     name: eza
+    where: os.name == "macos"
 
   - action: package.install
     name: bat
+    where: os.name == "macos"
 
   - action: package.install
     name: fd
+    where: os.name == "macos"
 
   - action: package.install
     name: ripgrep
+    where: os.name == "macos"
 
-  # Utilities
   - action: package.install
     name: jq
+    where: os.name == "macos"
 
   - action: package.install
     name: git-delta
+    where: os.name == "macos"
 
   - action: package.install
     name: btop
+    where: os.name == "macos"
 
   - action: package.install
     name: tldr
+    where: os.name == "macos"
 
   - action: package.install
     name: tree
+    where: os.name == "macos"
 
   - action: package.install
     name: wget
+    where: os.name == "macos"
 
   - action: package.install
     name: hyperfine
+    where: os.name == "macos"
 
   - action: package.install
     name: cloc
+    where: os.name == "macos"
 
   - action: package.install
     name: fswatch
+    where: os.name == "macos"
+
+  # === Windows (winget) ===
+  - action: package.install
+    name: junegunn.fzf
+    provider: winget
+    where: os.name == "windows"
+
+  - action: package.install
+    name: ajeetdsouza.zoxide
+    provider: winget
+    where: os.name == "windows"
+
+  - action: package.install
+    name: Starship.Starship
+    provider: winget
+    where: os.name == "windows"
+
+  - action: package.install
+    name: eza-community.eza
+    provider: winget
+    where: os.name == "windows"
+
+  - action: package.install
+    name: sharkdp.bat
+    provider: winget
+    where: os.name == "windows"
+
+  - action: package.install
+    name: sharkdp.fd
+    provider: winget
+    where: os.name == "windows"
+
+  - action: package.install
+    name: BurntSushi.ripgrep.MSVC
+    provider: winget
+    where: os.name == "windows"
+
+  - action: package.install
+    name: jqlang.jq
+    provider: winget
+    where: os.name == "windows"
+
+  - action: package.install
+    name: dandavison.delta
+    provider: winget
+    where: os.name == "windows"
+
+  - action: package.install
+    name: aristocratos.btop4win
+    provider: winget
+    where: os.name == "windows"
+
+  - action: package.install
+    name: tldr-pages.tlrc
+    provider: winget
+    where: os.name == "windows"
+
+  - action: package.install
+    name: sharkdp.hyperfine
+    provider: winget
+    where: os.name == "windows"
+
+  - action: package.install
+    name: AlDanial.Cloc
+    provider: winget
+    where: os.name == "windows"
+
+  # direnv, tree, wget, fswatch - not readily available in winget or macOS-only

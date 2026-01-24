@@ -1,7 +1,19 @@
 # macOS-specific packages
-# TODO: Add OS conditionals once we figure out correct comtrya syntax
+# Only runs on macOS
+
+where: os.name == "macos"
 
 actions:
+  # Homebrew taps (repositories)
+  - action: package.repository
+    name: nikitabobko/tap
+
+  - action: package.repository
+    name: deskflow/tap
+
+  - action: package.repository
+    name: hedge-ops/homebrew-tap
+
   # Docker (via Colima on macOS)
   - action: package.install
     name: colima
@@ -12,9 +24,10 @@ actions:
   - action: package.install
     name: docker-compose
 
-  # Window manager
+  # Window manager (from tap)
   - action: package.install
     name: aerospace
+    repository: nikitabobko/tap
 
   # Swift development
   - action: package.install
@@ -23,3 +36,7 @@ actions:
   # Document conversion
   - action: package.install
     name: pandoc
+
+  # AI tools
+  - action: package.install
+    name: gemini-cli

@@ -1,4 +1,5 @@
 # Shell configuration
+# Creates symlink at ~/.zshrc pointing to ~/dotfiles/.zshrc
 
 actions:
   - action: file.link

@@ -12,3 +12,7 @@ actions:
   # Java
   - action: package.install
     name: openjdk
+
+  # Ruby dependencies
+  - action: package.install
+    name: libyaml

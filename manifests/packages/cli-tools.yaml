@@ -2,10 +2,6 @@
 # These are installed via platform package managers
 
 actions:
-  # GitHub
-  - action: package.install
-    name: gh
-
   # Shell integration tools
   - action: package.install
     name: fzf
@@ -56,3 +52,6 @@ actions:
 
   - action: package.install
     name: cloc
+
+  - action: package.install
+    name: fswatch

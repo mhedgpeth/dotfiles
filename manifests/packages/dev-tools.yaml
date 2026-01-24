@@ -18,6 +18,9 @@ actions:
   - action: package.install
     name: tree-sitter
 
+  - action: package.install
+    name: tree-sitter-cli
+
   # Neovim dependencies
   - action: package.install
     name: lua-language-server

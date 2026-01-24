@@ -49,14 +49,16 @@ comtrya apply   # → dotfiles + packages
 ```
 ~/dotfiles/
 ├── aqua.yaml                    # gh, beads, comtrya
+├── Comtrya.yaml                 # comtrya config (manifest_paths)
 ├── manifests/                   # comtrya manifests
 │   ├── packages/
 │   │   ├── cli-tools.yaml      # fzf, zoxide, starship, etc.
-│   │   ├── dev-tools.yaml      # neovim, git, etc.
-│   │   └── gui-apps.yaml       # vscode, ghostty, etc.
-│   └── dotfiles/
-│       ├── shell.yaml          # .zshrc
-│       └── config.yaml         # .config/*
+│   │   ├── dev-tools.yaml      # neovim, git, yazi, etc.
+│   │   ├── runtimes.yaml       # mise, node, openjdk
+│   │   ├── macos.yaml          # macOS-only: colima, docker, taps
+│   │   └── gui-apps.yaml       # macOS casks: ghostty, vscode, etc.
+│   ├── dotfiles-shell.yaml     # .zshrc symlink
+│   └── dotfiles-config.yaml    # .config/* symlinks
 ├── .config/                     # actual config files
 └── .zshrc                       # actual shell config
 ```
@@ -65,10 +67,11 @@ comtrya apply   # → dotfiles + packages
 
 ### Phase 1: Local (Mac Desktop)
 - [x] Add comtrya to aqua.yaml
-- [ ] Create basic manifest structure
-- [ ] Migrate .zshrc to comtrya
-- [ ] Migrate packages to comtrya (replace Brewfile)
-- [ ] Verify `comtrya apply` works
+- [x] Create basic manifest structure
+- [x] Migrate .zshrc to comtrya
+- [x] Migrate packages to comtrya (replace Brewfile)
+- [x] Add OS conditionals (where: os.name == "macos")
+- [x] Verify `comtrya apply` works
 
 ### Phase 2: Mac
 - [ ] Test on MacBook Air

@@ -25,7 +25,7 @@ _install-linux:
 init:
     @echo '{{ style("command") }}init:{{ NORMAL }}'
     chezmoi init --source=home
-    ya pkg add yazi-rs/flavors:catppuccin-frappe || true
+    -ya pkg add yazi-rs/flavors:catppuccin-frappe
 
 # Apply dotfiles via chezmoi
 apply:

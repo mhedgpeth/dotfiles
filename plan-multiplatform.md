@@ -81,7 +81,10 @@ cd ~/dotfiles
 # 4. Install repo tools
 aqua install          # → beads, just, chezmoi
 
-# 5. Apply everything
+# 5. Initialize chezmoi (first time only)
+just init             # → chezmoi init --source=home
+
+# 6. Apply everything
 just install          # → global packages (Brewfile/scoopfile)
 just apply            # → dotfiles via chezmoi
 ```

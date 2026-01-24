@@ -22,6 +22,10 @@ _install-linux:
     @echo "Installing packages via pacman/yay..."
     @if [ -f packages/archlinux.txt ]; then yay -S --needed - < packages/archlinux.txt; fi
 
+# Initialize chezmoi (run once after clone)
+init:
+    chezmoi init --source=home
+
 # Apply dotfiles via chezmoi
 apply:
     chezmoi apply --source=home
@@ -34,5 +38,5 @@ diff:
 add file:
     chezmoi add --source=home {{file}}
 
-# Full setup: install packages + apply dotfiles
-setup: install apply
+# Full setup: init + install packages + apply dotfiles
+setup: init install apply

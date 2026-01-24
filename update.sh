@@ -12,7 +12,7 @@ softwareupdate -i -a
 
 echo "${GREEN}Ensuring brew is up to date${RESET}"
 
-export HOMEBREW_BUNDLE_FILE="$HOME/dotfiles/.config/homebrew/Brewfile"
+export HOMEBREW_BUNDLE_FILE="$HOME/dotfiles/packages/Brewfile"
 
 brew bundle install
 
@@ -125,59 +125,8 @@ if [ ! -L "$HOME/people" ]; then
   echo "${BLUE}Created symlink to ~/people${RESET}"
 fi
 
-echo "${GREEN}Ensuring settings are linked properly${RESET}"
-
-# Create .config directory if it doesn't exist
-mkdir -p ~/.config
-
-# Create ~/.claude directory if it doesn't exist
-mkdir -p ~/.claude
-
-# Define files and directories to link
-files_to_link=(
-  ".zshrc"
-  "update.sh"
-  ".config/yazi/theme.toml"
-  ".config/yazi/keymap.toml"
-  ".config/yazi/yazi.toml"
-  ".config/deskflow/deskflow.conf"
-)
-
-config_dirs_to_link=(
-  "aerospace"
-  "bacon"
-  "ghostty"
-  "git"
-  "homebrew"
-  "leader-key"
-  "nvim"
-  "starship"
-  "zed"
-)
-
-# Link individual files (force recreates broken/wrong symlinks)
-for file in "${files_to_link[@]}"; do
-  # Create parent directory if needed
-  parent_dir=$(dirname ~/"$file")
-  mkdir -p "$parent_dir"
-  ln -sf ~/dotfiles/"$file" ~/"$file"
-done
-echo "${GREEN}Linked individual files${RESET}"
-
-# Link .config directories (force recreates broken/wrong symlinks)
-for dir in "${config_dirs_to_link[@]}"; do
-  ln -sfn ~/dotfiles/.config/"$dir" ~/.config/"$dir"
-done
-echo "${GREEN}Linked .config directories${RESET}"
-
-# Link Claude Code settings and commands
-if [ -f ~/dotfiles/.config/claude/settings.json ]; then
-  ln -sf ~/dotfiles/.config/claude/settings.json ~/.claude/settings.json
-fi
-if [ -d ~/dotfiles/.config/claude/commands ]; then
-  ln -sfn ~/dotfiles/.config/claude/commands ~/.claude/commands
-fi
-echo "${GREEN}Linked Claude Code config${RESET}"
+echo "${GREEN}Applying dotfiles via chezmoi${RESET}"
+chezmoi apply --source="$HOME/dotfiles/home"
 
 echo "${GREEN}Starting Deskflow (if not running)${RESET}"
 if pgrep -f "Deskflow" > /dev/null; then

@@ -1,0 +1,8 @@
+# chezmoi configuration
+# Template variables available: .chezmoi.os, .chezmoi.arch, .chezmoi.hostname
+
+sourceDir: {{ .chezmoi.sourceDir | quote }}
+
+data:
+  os: {{ .chezmoi.os | quote }}
+  arch: {{ .chezmoi.arch | quote }}

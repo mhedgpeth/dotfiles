@@ -1,7 +1,0 @@
-# Shell configuration
-# Creates symlink at ~/.zshrc pointing to ~/dotfiles/.zshrc
-
-actions:
-  - action: file.link
-    source: '{{ user.home_dir }}/dotfiles/.zshrc'
-    target: '{{ user.home_dir }}/.zshrc'

@@ -38,6 +38,7 @@ brew "zoxide" # better cd
 cask "ghostty" # terminal emulator
 
 # git
+brew "gh" # GitHub CLI
 brew "git"
 brew "git-delta" # syntax-highlighted diffs
 brew "git-filter-repo" # rewrite git history

@@ -1,0 +1,56 @@
+# Windows packages (minimal PeopleWork dev setup)
+# Only runs on Windows
+
+where: os.name == "windows"
+
+actions:
+  # Visual Studio (C++ build tools + WinUI workload)
+  - action: package.install
+    name: Microsoft.VisualStudio.2022.Community
+    provider: winget
+
+  # Git
+  - action: package.install
+    name: Git.Git
+    provider: winget
+
+  # Rust
+  - action: package.install
+    name: Rustlang.Rustup
+    provider: winget
+
+  # PeopleWork dependencies
+  # Note: aqua installed manually (scoop install aqua)
+  # Note: colima is macOS-only, Docker Desktop replaces it on Windows
+  # Post-install: Enable "Start Docker Desktop when you sign in" in Settings → General
+  - action: package.install
+    name: Docker.DockerDesktop
+    provider: winget
+
+  - action: package.install
+    name: jdx.mise
+    provider: winget
+
+  # Terminal (modern Windows Terminal)
+  - action: package.install
+    name: Microsoft.WindowsTerminal
+    provider: winget
+
+  # Code search (essential for Rust dev)
+  - action: package.install
+    name: BurntSushi.ripgrep.MSVC
+    provider: winget
+
+  - action: package.install
+    name: sharkdp.fd
+    provider: winget
+
+  # Shell prompt
+  - action: package.install
+    name: Starship.Starship
+    provider: winget
+
+  # Editor (for quick edits outside VS)
+  - action: package.install
+    name: Microsoft.VisualStudioCode
+    provider: winget

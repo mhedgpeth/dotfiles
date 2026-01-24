@@ -1,0 +1,20 @@
+# Windows dotfiles
+# Only runs on Windows
+
+where: os.name == "windows"
+
+actions:
+  # Starship config (same as macOS)
+  - action: file.link
+    source: "{{ user.home_dir }}/dotfiles/.config/starship"
+    target: "{{ user.home_dir }}/.config/starship"
+
+  # Git config (same as macOS)
+  - action: file.link
+    source: "{{ user.home_dir }}/dotfiles/.config/git"
+    target: "{{ user.home_dir }}/.config/git"
+
+  # PowerShell profile
+  - action: file.link
+    source: "{{ user.home_dir }}/dotfiles/.config/powershell/Microsoft.PowerShell_profile.ps1"
+    target: "{{ user.home_dir }}/Documents/PowerShell/Microsoft.PowerShell_profile.ps1"

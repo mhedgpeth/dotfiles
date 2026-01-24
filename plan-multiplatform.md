@@ -77,4 +77,7 @@ comtrya apply   # → dotfiles + packages
 - [ ] Test on MacBook Air
 
 ### Phase 3: Windows
+- [x] Create windows.yaml package manifest (Visual Studio, Git, Rust, ripgrep, fd)
+- [x] Create dotfiles-windows.yaml (starship, git, PowerShell profile)
+- [x] Create PowerShell profile with starship init
 - [ ] Test on Windows Desktop

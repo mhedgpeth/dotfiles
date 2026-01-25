@@ -99,7 +99,13 @@ cask "visual-studio-code"
 cask "zed"
 
 # macos
+brew "mas" # Mac App Store CLI
 cask "nikitabobko/tap/aerospace" # window manager
+mas "Kindle", id: 302584613
+mas "Day One", id: 1055511498
+mas "Todoist", id: 585829637
+mas "Keymapp", id: 6472865291
+mas "Apple Developer", id: 640199958
 
 # collaboration
 cask "discord"

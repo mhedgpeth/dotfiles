@@ -102,7 +102,10 @@ configure:
     @echo '{{ style("command") }}configure:{{ NORMAL }}'
     @just _configure-{{os()}}
 
-_configure-macos: _colima-macos
+_configure-macos: _colima-macos _macos-defaults
+
+_macos-defaults:
+    @./scripts/configure-macos-defaults.sh
 
 _configure-windows:
     @true

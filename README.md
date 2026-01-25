@@ -62,24 +62,18 @@ just    # or `just update` - install, upgrade, cleanup, apply, finish, configure
 
 ### macOS
 
+#### Verify Automation (test on fresh install)
+
+- [ ] App Store apps installed (Kindle, Day One, Todoist, Keymapp, Apple Developer)
+- [ ] 24-hour time enabled
+- [ ] Dark mode enabled
+- [ ] Mission Control groups windows by application
+- [ ] Xcode developer directory set (if Xcode installed)
+
 #### XCode
 
 After initial setup, XCode needs to be updated from the App Store and started.
-Then run:
-
-```sh
-sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
-```
-
-#### App Store Apps
-
-Install these apps from the App Store:
-
-- Amazon Kindle
-- Day One
-- Todoist
-- ZSA Keybindings
-- Apple Developer
+The `just update` command will run `xcode-select` automatically if Xcode is present.
 
 #### Manual Configuration
 
@@ -104,10 +98,7 @@ Configure apps:
 
 Configure System Settings:
 
-- General → Date & Time → 24-hour time (both settings)
-- Appearance → Dark
 - Control Center → Focus: Always Show, Sounds: Always Show
-- Desktop & Dock → Mission Control → Group windows by application
 - Trackpad → Tracking Speed: 8/10
 - Printers & Scanners → Add printer
 

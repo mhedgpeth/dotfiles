@@ -50,85 +50,113 @@ just init       # one-time setup, then runs update
 just    # or `just update` - install, upgrade, cleanup, apply, finish, configure
 ```
 
-## Reset Mac
+## Reset
 
-See [this article](https://support.apple.com/en-us/102664)
+**macOS:** See [Apple's guide](https://support.apple.com/en-us/102664)
 
-## XCode
+**Windows:** Settings → System → Recovery → Reset this PC → Remove everything
+
+**Arch Linux:** See [omarchy](https://omarchy.org/) for installation
+
+---
+
+## Post-Setup: macOS
+
+### XCode
 
 After initial setup, XCode needs to be updated from the App Store and started.
-
-After it is started, run this command to ensure Swift tools are available on
-the terminal:
+Then run:
 
 ```sh
 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
-
 ```
 
-## Secrets
-
-Copy `.env.template` to `~/.env` and add the appropriate values.
-
-## Other AppStore Apps
+### App Store Apps
 
 Install these apps from the App Store:
 
-- Amazon Kindle  
+- Amazon Kindle
 - Day One
 - Todoist
 - ZSA Keybindings
 - Apple Developer
 
-## Manual Configuration
+### Manual Configuration
 
-First, set up accounts on the computer:
+Set up accounts:
 
 1. Open Passwords, from which you will get credentials.
 2. Open Safari and log into the accounts in their associated profiles.
 3. Add internet accounts (work, home, family).
-4. Open slack and add accounts to it.
+4. Open Slack and add accounts to it.
 
-Then, open and configure these apps:
+Configure apps:
 
-- Safari -> Settings -> Tabs -> Tab layout: Compact
-- Messages -> Settings -> iMessage -> Enable Messages in iCloud checked
-- Photos -> Settings -> iCloud -> iCloud Photos -> Optimize Mac Storage selected
-- Music -> Settings -> General -> Automatic Downloads checked
-- Music -> Settings -> General -> Download Dolby Atmos
-- Music -> Settings -> General -> Show: -> Star Ratings checked
-- Music -> Settings -> Playback -> Lossless Audio -> Enable Lossless Audio checked
-- Podcasts -> Settings -> Automatically Download set to off
-- Calendar -> Settings -> Advanced -> Turn on time zone support checked
-- Calendar -> Settings -> Advanced -> Show week numbers checked
-- Mail -> Settings -> Junk Mail -> Junk Mail Behaviors -> Enabled junk mail
-  filtering checked
-- Mail -> Settings -> Viewing -> Summarize Message Previews unchecked
-- Mail -> Settings -> Viewing -> Move discarded messages into: -> Archive
+- Safari → Settings → Tabs → Tab layout: Compact
+- Messages → Settings → iMessage → Enable Messages in iCloud
+- Photos → Settings → iCloud → iCloud Photos → Optimize Mac Storage
+- Music → Settings → General → Automatic Downloads, Download Dolby Atmos, Star Ratings
+- Music → Settings → Playback → Lossless Audio → Enable
+- Podcasts → Settings → Automatically Download: Off
+- Calendar → Settings → Advanced → Time zone support, Show week numbers
+- Mail → Settings → Junk Mail → Enable junk mail filtering
+- Mail → Settings → Viewing → Summarize Message Previews: Off, Move discarded to Archive
 
-Finally, open System Settings and configure the mac:
+Configure System Settings:
 
-- General -> Date & Time -> 24-hour time checked
-- General -> Date & Time -> Show 24-hour time on Lock Screen checked
-- Appearance -> Appearance -> Dark
-- Control Center -> Control Center Modules -> Focus -> Always Show
-- Control Center -> Control Center Modules -> Sounds -> Always Show
-- Desktop & Dock -> Mission Control -> Group windows by application checked
-- Screen Saver -> (you choose)
-- Trackpad -> Tracking Speed -> 8/10
-- Printers & Scanners -> Add Printer, Scanner or Fax... (follow prompts)
+- General → Date & Time → 24-hour time (both settings)
+- Appearance → Dark
+- Control Center → Focus: Always Show, Sounds: Always Show
+- Desktop & Dock → Mission Control → Group windows by application
+- Trackpad → Tracking Speed: 8/10
+- Printers & Scanners → Add printer
 
-## Testing
+### Test PeopleWork
 
-- Build `app` with `just i`
-- Open XCode and run the `app`
+```sh
+cd ~/code/github.com/hedge-ops/people
+just i        # build app
+# Open XCode and run
+```
 
-## Windows Notes
+---
 
-**Enable Developer Mode** (required for symlinks):
+## Post-Setup: Windows
 
-- Search "Developer settings" in Start menu, or run `start ms-settings:developers`
-- Turn on "Developer Mode"
+### Enable Developer Mode
+
+Required for symlinks:
+
+```powershell
+start ms-settings:developers
+```
+
+Turn on "Developer Mode".
+
+### Visual Studio for Rust
+
+1. Install Visual Studio 2022 with "Desktop development with C++" workload
+2. Ensure Windows SDK is included
+3. Rust toolchain uses MSVC by default on Windows
+
+### Windows Store Apps
+
+```powershell
+winget install "Apple Music"
+winget install "Apple TV"
+```
+
+### Manual Configuration
+
+- TODO: Document Windows-specific settings
+
+---
+
+## Post-Setup: Linux
+
+See [omarchy](https://omarchy.org/) for Arch Linux setup.
+
+TODO: Document post-omarchy configuration
 
 ## Deskflow (Software KVM)
 

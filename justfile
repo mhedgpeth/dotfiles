@@ -21,15 +21,16 @@ _init:
     @just _init-{{os()}}
 
 _init-macos:
-    @true
+    curl -fsSL https://claude.ai/install.sh | bash
 
 _init-windows:
     scoop bucket add extras
     scoop bucket add nerd-fonts
     scoop bucket add versions
+    powershell -Command "irm https://claude.ai/install.ps1 | iex"
 
 _init-linux:
-    @true
+    curl -fsSL https://claude.ai/install.sh | bash
 
 # Install global packages via native package manager
 install:

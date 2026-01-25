@@ -98,27 +98,17 @@ configure:
     @echo '{{ style("command") }}configure:{{ NORMAL }}'
     @just _configure-{{os()}}
 
-_configure-macos: _colima-macos _deskflow-macos
+_configure-macos: _colima-macos
 
-_configure-windows: _deskflow-windows
+_configure-windows:
+    @true
 
-_configure-linux: _deskflow-linux
+_configure-linux:
+    @true
 
 _colima-macos:
     @echo '{{ style("command") }}colima:{{ NORMAL }}'
     @./scripts/configure-colima.sh
-
-_deskflow-macos:
-    @echo '{{ style("command") }}deskflow:{{ NORMAL }}'
-    @./scripts/configure-deskflow.sh
-
-_deskflow-windows:
-    @echo '{{ style("command") }}deskflow:{{ NORMAL }}'
-    @powershell -ExecutionPolicy Bypass -File scripts/configure-deskflow.ps1
-
-_deskflow-linux:
-    @echo '{{ style("command") }}deskflow:{{ NORMAL }}'
-    @./scripts/configure-deskflow.sh
 
 # === Utility recipes ===
 

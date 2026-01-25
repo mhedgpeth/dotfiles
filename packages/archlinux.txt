@@ -72,6 +72,3 @@ slack-desktop
 
 # utilities
 anki
-
-# kvm
-deskflow

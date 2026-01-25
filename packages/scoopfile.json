@@ -59,8 +59,6 @@
     { "Name": "vscode", "Source": "extras" },
     { "Name": "zed", "Source": "extras" },
 
-    { "Name": "deskflow", "Source": "extras" },
-
     { "Name": "discord", "Source": "extras" },
     { "Name": "googlechrome", "Source": "extras" },
     { "Name": "slack", "Source": "extras" },

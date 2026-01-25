@@ -58,11 +58,11 @@ just    # or `just update` - install, upgrade, cleanup, apply, finish, configure
 
 **Arch Linux:** See [omarchy](https://omarchy.org/) for installation
 
----
+## Post Setup
 
-## Post-Setup: macOS
+### macOS
 
-### XCode
+#### XCode
 
 After initial setup, XCode needs to be updated from the App Store and started.
 Then run:
@@ -71,7 +71,7 @@ Then run:
 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 ```
 
-### App Store Apps
+#### App Store Apps
 
 Install these apps from the App Store:
 
@@ -81,7 +81,7 @@ Install these apps from the App Store:
 - ZSA Keybindings
 - Apple Developer
 
-### Manual Configuration
+#### Manual Configuration
 
 Set up accounts:
 
@@ -111,7 +111,7 @@ Configure System Settings:
 - Trackpad → Tracking Speed: 8/10
 - Printers & Scanners → Add printer
 
-### Test PeopleWork
+#### Test PeopleWork
 
 ```sh
 cd ~/code/github.com/hedge-ops/people
@@ -121,9 +121,9 @@ just i        # build app
 
 ---
 
-## Post-Setup: Windows
+### Windows
 
-### Enable Developer Mode
+#### Enable Developer Mode
 
 Required for symlinks:
 
@@ -133,59 +133,30 @@ start ms-settings:developers
 
 Turn on "Developer Mode".
 
-### Visual Studio for Rust
+#### Visual Studio for Rust
 
 1. Install Visual Studio 2022 with "Desktop development with C++" workload
 2. Ensure Windows SDK is included
 3. Rust toolchain uses MSVC by default on Windows
 
-### Windows Store Apps
+#### Windows Store Apps
 
 ```powershell
 winget install "Apple Music"
 winget install "Apple TV"
 ```
 
-### Manual Configuration
+#### Manual Configuration
 
 - TODO: Document Windows-specific settings
 
 ---
 
-## Post-Setup: Linux
+### Linux
 
 See [omarchy](https://omarchy.org/) for Arch Linux setup.
 
 TODO: Document post-omarchy configuration
-
-## Deskflow (Software KVM)
-
-Deskflow shares keyboard/mouse across machines. The Mac Mini is the server.
-
-### Server Setup (Mac Mini)
-
-1. Open Deskflow
-2. Change "This computer's name" to `mac-mini`
-3. Select "Use this computer's keyboard and mouse" (server mode)
-4. Start the server
-
-### Client Setup (MacBook Air, Windows, Arch)
-
-1. Install Deskflow on the client machine
-2. Change "This computer's name" to match the config (`macbook-air`, `windows`, or `arch`)
-3. Select "Use another computer's mouse and keyboard" (client mode)
-4. Enter the Mac Mini's IP address
-5. Start the client
-
-### Screen Layout
-
-```
-MacBook Air <-> Mac Mini <-> Windows
-                              ↕
-                            Arch
-```
-
-The config is at `~/.config/deskflow/deskflow.conf` (symlinked from dotfiles).
 
 ## Issue Tracking
 

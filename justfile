@@ -116,5 +116,5 @@ finish:
 # Full setup: init + install + apply + finish (first time)
 setup: init install apply finish
 
-# Regular dev workflow: install, upgrade, cleanup, apply, configure
-dev: install upgrade cleanup apply configure
+# Regular update workflow: install, upgrade, cleanup, apply, configure
+update: install upgrade cleanup apply configure

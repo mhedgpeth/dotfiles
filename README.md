@@ -1,36 +1,58 @@
 # dotfiles
 
-This repository manages the dotfiles for Michael Hedgpeth.
+Configuration for macOS, Windows, and Linux development machines.
+
+## New Machine Setup
+
+### 1. Bootstrap
+
+Install the package manager, aqua, and gh:
+
+**macOS:**
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install aqua git gh
+```
+
+**Windows:**
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+irm get.scoop.sh | iex
+scoop install aqua git gh
+```
+
+**Arch Linux:**
+
+```sh
+sudo pacman -S aqua git github-cli
+```
+
+### 2. Authenticate
+
+```sh
+gh auth login
+```
+
+### 3. Clone and Setup
+
+```sh
+gh repo clone mhedgpeth/dotfiles ~/dotfiles
+cd ~/dotfiles
+aqua install    # installs just, chezmoi
+just setup      # installs packages, applies dotfiles, clones work repos
+```
+
+## Regular Updates
+
+```sh
+just update    # install, upgrade, cleanup, apply, configure
+```
 
 ## Reset Mac
 
 See [this article](https://support.apple.com/en-us/102664)
-
-## New Machine
-
-When setting up a new machine, run this command in Terminal:
-
-```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mhedgpeth/dotfiles/refs/heads/main/setup.sh)"
-```
-
-This will:
-
-- Install brew
-- Install gh and authenticate
-- Clone this repository to `~/dotfiles`
-
-Restart your terminal after you run this in order for it to know brew is there.
-
-## Initial Setup
-
-Once this repository is cloned with the above process, navigate to `~/dotfiles`
-and run `./update.sh`, which:
-
-- Ensures all Apple updates are completed
-- Installs all brew packages
-- Creates symlinks for dotfiles to their normal locations
-- Sets up AI
 
 ## XCode
 
@@ -43,15 +65,6 @@ the terminal:
 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 
 ```
-
-## Update
-
-From here to ensure everything is proper, run `update`. It's meant to be run
-as many times as you want.
-
-## Configure
-
-To configure settings, run `configure.sh` and restart your mac.
 
 ## Secrets
 
@@ -110,38 +123,12 @@ Finally, open System Settings and configure the mac:
 - Build `app` with `just i`
 - Open XCode and run the `app`
 
-## Windows Setup
+## Windows Notes
 
-Windows support uses [comtrya](https://github.com/comtrya/comtrya) with winget for package management.
+**Enable Developer Mode** (required for symlinks):
 
-### Prerequisites
-
-1. **Enable Developer Mode** (required for symlinks):
-   - Search "Developer settings" in Start menu, or run `start ms-settings:developers`
-   - Turn on "Developer Mode"
-
-2. **Install Scoop** (to bootstrap aqua):
-   ```powershell
-   Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-   Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
-   ```
-
-3. **Install aqua**:
-   ```powershell
-   scoop install aqua
-   ```
-
-### Setup
-
-Clone the repository and run:
-
-```powershell
-cd ~/dotfiles
-aqua install
-just apply
-```
-
-This will install packages via winget and create config symlinks.
+- Search "Developer settings" in Start menu, or run `start ms-settings:developers`
+- Turn on "Developer Mode"
 
 ## Deskflow (Software KVM)
 

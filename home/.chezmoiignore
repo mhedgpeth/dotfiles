@@ -1,0 +1,19 @@
+# OS-specific ignores using chezmoi templates
+# https://www.chezmoi.io/reference/special-files-and-directories/chezmoiignore/
+
+# Windows-only files (ignore on macOS and Linux)
+{{ if ne .chezmoi.os "windows" }}
+Documents/
+AppData/
+{{ end }}
+
+# macOS-only files (ignore on Windows and Linux)
+{{ if ne .chezmoi.os "darwin" }}
+dot_config/aerospace/
+dot_config/ghostty/
+{{ end }}
+
+# Unix-only files (ignore on Windows)
+{{ if eq .chezmoi.os "windows" }}
+dot_zshrc
+{{ end }}

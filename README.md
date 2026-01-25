@@ -15,6 +15,9 @@ Install the package manager, aqua, and gh:
 brew install aqua git gh
 ```
 
+Then open **App Store** and sign in with your Apple ID (required for `mas` CLI
+to install apps during setup).
+
 **Windows** (run PowerShell as Administrator):
 
 ```powershell

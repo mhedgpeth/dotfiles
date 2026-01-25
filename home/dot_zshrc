@@ -74,7 +74,6 @@ alias gp='git pull'
 
 # configuration
 alias vim='nvim'
-alias update='./update.sh' 
 
 # shortcuts
 alias pw='cd ~/code/github.com/hedge-ops/people'

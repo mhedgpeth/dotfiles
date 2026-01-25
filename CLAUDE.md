@@ -19,27 +19,37 @@ configuration is clear and streamlined.
 
 ## Workflow
 
-The repo is designed to be cloned to `~/dotfiles` and symlinked to the home
-folder. Symlinking is handled by `update.sh`, which links individual files
-(`.zshrc`, yazi configs) and entire `.config/` subdirectories.
+The repo uses a modern cross-platform stack:
+- **chezmoi** - manages dotfiles (templating, OS detection, symlinks)
+- **just** - unified task runner for all platforms
+- **aqua** - pins tool versions (just, chezmoi, beads)
+
+Clone to `~/dotfiles`, run `aqua install` to get tools, then `just init` for
+first-time setup or `just` for regular updates.
 
 ## macOS
 
-On a macOS machine, the user should regularly run the `update.sh` script.
+On a macOS machine, run `just` regularly to keep everything configured.
 
-To set up, the user will view this repository README.md, run the appropriate
-steps, then run `setup.sh`, which is meant to be only ran once.
+To set up a fresh machine, follow README.md steps: install Homebrew, aqua, gh,
+then run `just init` which does one-time setup followed by a full update.
 
 ## Windows
 
-Windows support is minimal but actively being developed. Help build out
-Windows equivalents for macOS configurations when requested.
+Windows support is functional with Scoop and winget for packages. Run `just init`
+for first-time setup. System defaults automation is not yet implemented.
+
+## Linux
+
+Arch Linux is supported via pacman/yay. See README.md for setup details.
 
 ## Structure
 
-`setup.sh` - to set things up for the first time.
-`update.sh` - regularly ran to keep everything configured and up to date
-`configure.sh` - intended to configure macOS defaults (not currently functional)
+`justfile` - unified task runner (replaces old setup.sh/update.sh)
+`aqua.yaml` - pins versions of just, chezmoi, beads
+`home/` - chezmoi source directory (all dotfiles)
+`packages/` - package manifests (Brewfile, scoopfile.json, archlinux.txt)
+`scripts/` - platform-specific configuration scripts
 `.zshrc` - shell configuration
 `.config/aerospace` - for macOS window management
 `.config/bacon` - for continuous testing while developing

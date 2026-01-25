@@ -12,6 +12,12 @@ Install the package manager, aqua, and gh:
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+After Homebrew installs, it displays commands to add `brew` to your PATH. Run
+those commands before continuing.
+
+```sh
 brew install aqua git gh
 ```
 
@@ -26,6 +32,9 @@ irm get.scoop.sh | iex
 scoop install aqua git gh
 ```
 
+Note: After Scoop installs, you may need to restart your terminal for `scoop`
+to be available in PATH.
+
 **Arch Linux:**
 
 ```sh
@@ -36,16 +45,41 @@ sudo pacman -S aqua git github-cli
 
 ```sh
 gh auth login
+gh auth setup-git    # configures git to use gh for credentials
 ```
 
 ### 3. Clone and Initialize
 
 ```sh
-gh repo clone mhedgpeth/dotfiles ~/dotfiles
-cd ~/dotfiles
+cd ~
+gh repo clone mhedgpeth/dotfiles dotfiles
+cd dotfiles
+aqua policy allow
 aqua install    # installs just, chezmoi
+```
+
+After `aqua install`, add the aqua bin directory to your PATH for this session:
+
+**macOS/Linux:**
+
+```sh
+export PATH="$HOME/.local/share/aquaproj-aqua/bin:$PATH"
+```
+
+**Windows:**
+
+```powershell
+$env:PATH = "$env:LOCALAPPDATA\aquaproj-aqua\bin;$env:PATH"
+```
+
+Then run initialization:
+
+```sh
 just init       # one-time setup, then runs update
 ```
+
+Note: You may see a warning about `~/.local/bin` not being in PATH. This is
+expected and will resolve once shell configuration is applied.
 
 ## Regular Updates
 

@@ -24,9 +24,13 @@ _init-macos:
     curl -fsSL https://claude.ai/install.sh | bash
 
 _init-windows:
+    Write-Host "Enabling Developer Mode..."
+    Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" -Name "AllowDevelopmentWithoutDevLicense" -Value 1
+    Write-Host "Adding scoop buckets..."
     scoop bucket add extras
     scoop bucket add nerd-fonts
     scoop bucket add versions
+    Write-Host "Installing Claude Code..."
     powershell -Command "irm https://claude.ai/install.ps1 | iex"
 
 _init-linux:

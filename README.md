@@ -15,7 +15,7 @@ Install the package manager, aqua, and gh:
 brew install aqua git gh
 ```
 
-**Windows:**
+**Windows** (run PowerShell as Administrator):
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -111,46 +111,13 @@ Configure System Settings:
 - Trackpad → Tracking Speed: 8/10
 - Printers & Scanners → Add printer
 
-#### Test PeopleWork
-
-```sh
-cd ~/code/github.com/hedge-ops/people
-just i        # build app
-# Open XCode and run
-```
-
----
-
 ### Windows
-
-#### Enable Developer Mode
-
-Required for symlinks:
-
-```powershell
-start ms-settings:developers
-```
-
-Turn on "Developer Mode".
 
 #### Visual Studio for Rust
 
 1. Install Visual Studio 2022 with "Desktop development with C++" workload
 2. Ensure Windows SDK is included
 3. Rust toolchain uses MSVC by default on Windows
-
-#### Windows Store Apps
-
-```powershell
-winget install "Apple Music"
-winget install "Apple TV"
-```
-
-#### Manual Configuration
-
-- TODO: Document Windows-specific settings
-
----
 
 ### Linux
 

@@ -11,6 +11,12 @@
         },
         {
           "PackageIdentifier": "Microsoft.PowerToys"
+        },
+        {
+          "PackageIdentifier": "9PFHDD62MXS1"
+        },
+        {
+          "PackageIdentifier": "9NM4T8B9JQZ1"
         }
       ],
       "SourceDetails": {

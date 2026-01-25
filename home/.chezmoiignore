@@ -1,6 +1,9 @@
 # OS-specific ignores using chezmoi templates
 # https://www.chezmoi.io/reference/special-files-and-directories/chezmoiignore/
 
+# Generated lockfiles (managed by their respective tools)
+.config/nvim/lazy-lock.json
+
 # Windows-only files (ignore on macOS and Linux)
 {{ if ne .chezmoi.os "windows" }}
 Documents/

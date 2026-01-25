@@ -35,19 +35,19 @@ sudo pacman -S aqua git github-cli
 gh auth login
 ```
 
-### 3. Clone and Setup
+### 3. Clone and Initialize
 
 ```sh
 gh repo clone mhedgpeth/dotfiles ~/dotfiles
 cd ~/dotfiles
 aqua install    # installs just, chezmoi
-just setup      # installs packages, applies dotfiles, clones work repos
+just init       # one-time setup, then runs update
 ```
 
 ## Regular Updates
 
 ```sh
-just update    # install, upgrade, cleanup, apply, configure
+just    # or `just update` - install, upgrade, cleanup, apply, finish, configure
 ```
 
 ## Reset Mac

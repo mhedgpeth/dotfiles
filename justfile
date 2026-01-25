@@ -3,27 +3,19 @@
 
 set windows-shell := ["powershell.exe", "-NoLogo", "-Command"]
 
-# Show available commands
-default:
-    @just --list
+# Default: keep everything up to date
+default: update
 
-# Install global packages via native package manager
-install:
-    @echo '{{ style("command") }}install:{{ NORMAL }}'
-    @just _install-{{os()}}
+# First-time setup: init then update
+init: _init update
 
-_install-macos:
-    brew bundle --file=packages/Brewfile
+# Keep everything up to date (run anytime)
+update: install upgrade cleanup apply finish configure
 
-_install-windows:
-    scoop import packages/scoopfile.json
-    winget import -i packages/winget.json --ignore-unavailable --accept-source-agreements --accept-package-agreements
+# === Internal recipes ===
 
-_install-linux:
-    yay -S --needed - < packages/archlinux.txt
-
-# Initialize chezmoi (run once after clone)
-init:
+# One-time chezmoi and OS setup
+_init:
     @echo '{{ style("command") }}init:{{ NORMAL }}'
     chezmoi init --source=home
     @just _init-{{os()}}
@@ -39,19 +31,20 @@ _init-windows:
 _init-linux:
     @true
 
-# Apply dotfiles via chezmoi
-apply:
-    @echo '{{ style("command") }}apply:{{ NORMAL }}'
-    chezmoi apply --source=home
+# Install global packages via native package manager
+install:
+    @echo '{{ style("command") }}install:{{ NORMAL }}'
+    @just _install-{{os()}}
 
-# Preview what chezmoi would change
-diff:
-    @echo '{{ style("command") }}diff:{{ NORMAL }}'
-    chezmoi diff --source=home
+_install-macos:
+    brew bundle --file=packages/Brewfile
 
-# Add a file to chezmoi management
-add file:
-    chezmoi add --source=home {{file}}
+_install-windows:
+    scoop import packages/scoopfile.json
+    winget import -i packages/winget.json --ignore-unavailable --accept-source-agreements --accept-package-agreements
+
+_install-linux:
+    yay -S --needed - < packages/archlinux.txt
 
 # Upgrade installed packages
 upgrade:
@@ -81,6 +74,16 @@ _cleanup-windows:
 _cleanup-linux:
     @echo "Manual cleanup: pacman -Qdtq | pacman -Rns -"
 
+# Apply dotfiles via chezmoi
+apply:
+    @echo '{{ style("command") }}apply:{{ NORMAL }}'
+    chezmoi apply --source=home
+
+# One-time finishing touches (idempotent)
+finish:
+    @echo '{{ style("command") }}finish:{{ NORMAL }}'
+    -ya pkg add yazi-rs/flavors:catppuccin-frappe
+
 # OS-specific configuration (services, apps)
 configure:
     @echo '{{ style("command") }}configure:{{ NORMAL }}'
@@ -108,13 +111,13 @@ _deskflow-linux:
     @echo '{{ style("command") }}deskflow:{{ NORMAL }}'
     @./scripts/configure-deskflow.sh
 
-# One-time finishing touches (after packages installed)
-finish:
-    @echo '{{ style("command") }}finish:{{ NORMAL }}'
-    -ya pkg add yazi-rs/flavors:catppuccin-frappe
+# === Utility recipes ===
 
-# Full setup: init + install + apply + finish (first time)
-setup: init install apply finish
+# Preview what chezmoi would change
+diff:
+    @echo '{{ style("command") }}diff:{{ NORMAL }}'
+    chezmoi diff --source=home
 
-# Regular update workflow: install, upgrade, cleanup, apply, configure
-update: install upgrade cleanup apply configure
+# Add a file to chezmoi management
+add file:
+    chezmoi add --source=home {{file}}

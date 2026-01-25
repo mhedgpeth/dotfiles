@@ -1,0 +1,77 @@
+# Arch Linux packages (installed via yay)
+# CLI tools managed by aqua per project, this handles everything else
+
+# development
+aqua
+docker
+docker-compose
+libyaml
+mise
+rustup
+
+# terminal
+bat
+btop
+cloc
+direnv
+eza
+fd
+fzf
+hyperfine
+jq
+ripgrep
+starship
+tldr
+pandoc
+tree
+wget
+zoxide
+ghostty
+
+# git
+github-cli
+ghq
+git
+git-delta
+git-filter-repo
+lazygit
+
+# editor
+lua-language-server
+luarocks
+neovim
+tree-sitter
+
+# yazi (file manager + preview deps)
+ffmpeg
+imagemagick
+poppler
+p7zip
+yazi
+
+# fonts (nerd fonts)
+ttf-firacode-nerd
+ttf-jetbrains-mono-nerd
+ttf-meslo-nerd
+
+# rust
+bacon
+
+# web
+nodejs
+
+# java
+jdk-openjdk
+
+# c#/.net
+dotnet-sdk
+
+# collaboration
+discord
+slack-desktop
+
+# utilities
+anki
+
+# kvm
+deskflow

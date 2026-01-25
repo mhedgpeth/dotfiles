@@ -10,7 +10,7 @@ default: update
 init: _init update
 
 # Keep everything up to date (run anytime)
-update: install upgrade cleanup apply finish configure
+update: install upgrade cleanup apply repos finish configure
 
 # === Internal recipes ===
 
@@ -78,6 +78,14 @@ _cleanup-linux:
 apply:
     @echo '{{ style("command") }}apply:{{ NORMAL }}'
     chezmoi apply --source=home
+
+# Clone/update repositories via ghq
+repos:
+    @echo '{{ style("command") }}repos:{{ NORMAL }}'
+    ghq get hedge-ops/people
+    ghq get redbadger/crux
+    ghq get steveyegge/beads
+    ghq get mhedgpeth/facet-generate
 
 # One-time finishing touches (idempotent)
 finish:

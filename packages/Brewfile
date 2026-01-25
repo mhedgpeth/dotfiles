@@ -39,6 +39,7 @@ cask "ghostty" # terminal emulator
 
 # git
 brew "gh" # GitHub CLI
+brew "ghq" # git repo manager
 brew "git"
 brew "git-delta" # syntax-highlighted diffs
 brew "git-filter-repo" # rewrite git history

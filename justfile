@@ -95,6 +95,8 @@ repos:
 # One-time finishing touches (idempotent)
 finish:
     @echo '{{ style("command") }}finish:{{ NORMAL }}'
+    rustup default stable
+    rustup component add rust-analyzer
     -ya pkg add yazi-rs/flavors:catppuccin-frappe
 
 # OS-specific configuration (services, apps)

@@ -13,7 +13,7 @@ brew "docker" # CLI only, desktop replaced by colima
 brew "docker-compose" # multi-container orchestration
 brew "libyaml" # yaml parsing for ruby gems
 brew "mise" # polyglot tool version manager
-brew "rustup" # rust toolchain manager
+# rustup installed via official installer (not brew) for proper proxy binaries
 
 # terminal
 brew "bat" # better cat with syntax highlighting

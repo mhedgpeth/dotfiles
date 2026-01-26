@@ -21,6 +21,7 @@ _init:
     @just _init-{{os()}}
 
 _init-macos:
+    @just _rustup-install
     curl -fsSL https://claude.ai/install.sh | bash
 
 _init-windows:
@@ -30,10 +31,12 @@ _init-windows:
     scoop bucket add extras
     scoop bucket add nerd-fonts
     scoop bucket add versions
+    just _rustup-install-windows
     Write-Host "Installing Claude Code..."
     powershell -Command "irm https://claude.ai/install.ps1 | iex"
 
 _init-linux:
+    @just _rustup-install
     curl -fsSL https://claude.ai/install.sh | bash
 
 # Install global packages via native package manager
@@ -98,6 +101,19 @@ finish:
     rustup default stable
     rustup component add rust-analyzer
     -ya pkg add yazi-rs/flavors:catppuccin-frappe
+
+# Install rustup via official installer (creates proper proxy binaries in ~/.cargo/bin)
+_rustup-install:
+    #!/usr/bin/env bash
+    if command -v ~/.cargo/bin/rustup &> /dev/null; then
+        echo "rustup already installed via official installer"
+    else
+        echo "Installing rustup via official installer..."
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    fi
+
+_rustup-install-windows:
+    if (Get-Command "$env:USERPROFILE\.cargo\bin\rustup.exe" -ErrorAction SilentlyContinue) { Write-Host "rustup already installed" } else { Write-Host "Installing rustup..."; $rustupInit = "$env:TEMP\rustup-init.exe"; Invoke-WebRequest -Uri "https://win.rustup.rs/x86_64" -OutFile $rustupInit; & $rustupInit -y }
 
 # OS-specific configuration (services, apps)
 configure:

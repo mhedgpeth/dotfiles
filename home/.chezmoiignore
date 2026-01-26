@@ -6,7 +6,7 @@
 
 # Windows-only files (ignore on macOS and Linux)
 {{ if ne .chezmoi.os "windows" }}
-Documents/
+OneDrive/
 AppData/
 {{ end }}
 

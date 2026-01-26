@@ -1,0 +1,13 @@
+# Install PowerShell profile to the correct location
+# chezmoi runs this script when the source file changes
+
+$profileDir = Split-Path $PROFILE -Parent
+if (-not (Test-Path $profileDir)) {
+    New-Item -ItemType Directory -Path $profileDir -Force | Out-Null
+}
+
+$sourceProfile = Join-Path $env:USERPROFILE ".config\powershell\Microsoft.PowerShell_profile.ps1"
+if (Test-Path $sourceProfile) {
+    Copy-Item -Path $sourceProfile -Destination $PROFILE -Force
+    Write-Host "PowerShell profile installed to $PROFILE"
+}

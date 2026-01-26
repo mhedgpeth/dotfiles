@@ -141,11 +141,13 @@ Configure System Settings:
 
 ### Windows
 
-#### Visual Studio for Rust
+#### Visual Studio Workloads
 
-1. Install Visual Studio 2022 with "Desktop development with C++" workload
-2. Ensure Windows SDK is included
-3. Rust toolchain uses MSVC by default on Windows
+Open Visual Studio Installer, modify your installation, and add these workloads:
+
+- **Desktop development with C++** - required for Rust and nvim-treesitter
+- **.NET desktop development** - required for C# development
+- **WinUI application development** - required for WinUI 3 apps
 
 ### Linux
 

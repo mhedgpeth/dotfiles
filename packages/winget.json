@@ -1,21 +1,31 @@
 {
   "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+  "_comment": "Windows system packages via winget. Dev tools are in scoopfile.json.",
   "Sources": [
     {
       "Packages": [
         {
-          "PackageIdentifier": "Microsoft.VisualStudio.2026.Community"
+          "_comment": "IDE for C#/WinUI development (PeopleWork)",
+          "PackageIdentifier": "Microsoft.VisualStudio.Community"
         },
         {
+          "_comment": "Primary terminal emulator",
           "PackageIdentifier": "Microsoft.WindowsTerminal"
         },
         {
+          "_comment": "Modern PowerShell 7+",
+          "PackageIdentifier": "Microsoft.PowerShell"
+        },
+        {
+          "_comment": "Window management, keyboard shortcuts, utilities",
           "PackageIdentifier": "Microsoft.PowerToys"
         },
         {
+          "_comment": "Apple Music (Store ID - no human-readable alias exists)",
           "PackageIdentifier": "9PFHDD62MXS1"
         },
         {
+          "_comment": "Apple TV (Store ID - no human-readable alias exists)",
           "PackageIdentifier": "9NM4T8B9JQZ1"
         }
       ],

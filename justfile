@@ -82,7 +82,7 @@ _cleanup-linux:
 # Apply dotfiles via chezmoi
 apply:
     @echo '{{ style("command") }}apply:{{ NORMAL }}'
-    chezmoi apply --source=home
+    chezmoi apply --source=home --force
 
 # Clone/update repositories via ghq
 repos:
@@ -110,10 +110,10 @@ _macos-defaults:
     @./scripts/configure-macos-defaults.sh
 
 _configure-windows:
-    @true
+    if (-not (Get-Module -ListAvailable -Name PSFzf)) { Install-Module -Name PSFzf -Scope CurrentUser -Force }
 
 _configure-linux:
-    @true
+    true
 
 _colima-macos:
     @echo '{{ style("command") }}colima:{{ NORMAL }}'

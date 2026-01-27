@@ -1,3 +1,4 @@
+{{- if eq .chezmoi.os "windows" -}}
 # Install PowerShell profile to the correct location
 # chezmoi runs this script when the source file changes
 
@@ -11,3 +12,4 @@ if (Test-Path $sourceProfile) {
     Copy-Item -Path $sourceProfile -Destination $PROFILE -Force
     Write-Host "PowerShell profile installed to $PROFILE"
 }
+{{- end -}}

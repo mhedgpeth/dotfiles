@@ -6,6 +6,7 @@
 
 # Windows-only files (ignore on macOS and Linux)
 {{ if ne .chezmoi.os "windows" }}
+.chezmoiscripts/windows/
 OneDrive/
 AppData/
 {{ end }}

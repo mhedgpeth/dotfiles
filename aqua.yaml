@@ -11,12 +11,7 @@ checksum:
 registries:
   - type: standard
     ref: v4.458.0  # https://github.com/aquaproj/aqua-registry/releases
-  - name: local
-    type: local
-    path: aqua-registry.yaml
 
 packages:
   - name: casey/just@1.40.0  # task runner
   - name: twpayne/chezmoi@v2.64.0  # dotfiles manager
-  - name: steveyegge/beads@v0.47.1
-    registry: local

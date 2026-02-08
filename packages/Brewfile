@@ -90,6 +90,7 @@ cask "postman"
 
 # ai
 brew "gemini-cli"
+brew "opencode"
 cask "claude"
 cask "superwhisper" # voice dictation for ai prompts
 

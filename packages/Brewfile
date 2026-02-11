@@ -4,6 +4,7 @@
 # taps
 tap "hedge-ops/homebrew-tap"
 tap "minorole/tap"
+tap "anomalyco/tap"
 tap "nikitabobko/tap"
 
 # people work dependencies
@@ -89,9 +90,9 @@ cask "ngrok" # expose localhost publicly
 cask "postman"
 
 # ai
+brew "anomalyco/tap/opencode"
 cask "codex"
 brew "gemini-cli"
-brew "opencode"
 cask "claude"
 cask "superwhisper" # voice dictation for ai prompts
 

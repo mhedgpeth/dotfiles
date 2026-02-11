@@ -55,6 +55,8 @@
     { "Name": "ngrok", "Source": "main", "_comment": "api: expose localhost publicly" },
     { "Name": "postman", "Source": "extras", "_comment": "api: API testing" },
 
+    { "Name": "opencode", "Source": "main", "_comment": "ai: terminal AI coding agent" },
+
     { "Name": "vscode", "Source": "extras", "_comment": "editors-backup: Visual Studio Code" },
     { "Name": "zed", "Source": "extras", "_comment": "editors-backup: Zed editor" },
 

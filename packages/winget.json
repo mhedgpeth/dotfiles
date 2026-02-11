@@ -21,6 +21,10 @@
           "PackageIdentifier": "Microsoft.PowerToys"
         },
         {
+          "_comment": "AI: OpenAI Codex CLI coding agent",
+          "PackageIdentifier": "OpenAI.Codex"
+        },
+        {
           "_comment": "Apple Music (Store ID - no human-readable alias exists)",
           "PackageIdentifier": "9PFHDD62MXS1"
         },

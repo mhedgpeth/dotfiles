@@ -89,6 +89,7 @@ cask "ngrok" # expose localhost publicly
 cask "postman"
 
 # ai
+brew "codex"
 brew "gemini-cli"
 brew "opencode"
 cask "claude"

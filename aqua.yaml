@@ -13,5 +13,4 @@ registries:
     ref: v4.458.0  # https://github.com/aquaproj/aqua-registry/releases
 
 packages:
-  - name: casey/just@1.40.0  # task runner
   - name: twpayne/chezmoi@v2.64.0  # dotfiles manager

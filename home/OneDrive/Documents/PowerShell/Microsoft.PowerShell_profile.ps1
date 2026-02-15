@@ -65,13 +65,23 @@ if (Get-Command yazi -ErrorAction SilentlyContinue) {
 
 # ===== Environment =====
 
+# XDG directories (must be set before PATH since aqua uses XDG_DATA_HOME)
+$env:XDG_CONFIG_HOME = "$HOME/.config"
+$env:XDG_CACHE_HOME = "$HOME/.cache"
+$env:XDG_DATA_HOME = "$HOME/.local/share"
+
 # PATH additions (order matters: later entries take priority)
 $env:PATH = "$HOME/.cargo/bin;$env:PATH"
+$env:PATH = "$env:XDG_DATA_HOME/aquaproj-aqua/bin;$env:PATH"
 $env:PATH = "$HOME/.local/bin;$env:PATH"
-$env:PATH = "$env:LOCALAPPDATA/aquaproj-aqua/bin;$env:PATH"
+$env:PATH = "$HOME/scoop/shims;$env:PATH"
 
-# XDG config (ensures nvim and other tools find ~/.config)
-$env:XDG_CONFIG_HOME = "$HOME/.config"
+# Ensure XDG directories exist (direnv needs these on Windows)
+@("$env:XDG_CACHE_HOME/direnv", "$env:XDG_DATA_HOME/direnv") | ForEach-Object {
+    if (-not (Test-Path $_)) {
+        New-Item -ItemType Directory -Path $_ -Force | Out-Null
+    }
+}
 
 # Editor
 $env:EDITOR = "nvim"

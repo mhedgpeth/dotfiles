@@ -25,12 +25,20 @@
           "PackageIdentifier": "OpenAI.Codex"
         },
         {
+          "_comment": "Container runtime for development",
+          "PackageIdentifier": "Docker.DockerDesktop"
+        },
+        {
           "_comment": "Apple Music (Store ID - no human-readable alias exists)",
           "PackageIdentifier": "9PFHDD62MXS1"
         },
         {
           "_comment": "Apple TV (Store ID - no human-readable alias exists)",
           "PackageIdentifier": "9NM4T8B9JQZ1"
+        },
+        {
+          "_comment": "Multi-boot USB drive creator",
+          "PackageIdentifier": "Ventoy.Ventoy"
         }
       ],
       "SourceDetails": {

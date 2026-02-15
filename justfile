@@ -1,7 +1,7 @@
 # Dotfiles management
 # Bootstrap: brew/scoop install aqua && aqua install
 
-set windows-shell := ["powershell.exe", "-NoLogo", "-Command"]
+set windows-shell := ["pwsh.exe", "-NoLogo", "-Command"]
 
 # Default: keep everything up to date
 default: update
@@ -27,13 +27,15 @@ _init-macos:
 _init-windows:
     Write-Host "Enabling Developer Mode..."
     Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" -Name "AllowDevelopmentWithoutDevLicense" -Value 1
+    Write-Host "Creating XDG cache directories..."
+    New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.cache\direnv" | Out-Null
     Write-Host "Adding scoop buckets..."
     scoop bucket add extras
     scoop bucket add nerd-fonts
     scoop bucket add versions
     just _rustup-install-windows
     Write-Host "Installing Claude Code..."
-    powershell -Command "irm https://claude.ai/install.ps1 | iex"
+    irm https://claude.ai/install.ps1 | iex
 
 _init-linux:
     @just _rustup-install
@@ -126,7 +128,8 @@ _macos-defaults:
     @./scripts/configure-macos-defaults.sh
 
 _configure-windows:
-    if (-not (Get-Module -ListAvailable -Name PSFzf)) { Install-Module -Name PSFzf -Scope CurrentUser -Force }
+    @echo "Configuring Windows Terminal..."
+    pwsh.exe -ExecutionPolicy Bypass -File scripts/configure-windows-terminal.ps1
 
 _configure-linux:
     true

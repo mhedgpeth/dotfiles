@@ -8,8 +8,8 @@
   ],
   "apps": [
     { "Name": "aqua", "Source": "main", "_comment": "peoplework: per-project CLI tool manager" },
+    { "Name": "just", "Source": "main", "_comment": "peoplework: task runner" },
     { "Name": "mise", "Source": "main", "_comment": "peoplework: polyglot version manager (ruby)" },
-    { "Name": "rustup", "Source": "main", "_comment": "peoplework: rust toolchain manager" },
 
     { "Name": "bat", "Source": "main", "_comment": "terminal: better cat with syntax highlighting" },
     { "Name": "cloc", "Source": "main", "_comment": "terminal: count lines of code" },

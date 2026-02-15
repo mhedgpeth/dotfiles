@@ -9,6 +9,7 @@ tap "nikitabobko/tap"
 
 # people work dependencies
 brew "aqua" # per-project CLI tool manager
+brew "just" # task runner
 brew "colima" # container runtime for tests and local db
 brew "docker" # CLI only, desktop replaced by colima
 brew "docker-compose" # multi-container orchestration

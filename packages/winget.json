@@ -25,6 +25,10 @@
           "PackageIdentifier": "OpenAI.Codex"
         },
         {
+          "_comment": "Git (installed via winget for C:\\Program Files path, needed by GH Actions runners)",
+          "PackageIdentifier": "Git.Git"
+        },
+        {
           "_comment": "Container runtime for development",
           "PackageIdentifier": "Docker.DockerDesktop"
         },

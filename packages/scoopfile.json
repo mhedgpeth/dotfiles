@@ -28,7 +28,6 @@
 
     { "Name": "gh", "Source": "main", "_comment": "git: GitHub CLI" },
     { "Name": "ghq", "Source": "main", "_comment": "git: repo manager" },
-    { "Name": "git", "Source": "main", "_comment": "git" },
     { "Name": "delta", "Source": "main", "_comment": "git: syntax-highlighted diffs" },
     { "Name": "git-filter-repo", "Source": "main", "_comment": "git: rewrite history" },
     { "Name": "lazygit", "Source": "extras", "_comment": "git: TUI" },

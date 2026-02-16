@@ -134,6 +134,8 @@ _macos-defaults:
 _configure-windows:
     @echo "Configuring Windows Terminal..."
     pwsh.exe -ExecutionPolicy Bypass -File scripts/configure-windows-terminal.ps1
+    @echo "Configuring WSL autostart..."
+    pwsh.exe -ExecutionPolicy Bypass -File scripts/configure-wsl-autostart.ps1
 
 _configure-linux:
     true

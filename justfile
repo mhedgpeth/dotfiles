@@ -38,6 +38,8 @@ _init-windows:
     just _rustup-install-windows
     Write-Host "Installing Claude Code..."
     irm https://claude.ai/install.ps1 | iex
+    Write-Host "Setting up WSL2 with Arch Linux..."
+    pwsh.exe -ExecutionPolicy Bypass -File scripts/setup-wsl.ps1
 
 _init-linux:
     @just _rustup-install

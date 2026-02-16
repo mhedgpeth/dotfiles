@@ -25,9 +25,13 @@ if (Get-Command lazygit -ErrorAction SilentlyContinue) {
 
 # ===== Functions (for commands with arguments) =====
 
-# Git shortcuts
+# Git shortcuts (remove built-in aliases that conflict)
+Remove-Item Alias:gp -Force -ErrorAction SilentlyContinue
+Remove-Item Alias:gs -Force -ErrorAction SilentlyContinue
+Remove-Item Alias:gc -Force -ErrorAction SilentlyContinue
 function gs { git status }
 function gp { git pull }
+function gco { git checkout @args }
 
 # Navigation
 function .. { Set-Location .. }

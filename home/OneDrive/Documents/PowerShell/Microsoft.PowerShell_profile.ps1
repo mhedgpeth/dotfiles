@@ -109,12 +109,12 @@ if (Get-Command fzf -ErrorAction SilentlyContinue) {
 
 # Direnv (per-directory env vars)
 if (Get-Command direnv -ErrorAction SilentlyContinue) {
-    Invoke-Expression (& direnv hook powershell | Out-String)
+    Invoke-Expression (& direnv hook pwsh | Out-String)
 }
 
 # Mise (polyglot version manager)
 if (Get-Command mise -ErrorAction SilentlyContinue) {
-    Invoke-Expression (& mise activate powershell | Out-String)
+    Invoke-Expression (& mise activate pwsh | Out-String)
 }
 
 # Starship prompt (must be last)

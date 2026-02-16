@@ -27,6 +27,8 @@ _init-macos:
 _init-windows:
     Write-Host "Enabling Developer Mode..."
     Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" -Name "AllowDevelopmentWithoutDevLicense" -Value 1
+    Write-Host "Remapping Caps Lock to Backspace..."
+    Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Keyboard Layout" -Name "Scancode Map" -Value ([byte[]](0x00,0x00,0x00,0x00, 0x00,0x00,0x00,0x00, 0x02,0x00,0x00,0x00, 0x0E,0x00,0x3A,0x00, 0x00,0x00,0x00,0x00)) -Type Binary
     Write-Host "Creating XDG cache directories..."
     New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.cache\direnv" | Out-Null
     Write-Host "Adding scoop buckets..."

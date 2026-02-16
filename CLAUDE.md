@@ -62,9 +62,21 @@ Arch Linux is supported via pacman/yay. See README.md for setup details.
 `.config/yazi` - file explorer
 `.config/moonlander` - ZSA Moonlander keyboard (QMK source from Oryx)
 
-## Keyboard
+## Hardware
 
-The user has a ZSA Moonlander split keyboard. Config is in `.config/moonlander/keymap.c`.
+### Machines
+
+- **macOS** - primary development machine
+- **Windows/Linux** - Beelink SER Pro9 (dual-boot Windows 11 / Arch Linux)
+
+### Peripherals (Windows/Linux desk)
+
+- **Keyboard** - Epomaker F75 (Caps Lock remapped to Backspace via Windows Scancode Map)
+- **Mouse** - Logitech MX Master 4
+
+### ZSA Moonlander (macOS desk)
+
+Split keyboard with QMK firmware. Config is in `.config/moonlander/keymap.c`.
 Oryx URL: https://configure.zsa.io/moonlander/layouts/p6XyD/latest/0
 
 When suggesting keybindings or shortcuts, read `keymap.c` first to understand:

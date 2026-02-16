@@ -93,33 +93,31 @@ $env:STARSHIP_CONFIG = "$HOME/.config/starship/starship.toml"
 $env:BACON_CONFIG = "$HOME/.config/bacon/prefs.toml"
 
 # ===== Shell Integrations =====
-# NOTE: Temporarily disabled - add back one by one to find what's hanging
-# Uncomment each block to re-enable
 
 # Zoxide (better cd)
-# if (Get-Command zoxide -ErrorAction SilentlyContinue) {
-#     Invoke-Expression (& zoxide init powershell --cmd z | Out-String)
-# }
+if (Get-Command zoxide -ErrorAction SilentlyContinue) {
+    Invoke-Expression (& zoxide init powershell --cmd z | Out-String)
+}
 
 # Fzf (fuzzy finder)
-# if (Get-Command fzf -ErrorAction SilentlyContinue) {
-#     if (Get-Module -ListAvailable -Name PSFzf) {
-#         Import-Module PSFzf
-#         Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
-#     }
-# }
+if (Get-Command fzf -ErrorAction SilentlyContinue) {
+    if (Get-Module -ListAvailable -Name PSFzf) {
+        Import-Module PSFzf
+        Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
+    }
+}
 
 # Direnv (per-directory env vars)
-# if (Get-Command direnv -ErrorAction SilentlyContinue) {
-#     Invoke-Expression (& direnv hook powershell | Out-String)
-# }
+if (Get-Command direnv -ErrorAction SilentlyContinue) {
+    Invoke-Expression (& direnv hook powershell | Out-String)
+}
 
 # Mise (polyglot version manager)
-# if (Get-Command mise -ErrorAction SilentlyContinue) {
-#     Invoke-Expression (& mise activate powershell | Out-String)
-# }
+if (Get-Command mise -ErrorAction SilentlyContinue) {
+    Invoke-Expression (& mise activate powershell | Out-String)
+}
 
 # Starship prompt (must be last)
-# if (Get-Command starship -ErrorAction SilentlyContinue) {
-#     Invoke-Expression (& starship init powershell)
-# }
+if (Get-Command starship -ErrorAction SilentlyContinue) {
+    Invoke-Expression (& starship init powershell)
+}

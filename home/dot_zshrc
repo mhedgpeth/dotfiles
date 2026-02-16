@@ -89,6 +89,7 @@ alias lg='lazygit'
 
 # ai
 alias chat='ollama run deepseek-r1:7b'
+claude() { caffeinate -i command claude "$@"; }
 
 # secrets, see template for details
 [ -f "$HOME/.env" ] && source "$HOME/.env"

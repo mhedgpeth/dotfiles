@@ -31,15 +31,20 @@ _init-windows:
     Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Keyboard Layout" -Name "Scancode Map" -Value ([byte[]](0x00,0x00,0x00,0x00, 0x00,0x00,0x00,0x00, 0x02,0x00,0x00,0x00, 0x0E,0x00,0x3A,0x00, 0x00,0x00,0x00,0x00)) -Type Binary
     Write-Host "Creating XDG cache directories..."
     New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.cache\direnv" | Out-Null
+    Write-Host "Installing winget from GitHub releases..."
+    pwsh.exe -ExecutionPolicy Bypass -File scripts/install-winget.ps1
     Write-Host "Adding scoop buckets..."
     scoop bucket add extras
     scoop bucket add nerd-fonts
     scoop bucket add versions
     just _rustup-install-windows
+    Write-Host "Enabling SSH Agent service..."
+    Get-Service ssh-agent | Set-Service -StartupType Automatic
+    Start-Service ssh-agent
+    $sshKey = Get-ChildItem "$env:USERPROFILE\.ssh" -Force -ErrorAction SilentlyContinue | Where-Object { $_.Name -match "^id_" -and $_.Extension -ne ".pub" } | Select-Object -First 1
+    if ($sshKey) { Write-Host "Adding SSH key: $($sshKey.Name)..."; ssh-add $sshKey.FullName } else { Write-Host "No SSH key found in ~/.ssh - generate one and run: ssh-add ~/.ssh/<key>" }
     Write-Host "Installing Claude Code..."
     irm https://claude.ai/install.ps1 | iex
-    Write-Host "Setting up WSL2 with Arch Linux..."
-    pwsh.exe -ExecutionPolicy Bypass -File scripts/setup-wsl.ps1
 
 _init-linux:
     @just _rustup-install
@@ -134,8 +139,6 @@ _macos-defaults:
 _configure-windows:
     @echo "Configuring Windows Terminal..."
     pwsh.exe -ExecutionPolicy Bypass -File scripts/configure-windows-terminal.ps1
-    @echo "Configuring WSL autostart..."
-    pwsh.exe -ExecutionPolicy Bypass -File scripts/configure-wsl-autostart.ps1
 
 _configure-linux:
     true

@@ -11,11 +11,6 @@ OneDrive/
 AppData/
 {{ end }}
 
-# Windows-only files (ignore on macOS and Linux)
-{{ if ne .chezmoi.os "windows" }}
-dot_wslconfig
-{{ end }}
-
 # macOS-only files (ignore on Windows and Linux)
 {{ if ne .chezmoi.os "darwin" }}
 dot_config/aerospace/

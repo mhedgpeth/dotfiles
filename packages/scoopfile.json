@@ -63,6 +63,7 @@
     { "Name": "googlechrome", "Source": "extras", "_comment": "collaboration: browser" },
     { "Name": "slack", "Source": "extras", "_comment": "collaboration" },
 
-    { "Name": "anki", "Source": "extras", "_comment": "utilities: flashcards" }
+    { "Name": "anki", "Source": "extras", "_comment": "utilities: flashcards" },
+    { "Name": "obs-studio", "Source": "extras", "_comment": "utilities: screen recording & streaming" }
   ]
 }

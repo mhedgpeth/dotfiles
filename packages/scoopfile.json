@@ -48,6 +48,7 @@
     { "Name": "JetBrainsMono-NF", "Source": "nerd-fonts", "_comment": "fonts: nerd font with icons" },
     { "Name": "Meslo-NF", "Source": "nerd-fonts", "_comment": "fonts: nerd font with icons" },
 
+    { "Name": "deno", "Source": "main", "_comment": "languages: deno runtime" },
     { "Name": "nodejs", "Source": "main", "_comment": "languages: needed for claude" },
     { "Name": "dotnet-sdk", "Source": "main", "_comment": "languages: C#/WinUI development" },
 

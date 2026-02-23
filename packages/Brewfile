@@ -76,6 +76,7 @@ brew "xcode-build-server" # lsp for xcode projects
 cask "sf-symbols" # browse apple sf symbols
 
 # web
+brew "deno"
 brew "node@24" # needed for claude
 
 # java

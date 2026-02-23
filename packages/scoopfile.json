@@ -4,7 +4,8 @@
     { "Name": "main" },
     { "Name": "extras" },
     { "Name": "nerd-fonts" },
-    { "Name": "versions" }
+    { "Name": "versions" },
+    { "Name": "java" }
   ],
   "apps": [
     { "Name": "aqua", "Source": "main", "_comment": "peoplework: per-project CLI tool manager" },
@@ -50,6 +51,7 @@
 
     { "Name": "deno", "Source": "main", "_comment": "languages: deno runtime" },
     { "Name": "nodejs", "Source": "main", "_comment": "languages: needed for claude" },
+    { "Name": "openjdk", "Source": "java", "_comment": "languages: Java runtime" },
     { "Name": "dotnet-sdk", "Source": "main", "_comment": "languages: C#/WinUI development" },
 
     { "Name": "ngrok", "Source": "main", "_comment": "api: expose localhost publicly" },

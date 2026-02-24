@@ -51,6 +51,7 @@
 
     { "Name": "deno", "Source": "main", "_comment": "languages: deno runtime" },
     { "Name": "nodejs", "Source": "main", "_comment": "languages: needed for claude" },
+    { "Name": "gradle", "Source": "main", "_comment": "languages: Java build tool" },
     { "Name": "openjdk", "Source": "java", "_comment": "languages: Java runtime" },
     { "Name": "dotnet-sdk", "Source": "main", "_comment": "languages: C#/WinUI development" },
 

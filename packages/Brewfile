@@ -80,6 +80,7 @@ brew "deno"
 brew "node@24" # needed for claude
 
 # java
+brew "gradle"
 brew "openjdk"
 
 # c#/.net

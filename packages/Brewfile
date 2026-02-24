@@ -88,6 +88,9 @@ cask "dotnet-sdk"
 # database
 cask "pgadmin4"
 
+# cloud
+cask "google-cloud-sdk" # gcloud CLI
+
 # api
 cask "ngrok" # expose localhost publicly
 cask "postman"

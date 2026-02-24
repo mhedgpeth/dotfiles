@@ -54,6 +54,8 @@
     { "Name": "openjdk", "Source": "java", "_comment": "languages: Java runtime" },
     { "Name": "dotnet-sdk", "Source": "main", "_comment": "languages: C#/WinUI development" },
 
+    { "Name": "gcloud", "Source": "extras", "_comment": "cloud: Google Cloud SDK" },
+
     { "Name": "ngrok", "Source": "main", "_comment": "api: expose localhost publicly" },
     { "Name": "postman", "Source": "extras", "_comment": "api: API testing" },
 

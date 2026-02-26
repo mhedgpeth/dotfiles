@@ -79,9 +79,10 @@ cask "sf-symbols" # browse apple sf symbols
 brew "deno"
 brew "node@24" # needed for claude
 
-# java
+# java / android
 brew "gradle"
 brew "openjdk"
+cask "android-studio"
 
 # c#/.net
 cask "dotnet-sdk"

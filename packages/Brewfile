@@ -65,6 +65,7 @@ brew "yazi" # terminal file manager
 # fonts (nerd fonts include icons for terminal)
 cask "font-fira-code-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
+cask "font-ibm-plex-sans"
 cask "font-meslo-lg-nerd-font"
 
 # rust

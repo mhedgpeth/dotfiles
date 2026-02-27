@@ -45,6 +45,7 @@
     { "Name": "7zip", "Source": "main", "_comment": "yazi: archive preview" },
     { "Name": "yazi", "Source": "main", "_comment": "yazi: terminal file manager" },
 
+    { "Name": "IBM-Plex-Sans", "Source": "nerd-fonts", "_comment": "fonts: IBM Plex Sans typeface" },
     { "Name": "FiraCode-NF", "Source": "nerd-fonts", "_comment": "fonts: nerd font with icons" },
     { "Name": "JetBrainsMono-NF", "Source": "nerd-fonts", "_comment": "fonts: nerd font with icons" },
     { "Name": "Meslo-NF", "Source": "nerd-fonts", "_comment": "fonts: nerd font with icons" },

@@ -14,8 +14,6 @@ export HOMEBREW_NO_ENV_HINTS=true
 # Java (Homebrew openjdk isn't linked by default)
 export PATH="$(brew --prefix openjdk)/bin:$PATH"
 
-# Cargo before brew (so rustup-installed tools take precedence)
-export PATH="$HOME/.cargo/bin:$PATH"
 
 # plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -129,5 +127,7 @@ eval "$(starship init zsh)"
 # Also look at bun (for bunx), then .local (for claude)
 export PATH="$HOME/.bun/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-# Aqua gets priority
+# Aqua
 export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
+# Cargo gets priority (so rustup-installed tools take precedence)
+export PATH="$HOME/.cargo/bin:$PATH"

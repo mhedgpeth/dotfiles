@@ -75,8 +75,8 @@ $env:XDG_CACHE_HOME = "$HOME/.cache"
 $env:XDG_DATA_HOME = "$HOME/.local/share"
 
 # PATH additions (order matters: later entries take priority)
-$env:PATH = "$HOME/.cargo/bin;$env:PATH"
 $env:PATH = "$env:XDG_DATA_HOME/aquaproj-aqua/bin;$env:PATH"
+$env:PATH = "$HOME/.cargo/bin;$env:PATH"
 $env:PATH = "$HOME/.local/bin;$env:PATH"
 $env:PATH = "$HOME/scoop/shims;$env:PATH"
 

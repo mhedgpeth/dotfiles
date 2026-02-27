@@ -37,6 +37,7 @@ _init-windows:
     scoop bucket add extras
     scoop bucket add nerd-fonts
     scoop bucket add versions
+    scoop bucket add java
     just _rustup-install-windows
     Write-Host "Enabling SSH Agent service..."
     Get-Service ssh-agent | Set-Service -StartupType Automatic

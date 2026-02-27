@@ -36,6 +36,7 @@ cask "basictex" # minimal latex for pandoc pdf output
 brew "tree" # directory tree
 brew "wget" # download files
 brew "yt-dlp" # download audio/video for music practice
+brew "hledger" # plain text accounting
 brew "zoxide" # better cd
 cask "ghostty" # terminal emulator
 

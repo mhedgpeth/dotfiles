@@ -25,6 +25,7 @@
     { "Name": "tldr", "Source": "main", "_comment": "terminal: simplified man pages" },
     { "Name": "pandoc", "Source": "main", "_comment": "terminal: document converter" },
     { "Name": "wget", "Source": "main", "_comment": "terminal: download files" },
+    { "Name": "hledger", "Source": "main", "_comment": "terminal: plain text accounting" },
     { "Name": "zoxide", "Source": "main", "_comment": "terminal: better cd" },
 
     { "Name": "gh", "Source": "main", "_comment": "git: GitHub CLI" },

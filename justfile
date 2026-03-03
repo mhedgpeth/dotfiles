@@ -137,9 +137,14 @@ _configure-macos: _colima-macos _macos-defaults
 _macos-defaults:
     @./scripts/configure-macos-defaults.sh
 
-_configure-windows:
+_configure-windows: _gradle-shim-windows
     @echo "Configuring Windows Terminal..."
     pwsh.exe -ExecutionPolicy Bypass -File scripts/configure-windows-terminal.ps1
+
+# Create gradle.exe shim so Rust's Command::new("gradle") can find it
+# Scoop only generates .cmd shims for batch-based tools, but Rust needs .exe
+_gradle-shim-windows:
+    $shimSrc = "$env:USERPROFILE\scoop\apps\scoop\current\supporting\shims\kiennq\shim.exe"; $shimDir = "$env:USERPROFILE\scoop\shims"; $target = "$shimDir\gradle.exe"; if (Test-Path "$shimDir\gradle.cmd") { if (-not (Test-Path $target)) { Write-Host "Creating gradle.exe shim..."; Copy-Item $shimSrc $target; Set-Content "$shimDir\gradle.shim" "path = `"$env:USERPROFILE\scoop\apps\gradle\current\bin\gradle.bat`"" } else { Write-Host "gradle.exe shim already exists" } } else { Write-Host "Gradle not installed via scoop, skipping shim" }
 
 _configure-linux:
     true

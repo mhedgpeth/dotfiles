@@ -56,6 +56,8 @@
     { "Name": "gradle", "Source": "main", "_comment": "languages: Java build tool" },
     { "Name": "openjdk", "Source": "java", "_comment": "languages: Java runtime" },
     { "Name": "android-studio", "Source": "extras", "_comment": "languages: Android/Kotlin development" },
+    { "Name": "kotlin", "Source": "main", "_comment": "languages: Kotlin compiler for facet-generate tests" },
+    { "Name": "swift", "Source": "main", "_comment": "languages: Swift development" },
     { "Name": "dotnet-sdk", "Source": "main", "_comment": "languages: C#/WinUI development" },
 
     { "Name": "gcloud", "Source": "extras", "_comment": "cloud: Google Cloud SDK" },

@@ -29,10 +29,6 @@
           "PackageIdentifier": "Git.Git"
         },
         {
-          "_comment": "Container runtime for development",
-          "PackageIdentifier": "Docker.DockerDesktop"
-        },
-        {
           "_comment": "Apple Music (Store ID - no human-readable alias exists)",
           "PackageIdentifier": "9PFHDD62MXS1"
         },

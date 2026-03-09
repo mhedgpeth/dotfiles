@@ -46,6 +46,7 @@ _init-windows:
     if ($sshKey) { Write-Host "Adding SSH key: $($sshKey.Name)..."; ssh-add $sshKey.FullName } else { Write-Host "No SSH key found in ~/.ssh - generate one and run: ssh-add ~/.ssh/<key>" }
     Write-Host "Installing Claude Code..."
     irm https://claude.ai/install.ps1 | iex
+    @just _docker-windows
 
 _init-linux:
     @just _rustup-install
@@ -62,6 +63,10 @@ _install-macos:
 _install-windows:
     scoop import packages/scoopfile.json
     winget import -i packages/winget.json --ignore-unavailable --accept-source-agreements --accept-package-agreements
+
+# Install Docker Desktop directly (winget hangs due to UAC/installer detach)
+_docker-windows:
+    if (Get-Command "Docker Desktop" -ErrorAction SilentlyContinue) { Write-Host "Docker Desktop already installed" } elseif (Test-Path "$env:ProgramFiles\Docker\Docker\Docker Desktop.exe") { Write-Host "Docker Desktop already installed" } else { Write-Host "Downloading Docker Desktop installer..."; $installer = "$env:TEMP\DockerDesktopInstaller.exe"; Invoke-WebRequest -Uri "https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe" -OutFile $installer; Write-Host "Installing Docker Desktop (silent)..."; Start-Process -FilePath $installer -ArgumentList "install","--quiet","--accept-license" -Wait; Remove-Item $installer -ErrorAction SilentlyContinue; Write-Host "Docker Desktop installed. Restart may be required." }
 
 _install-linux:
     yay -S --needed - < packages/archlinux.txt

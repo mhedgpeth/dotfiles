@@ -142,9 +142,13 @@ _configure-macos: _colima-macos _macos-defaults
 _macos-defaults:
     @./scripts/configure-macos-defaults.sh
 
-_configure-windows: _gradle-shim-windows
+_configure-windows: _gradle-shim-windows _android-sdk-windows
     @echo "Configuring Windows Terminal..."
     pwsh.exe -ExecutionPolicy Bypass -File scripts/configure-windows-terminal.ps1
+
+# Install Android SDK command-line tools and NDK
+_android-sdk-windows:
+    pwsh.exe -ExecutionPolicy Bypass -File scripts/install-android-sdk.ps1
 
 # Create gradle.exe shim so Rust's Command::new("gradle") can find it
 # Scoop only generates .cmd shims for batch-based tools, but Rust needs .exe

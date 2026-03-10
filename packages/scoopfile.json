@@ -51,6 +51,7 @@
     { "Name": "JetBrainsMono-NF", "Source": "nerd-fonts", "_comment": "fonts: nerd font with icons" },
     { "Name": "Meslo-NF", "Source": "nerd-fonts", "_comment": "fonts: nerd font with icons" },
 
+    { "Name": "python", "Source": "main", "_comment": "languages: python3 on PATH for Android NDK linker" },
     { "Name": "deno", "Source": "main", "_comment": "languages: deno runtime" },
     { "Name": "nodejs", "Source": "main", "_comment": "languages: needed for claude" },
     { "Name": "gradle", "Source": "main", "_comment": "languages: Java build tool" },

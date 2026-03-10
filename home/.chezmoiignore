@@ -21,3 +21,8 @@ dot_config/ghostty/
 {{ if eq .chezmoi.os "windows" }}
 dot_zshrc
 {{ end }}
+
+# Windows-only files (ignore on macOS and Linux)
+{{ if ne .chezmoi.os "windows" }}
+dot_bashrc
+{{ end }}

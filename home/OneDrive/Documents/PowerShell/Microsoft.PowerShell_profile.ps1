@@ -74,6 +74,11 @@ $env:XDG_CONFIG_HOME = "$HOME/.config"
 $env:XDG_CACHE_HOME = "$HOME/.cache"
 $env:XDG_DATA_HOME = "$HOME/.local/share"
 
+# Android SDK
+$env:ANDROID_HOME = "$HOME/AppData/Local/Android/Sdk"
+$env:PATH = "$env:ANDROID_HOME/platform-tools;$env:PATH"
+$env:PATH = "$env:ANDROID_HOME/cmdline-tools/latest/bin;$env:PATH"
+
 # PATH additions (order matters: later entries take priority)
 $env:PATH = "$env:XDG_DATA_HOME/aquaproj-aqua/bin;$env:PATH"
 $env:PATH = "$HOME/.cargo/bin;$env:PATH"

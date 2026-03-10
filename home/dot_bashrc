@@ -1,0 +1,6 @@
+# Bash profile for Git Bash (MSYS2) on Windows
+# Mirrors key environment variables from the PowerShell profile
+
+# Android SDK
+export ANDROID_HOME="$HOME/AppData/Local/Android/Sdk"
+export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"

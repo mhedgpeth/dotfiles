@@ -15,6 +15,7 @@ AppData/
 {{ if ne .chezmoi.os "darwin" }}
 dot_config/aerospace/
 dot_config/ghostty/
+Library/
 {{ end }}
 
 # Unix-only files (ignore on Windows)

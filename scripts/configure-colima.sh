@@ -11,6 +11,10 @@ if command -v colima &>/dev/null; then
 
   # Start now if not already running
   if ! colima status &>/dev/null; then
-    colima start
+    if ! colima start 2>/dev/null; then
+      echo "Colima start failed, deleting stale VM and retrying..."
+      colima delete --force
+      colima start
+    fi
   fi
 fi

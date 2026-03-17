@@ -117,7 +117,7 @@ finish:
     @echo '{{ style("command") }}finish:{{ NORMAL }}'
     rustup default stable
     rustup component add rust-analyzer
-    -ya pkg add yazi-rs/flavors:catppuccin-frappe
+    ya pkg list 2>/dev/null | grep -q catppuccin-frappe || ya pkg add yazi-rs/flavors:catppuccin-frappe
 
 # Install rustup via official installer (creates proper proxy binaries in ~/.cargo/bin)
 _rustup-install:

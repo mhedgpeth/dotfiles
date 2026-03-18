@@ -11,6 +11,14 @@ folder=$(basename "$folder" 2>/dev/null)
 branch=$(git branch --show-current 2>/dev/null)
 pr=$(gh pr view --json number -q '.number' 2>/dev/null)
 
+# Ahead/behind upstream
+ahead=0
+behind=0
+if upstream=$(git rev-parse --abbrev-ref '@{upstream}' 2>/dev/null); then
+  ahead=$(git rev-list --count "$upstream"..HEAD 2>/dev/null || echo 0)
+  behind=$(git rev-list --count "HEAD..$upstream" 2>/dev/null || echo 0)
+fi
+
 # Git status counts
 added=$(git diff --cached --numstat 2>/dev/null | wc -l | tr -d ' ')
 modified=$(git diff --numstat 2>/dev/null | wc -l | tr -d ' ')
@@ -43,6 +51,10 @@ else
 fi
 [ -n "$branch" ] && out+=" on ${branch_color}⎇ ${branch}${reset}"
 [ -n "$pr" ] && out+=" PR #${pr}"
+sync=""
+[ "$ahead" -gt 0 ] 2>/dev/null && sync+="↑${ahead}"
+[ "$behind" -gt 0 ] 2>/dev/null && sync+="↓${behind}"
+[ -n "$sync" ] && out+=" \033[96m${sync}${reset}"
 gitstatus=""
 [ "$added" -gt 0 ] 2>/dev/null && gitstatus+=" \033[92m+${added}${reset}"
 [ "$modified" -gt 0 ] 2>/dev/null && gitstatus+=" \033[93m~${modified}${reset}"

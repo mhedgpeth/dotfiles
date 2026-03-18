@@ -106,6 +106,9 @@ brew "gemini-cli"
 cask "claude"
 cask "superwhisper" # voice dictation for ai prompts
 
+# security
+cask "1password" # password manager
+
 # editors
 cask "antigravity" # google's ai code editor
 cask "visual-studio-code"

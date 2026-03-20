@@ -74,7 +74,9 @@ brew "bacon" # background rust checker
 # brew "bacon-ls" # not ready yet
 
 # swift (tooling managed by aqua in project repos)
+brew "swiftlint" # swift linter
 brew "xcode-build-server" # lsp for xcode projects
+brew "xcodegen" # generate xcode projects from yaml
 cask "sf-symbols" # browse apple sf symbols
 
 # web
@@ -83,7 +85,7 @@ brew "node@24" # needed for claude
 
 # java / android
 brew "gradle"
-brew "openjdk"
+brew "openjdk@21"
 cask "android-studio"
 
 # c#/.net

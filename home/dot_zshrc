@@ -11,8 +11,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export HOMEBREW_BUNDLE_FILE="~/.config/homebrew/Brewfile"
 export HOMEBREW_NO_ENV_HINTS=true
 
-# Java (Homebrew openjdk isn't linked by default)
-export PATH="$(brew --prefix openjdk)/bin:$PATH"
+# Java (Homebrew openjdk@21 isn't linked by default)
+export JAVA_HOME="$(brew --prefix openjdk@21)/libexec/openjdk.jdk/Contents/Home"
+export PATH="$JAVA_HOME/bin:$PATH"
 
 
 # plugins
@@ -103,6 +104,10 @@ eval "$(mise activate zsh)"
 
 # Bacon
 export BACON_CONFIG="$HOME/.config/bacon/prefs.toml"
+
+# Android SDK (installed via Android Studio)
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/ndk/29.0.14206865/toolchains/llvm/prebuilt/darwin-x86_64/bin:$PATH"
 
 # Docker (via Colima)
 export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock" 

@@ -1,11 +1,15 @@
 #!/bin/bash
-# Claude Code status line: dotfiles on  main ▓▓▓░░░░░░░ 30% [Opus]
+# Claude Code status line: dotfiles on  main ▓▓▓░░░░░░░ 30% 5h:24% 7d:41% [Opus]
 # Green < 50% | Yellow >= 50% | Red >= 90%
 
 input=$(cat)
 pct=$(printf '%s' "$input" | jq -r '.context_window.used_percentage // 0' | cut -d. -f1)
-model=$(printf '%s' "$input" | jq -r '.model.display_name // empty')
+model=$(printf '%s' "$input" | jq -r '.model.display_name // empty | split(" (")[0]')
 exceeds=$(printf '%s' "$input" | jq -r '.context_window.exceeds_200k_tokens // false')
+rate_5h=$(printf '%s' "$input" | jq -r '.rate_limits.five_hour.used_percentage // empty')
+rate_5h_reset=$(printf '%s' "$input" | jq -r '.rate_limits.five_hour.resets_at // empty')
+rate_7d=$(printf '%s' "$input" | jq -r '.rate_limits.seven_day.used_percentage // empty')
+rate_7d_reset=$(printf '%s' "$input" | jq -r '.rate_limits.seven_day.resets_at // empty')
 folder=$(printf '%s' "$input" | jq -r '.workspace.current_dir // empty')
 folder=$(basename "$folder" 2>/dev/null)
 branch=$(git branch --show-current 2>/dev/null)
@@ -23,6 +27,19 @@ fi
 added=$(git diff --cached --numstat 2>/dev/null | wc -l | tr -d ' ')
 modified=$(git diff --numstat 2>/dev/null | wc -l | tr -d ' ')
 deleted=$(git ls-files --deleted 2>/dev/null | wc -l | tr -d ' ')
+
+# Format seconds remaining as compact countdown (e.g. 3d2h, 4h30m, 45m)
+fmt_countdown() {
+  local remaining=$1
+  [ "$remaining" -le 0 ] 2>/dev/null && echo "now" && return
+  local d=$((remaining / 86400))
+  local h=$(( (remaining % 86400) / 3600 ))
+  local m=$(( (remaining % 3600) / 60 ))
+  if [ "$d" -gt 0 ]; then echo "${d}d${h}h"
+  elif [ "$h" -gt 0 ]; then echo "${h}h${m}m"
+  else echo "${m}m"
+  fi
+}
 
 # Color based on usage
 if [ "$pct" -ge 90 ] 2>/dev/null; then
@@ -62,6 +79,30 @@ gitstatus=""
 [ -n "$gitstatus" ] && out+="$gitstatus"
 out+=" ${color}${bar} ${pct}%${reset}"
 [ "$exceeds" = "true" ] && out+=" \033[91m⚠${reset}"
+if [ -n "$rate_5h" ]; then
+  r5=$(printf '%.0f' "$rate_5h")
+  if [ "$r5" -ge 90 ] 2>/dev/null; then rc5='\033[91m'
+  elif [ "$r5" -ge 50 ] 2>/dev/null; then rc5='\033[93m'
+  else rc5='\033[92m'; fi
+  r5_label="5h:${r5}%"
+  if [ -n "$rate_5h_reset" ]; then
+    r5_remain=$(( rate_5h_reset - $(date +%s) ))
+    r5_label+="↻$(fmt_countdown "$r5_remain")"
+  fi
+  out+=" ${rc5}${r5_label}${reset}"
+fi
+if [ -n "$rate_7d" ]; then
+  r7=$(printf '%.0f' "$rate_7d")
+  if [ "$r7" -ge 90 ] 2>/dev/null; then rc7='\033[91m'
+  elif [ "$r7" -ge 50 ] 2>/dev/null; then rc7='\033[93m'
+  else rc7='\033[92m'; fi
+  r7_label="7d:${r7}%"
+  if [ -n "$rate_7d_reset" ]; then
+    r7_remain=$(( rate_7d_reset - $(date +%s) ))
+    r7_label+="↻$(fmt_countdown "$r7_remain")"
+  fi
+  out+=" ${rc7}${r7_label}${reset}"
+fi
 [ -n "$model" ] && out+=" \033[95m[${model}]${reset}"
 
 printf '%b' "$out"

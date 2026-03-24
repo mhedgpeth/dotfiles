@@ -2,12 +2,12 @@ return {
   "lewis6991/gitsigns.nvim",
   keys = {
     {
-      "<leader>hj",
+      "]h",
       "<cmd>Gitsigns next_hunk<cr>",
       desc = "Next Hunk",
     },
     {
-      "<leader>hk",
+      "[h",
       "<cmd>Gitsigns prev_hunk<cr>",
       desc = "Prev Hunk",
     },
@@ -37,7 +37,7 @@ return {
       desc = "Reset Buffer",
     },
     {
-      "<leader>Hu",
+      "<leader>hu",
       "<cmd>Gitsigns undo_stage_hunk<cr>",
       desc = "Undo Stage Hunk",
     },

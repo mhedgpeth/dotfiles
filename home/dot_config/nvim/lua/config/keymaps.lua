@@ -7,3 +7,7 @@ vim.keymap.set("n", "<leader><CR>", "<cmd>%bd<cr>", { desc = "Close All Buffers"
 vim.keymap.set("n", "<leader>os", "<cmd>OverseerToggle<cr>", { desc = "Toggle Overseer" })
 
 vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr>", { desc = "Save file" })
+
+-- Shift+Enter inserts a newline (like Enter) — matches Claude Code / VS Code behavior
+vim.keymap.set("i", "<S-CR>", "<CR>", { desc = "Newline" })
+vim.keymap.set("n", "<S-CR>", "o<Esc>", { desc = "Insert line below" })

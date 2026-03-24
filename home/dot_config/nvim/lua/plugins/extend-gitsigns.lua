@@ -2,6 +2,16 @@ return {
   "lewis6991/gitsigns.nvim",
   keys = {
     {
+      "<leader>hj",
+      "<cmd>Gitsigns next_hunk<cr>",
+      desc = "Next Hunk",
+    },
+    {
+      "<leader>hk",
+      "<cmd>Gitsigns prev_hunk<cr>",
+      desc = "Prev Hunk",
+    },
+    {
       "<leader>hb",
       "<cmd>Gitsigns blame_line<cr>",
       desc = "Blame Line",

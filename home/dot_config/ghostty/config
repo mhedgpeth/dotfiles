@@ -8,6 +8,7 @@ auto-update = download
 
 keybind = global:cmd+grave_accent=toggle_quick_terminal
 keybind = shift+enter=text:\x1b\n
+keybind = cmd+enter=text:\x1b\r
 # Tabs and titlebar
 macos-titlebar-style = tabs
 window-save-state = always
@@ -25,11 +26,11 @@ window-padding-balance = true
 # Split appearance (Catppuccin Mocha Overlay0)
 split-divider-color = #6c7086
 
-# Pane navigation (vim-style)
-keybind = ctrl+h=goto_split:left
-keybind = ctrl+j=goto_split:down
-keybind = ctrl+k=goto_split:up
-keybind = ctrl+l=goto_split:right
+# Pane navigation — disabled; nvim handles window nav via sidekick/edgy
+# keybind = ctrl+h=goto_split:left
+# keybind = ctrl+j=goto_split:down
+# keybind = ctrl+k=goto_split:up
+# keybind = ctrl+l=goto_split:right
 
 # Pane resizing (vim-style)
 keybind = ctrl+shift+h=resize_split:left,50

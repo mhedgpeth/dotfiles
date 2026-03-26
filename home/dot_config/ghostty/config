@@ -12,6 +12,7 @@ keybind = global:cmd+grave_accent=toggle_quick_terminal
 # Tabs and titlebar
 macos-titlebar-style = tabs
 window-save-state = always
+maximize = true
 
 # Cmd+S sends Ctrl+S for Neovim save
 keybind = cmd+s=text:\x13

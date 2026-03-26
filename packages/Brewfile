@@ -109,7 +109,6 @@ cask "claude"
 cask "superwhisper" # voice dictation for ai prompts
 
 # editors
-cask "antigravity" # google's ai code editor
 cask "visual-studio-code"
 cask "zed"
 

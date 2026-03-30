@@ -95,7 +95,7 @@ cask "dotnet-sdk"
 cask "pgadmin4"
 
 # cloud
-cask "google-cloud-sdk" # gcloud CLI
+cask "gcloud-cli" # gcloud CLI
 
 # api
 cask "ngrok" # expose localhost publicly

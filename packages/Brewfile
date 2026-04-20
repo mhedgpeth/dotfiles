@@ -80,11 +80,15 @@ brew "xcodegen" # generate xcode projects from yaml
 cask "sf-symbols" # browse apple sf symbols
 
 # web
+brew "binaryen" # wasm-opt and other WebAssembly tools
 brew "deno"
 brew "node@24" # needed for claude
+brew "typescript" # tsc compiler
 
 # java / android
 brew "gradle"
+brew "openjdk" # JDK 25 (current default JAVA_HOME)
+brew "openjdk@17" # required by Gradle toolchain pins (e.g. boltffi Kotlin harness)
 brew "openjdk@21"
 cask "android-studio"
 
@@ -106,6 +110,7 @@ brew "anomalyco/tap/opencode"
 cask "codex"
 brew "gemini-cli"
 cask "claude"
+cask "cmux" # ghostty-based terminal with vertical tabs for ai coding agents
 cask "superwhisper" # voice dictation for ai prompts
 
 # editors

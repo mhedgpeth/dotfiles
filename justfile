@@ -137,11 +137,15 @@ configure:
     @echo '{{ style("command") }}configure:{{ NORMAL }}'
     @just _configure-{{os()}}
 
-_configure-macos: _colima-macos _android-sdk-macos _macos-defaults
+_configure-macos: _colima-macos _android-sdk-macos _java-macos _macos-defaults
 
 # Install Android SDK components and Rust cross-compilation targets
 _android-sdk-macos:
     @./scripts/install-android-sdk-macos.sh
+
+# Symlink Homebrew JDKs so Gradle / java_home can auto-detect them
+_java-macos:
+    @./scripts/configure-java-macos.sh
 
 _macos-defaults:
     @./scripts/configure-macos-defaults.sh

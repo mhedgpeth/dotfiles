@@ -109,7 +109,6 @@ repos:
     @echo '{{ style("command") }}repos:{{ NORMAL }}'
     ghq get hedge-ops/people
     ghq get redbadger/crux
-    ghq get steveyegge/beads
     ghq get mhedgpeth/facet-generate
 
 # One-time finishing touches (idempotent)

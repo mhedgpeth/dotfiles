@@ -53,7 +53,7 @@ Comtrya was initially chosen but has critical issues:
 
 | Layer | Tool | Installs | Purpose |
 |-------|------|----------|---------|
-| **Repo-specific** | aqua | beads, just, chezmoi | Dotfiles repo workflow tools |
+| **Repo-specific** | aqua | chezmoi | Dotfiles repo workflow tools |
 | **Global** | Brew/Scoop/pacman | gh, neovim, fzf, starship, etc. | Dev environment |
 
 **Why this split?**
@@ -79,7 +79,7 @@ cd ~/dotfiles
 # Arch:    yay -S aqua-bin
 
 # 4. Install repo tools
-aqua install          # → beads, just, chezmoi
+aqua install          # → chezmoi
 
 # 5. Initialize chezmoi (first time only)
 just init             # → chezmoi init --source=home
@@ -93,7 +93,7 @@ just apply            # → dotfiles via chezmoi
 
 ```
 ~/dotfiles/
-├── aqua.yaml                    # repo tools: beads, just, chezmoi
+├── aqua.yaml                    # repo tools: chezmoi
 ├── justfile                     # unified entry point
 ├── home/                        # chezmoi source directory
 │   ├── .chezmoi.yaml.tmpl      # chezmoi config with OS detection

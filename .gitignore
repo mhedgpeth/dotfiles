@@ -1,7 +1,3 @@
 .DS_Store
 .config/zed/prompts*
 .config/nvim-debug/
-
-# bv (beads viewer) local config and caches
-.bv/
-.beads/.bv.lock

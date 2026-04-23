@@ -16,22 +16,26 @@ This file documents the rationale for permissions in `settings.json`.
 
 | Command | Rationale |
 |---------|-----------|
+| `gh pr view` | Read-only. Displays current branch's pull request details. |
 | `gh pr view *` | Read-only. Displays pull request details. |
 | `gh issue view *` | Read-only. Displays issue details. |
 | `gh pr checks *` | Read-only. Displays CI check status for a pull request. |
+| `gh pr diff *` | Read-only. Displays pull request diff. |
 
 ### Build & Test Commands
 
 | Command | Rationale |
 |---------|-----------|
 | `swift test *` | Runs Swift package tests. Local, non-destructive. |
-| `cargo test*` | Runs Rust tests (covers `cargo test` and `cargo test-*` variants). Local, non-destructive. |
+| `cargo test` | Runs Rust tests with no arguments. Local, non-destructive. |
+| `cargo test *` | Runs Rust tests with arguments (filters, flags). Local, non-destructive. Space-separated form avoids matching unrelated commands like `cargo testfoo`. |
 
 ### Shell Utilities
 
 | Command | Rationale |
 |---------|-----------|
 | `ls *` | Read-only. Lists directory contents. |
+| `head *` | Read-only. Shows first lines of a file or piped input. Enables piped read-only commands like `gh pr view ... \| head -n`. |
 
 ### Web Access
 

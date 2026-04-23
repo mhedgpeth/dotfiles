@@ -18,6 +18,28 @@ This file documents the rationale for permissions in `settings.json`.
 |---------|-----------|
 | `gh pr view *` | Read-only. Displays pull request details. |
 | `gh issue view *` | Read-only. Displays issue details. |
+| `gh pr checks *` | Read-only. Displays CI check status for a pull request. |
+
+### Build & Test Commands
+
+| Command | Rationale |
+|---------|-----------|
+| `swift test *` | Runs Swift package tests. Local, non-destructive. |
+| `cargo test*` | Runs Rust tests (covers `cargo test` and `cargo test-*` variants). Local, non-destructive. |
+
+### Shell Utilities
+
+| Command | Rationale |
+|---------|-----------|
+| `ls *` | Read-only. Lists directory contents. |
+
+### Web Access
+
+| Rule | Rationale |
+|------|-----------|
+| `WebSearch` | Read-only. Web search for research. |
+| `WebFetch(domain:github.com)` | Read-only. Fetches public GitHub content (READMEs, issues, PRs). |
+| `WebFetch(domain:book.leptos.dev)` | Read-only. Leptos framework documentation. |
 
 ---
 

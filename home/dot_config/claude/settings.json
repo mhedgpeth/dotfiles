@@ -7,7 +7,14 @@
   "permissions": {
     "allow": [
       "Bash(gh pr view *)",
-      "Bash(gh issue view *)"
+      "Bash(gh issue view *)",
+      "Bash(gh pr checks *)",
+      "Bash(swift test *)",
+      "Bash(cargo test*)",
+      "Bash(ls *)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:book.leptos.dev)"
     ],
     "ask": [],
     "deny": []

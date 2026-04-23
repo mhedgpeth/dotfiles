@@ -25,12 +25,8 @@
           "PackageIdentifier": "OpenAI.Codex"
         },
         {
-          "_comment": "Apple Music (Store ID - no human-readable alias exists)",
-          "PackageIdentifier": "9PFHDD62MXS1"
-        },
-        {
-          "_comment": "Apple TV (Store ID - no human-readable alias exists)",
-          "PackageIdentifier": "9NM4T8B9JQZ1"
+          "_comment": "languages: Swift development (moved from scoop — MAX_PATH issues with deep SDK paths)",
+          "PackageIdentifier": "Swift.Toolchain"
         },
         {
           "_comment": "Multi-boot USB drive creator",
@@ -46,6 +42,24 @@
         "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
         "Name": "winget",
         "Type": "Microsoft.PreIndexed.Package"
+      }
+    },
+    {
+      "Packages": [
+        {
+          "_comment": "Apple Music (Store ID - no human-readable alias exists)",
+          "PackageIdentifier": "9PFHDD62MXS1"
+        },
+        {
+          "_comment": "Apple TV (Store ID - no human-readable alias exists)",
+          "PackageIdentifier": "9NM4T8B9JQZ1"
+        }
+      ],
+      "SourceDetails": {
+        "Argument": "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
+        "Identifier": "StoreEdgeFD",
+        "Name": "msstore",
+        "Type": "Microsoft.Rest"
       }
     }
   ]

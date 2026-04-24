@@ -35,6 +35,10 @@
         {
           "_comment": "Password manager",
           "PackageIdentifier": "AgileBits.1Password"
+        },
+        {
+          "_comment": "Mesh VPN between personal devices",
+          "PackageIdentifier": "tailscale.tailscale"
         }
       ],
       "SourceDetails": {

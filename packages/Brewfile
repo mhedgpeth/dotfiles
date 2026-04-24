@@ -125,6 +125,7 @@ mas "Day One", id: 1055511498
 mas "Todoist", id: 585829637
 mas "Keymapp", id: 6472865291
 mas "Apple Developer", id: 640199958
+mas "Tailscale", id: 1475387142
 
 # collaboration
 cask "discord"

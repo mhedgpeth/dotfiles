@@ -7,8 +7,8 @@
 ## Why
 
 - Currently using cmux. Per *DevOps Toolbox: "CMUX: Too Much Hype?"* — zellij delivers the same daily-driver experience without cmux's overhead and is a better fit for a terminal-first NeoVim workflow.
-- Want a single multiplexer that runs natively on macOS, Arch, and Windows. **Zellij 0.44.0 (March 2026)** added native Windows support and remote-attach over HTTPS — both unlock the rest of this plan.
-- Want persistent dev sessions on every machine in the tailnet (mac mini, Beelink Arch, Beelink Windows) that survive disconnects.
+- Want a single multiplexer that runs natively on macOS and Windows. **Zellij 0.44.0 (March 2026)** added native Windows support and remote-attach over HTTPS — both unlock the rest of this plan.
+- Want persistent dev sessions on every machine in the tailnet (laptop, desktop, Windows box) that survive disconnects.
 - Want `claude` and `codex` to be first-class parts of the dev layout, with notifications that reach me no matter which machine the agent is running on.
 
 ## What
@@ -22,20 +22,18 @@
 
 The remote-sessions and notifications stories both depend on every machine being reachable on the tailnet under a consistent name:
 
-| Hostname | Role | OS | Runs agents? |
-|---|---|---|---|
-| `michael-air` | Portable dev (this machine) | macOS | Yes |
-| `michael-mini` | Primary dev desktop, Mac Mini Pro M4 | macOS | Yes |
-| `michael-beelink` | Dev box, Beelink SER Pro9 | Windows | Yes |
-| `build-mini` | GitHub Actions self-hosted runner, Mac Mini M4 | macOS | No — also hosts optional ntfy |
+| Role | OS | Runs agents? |
+|---|---|---|
+| Portable laptop | macOS | Yes |
+| Primary desktop (Mac Mini Pro M4) | macOS | Yes |
+| Windows dev box (Beelink SER Pro9) | Windows | Yes |
+| Build runner (Mac Mini M4) | macOS | No — also hosts optional ntfy |
 
-> The Beelink is technically dual-boot Arch/Windows, but the Arch side is dead code right now and out of scope for this migration. If/when it returns, split the hostname (`michael-beelink-arch` / `michael-beelink-win`).
-
-**Naming convention:** `michael-*` for personal devices, `build-*` for build/CI. Distinct hostnames per OS on dual-boot machines (so `michael-beelink-arch` and `michael-beelink-win`, since each Tailscale node needs a unique identity).
+**Naming convention:** `michael-*` for personal devices, `build-*` for build/CI. One Tailscale node per OS on dual-boot machines. Specific hostnames live on the tailnet, not in this repo — `tailscale status` is the source of truth.
 
 **One-time per machine** (documented in README, not repo work):
 
-1. Install Tailscale (in `Brewfile` and `winget.json`; verify in `archlinux.txt`).
+1. Install Tailscale (in `Brewfile` and `winget.json`).
 2. `tailscale up --ssh --hostname=<name>` — joins tailnet with the right name and enables Tailscale SSH for one-time setup / debugging.
 3. `tailscale status` confirms all expected machines are visible.
 
@@ -78,7 +76,7 @@ Going full zellij: use 0.44's HTTPS terminal-to-terminal attach instead of SSH. 
 
 End user command:
 ```sh
-zjr beelink rust    # zellij attach https://beelink.<tailnet>.ts.net/rust
+zjr <host> rust    # zellij attach https://<host>.<tailnet>.ts.net/rust
 ```
 
 **Bonus capabilities that come along:**
@@ -147,10 +145,10 @@ Two lines, no daemons, covers tab icon + OS notification.
 zj rust                                          # zellij attach -c rust
 
 # Remote: attach over HTTPS via the tailnet
-zjr beelink rust                                 # zellij attach https://beelink.<tailnet>.ts.net/rust
+zjr <host> rust                                  # zellij attach https://<host>.<tailnet>.ts.net/rust
 
 # Or open the same session in a browser from any device
-# https://beelink.<tailnet>.ts.net/rust
+# https://<host>.<tailnet>.ts.net/rust
 
 # Agents fire notifications anywhere on the tailnet
 # Claude:   Stop / Notification hooks → curl https://ntfy…/agent
@@ -160,10 +158,13 @@ zjr beelink rust                                 # zellij attach https://beelink
 ## Tasks
 
 ### 1. Install zellij
-- [ ] Add `zellij` to `packages/Brewfile`
-- [ ] Add `zellij` to `packages/scoopfile.json`
-- [ ] Remove `cmux` from any package manifest that has it
+- [x] Add `zellij` to `packages/Brewfile`
+- [x] Add `zellij` to `packages/scoopfile.json`
+- [x] Remove `cmux` from any package manifest that has it (no manifest ever had it; only the migration plan references it as historical context)
 - [ ] On each machine: `just install`, confirm `zellij --version` ≥ 0.44
+  - [x] Primary desktop — 0.44.1
+  - [ ] Portable laptop
+  - [ ] Windows dev box
 
 ### 2. Configure zellij basics
 - [ ] `home/dot_config/zellij/config.kdl` with at minimum:
@@ -188,7 +189,7 @@ zjr beelink rust                                 # zellij attach https://beelink
   - `zellij web --create-token`, save token to a password manager (only displayed once)
   - `tailscale serve --bg --https=443 http://localhost:8082`
   - Configure client-side token storage (TBD where zellij looks for the token)
-- [ ] Verify round-trip: macOS → Beelink (Arch), macOS → Beelink (Windows)
+- [ ] Verify round-trip across all dev machines (laptop ↔ desktop ↔ Windows box)
 
 ### 4. Notify (lowest priority — get there when I get there)
 
@@ -225,9 +226,9 @@ zjr beelink rust                                 # zellij attach https://beelink
 ### Step 4
 - **Codex hook config location** — Codex has hooks; resolve exact file/format during execution.
 - **Inactive-tab bell stasis** — does OSC 9 from a non-focused tab still fire on the client, or get stuck like BEL? Test before deciding whether `claude-zellij-whip` is worth adopting.
-- **Tier 2 ntfy topic structure** if we ever add it — one shared topic or per-machine (`agent-air`, `agent-mini`, `agent-beelink`)?
+- **Tier 2 ntfy topic structure** if we ever add it — one shared topic or one per dev machine?
 
 ## Deferred (out of scope for this migration)
 
-- **Arch Linux support** — `packages/archlinux.txt` is dead code; revisit when re-enabling the Beelink Arch side.
+- **Arch Linux support** — `packages/archlinux.txt` is dead code; the Windows dev box is Windows-only now. Revisit if Arch returns on any machine.
 - **Token rotation workflow** — handle as it comes up; for now, mint once and store in 1Password.

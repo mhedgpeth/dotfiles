@@ -67,9 +67,21 @@ Arch Linux is supported via pacman/yay. See README.md for setup details.
 ### Machines
 
 - **macOS** - primary development machine
-- **Windows/Linux** - Beelink SER Pro9 (dual-boot Windows 11 / Arch Linux)
+- **Windows** - Beelink SER Pro9
 
-### Peripherals (Windows/Linux desk)
+### Tailscale
+
+All dev machines join a private Tailscale tailnet for cross-machine access
+(remote zellij sessions, agent notifications, etc.).
+
+- Naming convention: `michael-*` for personal devices, `build-*` for build/CI.
+  One Tailscale node per OS on dual-boot machines.
+- Specific hostnames are deliberately not committed — `tailscale status` on
+  any machine is the source of truth.
+- The tailnet's MagicDNS suffix lives in `ZELLIJ_TAILNET` (set per-machine in
+  the local shell, never committed).
+
+### Peripherals (Windows desk)
 
 - **Keyboard** - Epomaker F75 (Caps Lock remapped to Backspace via Windows Scancode Map)
 - **Mouse** - Logitech MX Master 4

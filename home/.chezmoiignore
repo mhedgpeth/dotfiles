@@ -21,6 +21,7 @@ Library/
 # Unix-only files (ignore on Windows)
 {{ if eq .chezmoi.os "windows" }}
 dot_zshrc
+dot_config/zed/
 {{ end }}
 
 # Windows-only files (ignore on macOS and Linux)

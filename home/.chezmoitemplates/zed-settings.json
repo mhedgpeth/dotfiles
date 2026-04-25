@@ -1,0 +1,35 @@
+{
+  // Dock layout — panels on the left, agent on the right
+  "project_panel": { "dock": "left" },
+  "outline_panel": { "dock": "left" },
+  "collaboration_panel": { "dock": "left" },
+  "git_panel": { "dock": "left" },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "session": { "trust_all_worktrees": true },
+
+  // Vim motions everywhere
+  "vim_mode": true,
+
+  // Match terminal/nvim font (JetBrainsMono Nerd Font, same family as
+  // Ghostty on macOS and Windows Terminal on Windows)
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "ui_font_size": 16,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 15,
+
+  // Match nvim colorscheme (plugins/catppucin.lua — flavour "mocha")
+  "theme": {
+    "mode": "dark",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha"
+  },
+
+  // Ensure Catppuccin theme is available on a fresh machine
+  "auto_install_extensions": {
+    "catppuccin": true
+  }
+}

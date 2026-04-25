@@ -18,7 +18,7 @@ After Homebrew installs, it displays commands to add `brew` to your PATH. Run
 those commands before continuing.
 
 ```sh
-brew install aqua git gh
+brew install aqua git gh just chezmoi
 ```
 
 Then open **App Store** and sign in with your Apple ID (required for `mas` CLI
@@ -54,6 +54,13 @@ gh auth setup-git    # configures git to use gh for credentials
 cd ~
 gh repo clone mhedgpeth/dotfiles dotfiles
 cd dotfiles
+```
+
+**macOS only:** Before running `aqua install`, install Xcode from the App Store
+and launch it once to accept the license and finish first-run setup. This is
+required for `swiftlint` (installed via aqua) to build successfully.
+
+```sh
 aqua policy allow
 aqua install    # installs just, chezmoi
 ```
@@ -72,7 +79,16 @@ export PATH="$HOME/.local/share/aquaproj-aqua/bin:$PATH"
 $env:PATH = "$env:LOCALAPPDATA\aquaproj-aqua\bin;$env:PATH"
 ```
 
-Then run initialization:
+Apply dotfiles once manually so the new shell environment is in place before
+`just init` runs anything that depends on it:
+
+```sh
+chezmoi init --source=home
+chezmoi apply --source=home --force
+```
+
+Then restart your terminal (or `exec $SHELL`) so the new shell config loads,
+and run initialization:
 
 ```sh
 just init       # one-time setup, then runs update

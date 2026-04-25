@@ -79,19 +79,31 @@ export PATH="$HOME/.local/share/aquaproj-aqua/bin:$PATH"
 $env:PATH = "$env:LOCALAPPDATA\aquaproj-aqua\bin;$env:PATH"
 ```
 
-Apply dotfiles once manually so the new shell environment is in place before
-`just init` runs anything that depends on it:
+Apply dotfiles first so the new shell environment is in place before any
+package-manager or configure step runs:
 
 ```sh
 chezmoi init --source=home
-chezmoi apply --source=home --force
+just apply       # writes dotfiles
 ```
 
-Then restart your terminal (or `exec $SHELL`) so the new shell config loads,
-and run initialization:
+Restart your terminal (or `exec $SHELL`) so the new shell config loads.
+
+Next, install packages so OS-level tooling (Android Studio, Xcode CLI tools,
+etc.) is on disk before any configure step depends on it:
 
 ```sh
-just init       # one-time setup, then runs update
+just install     # brew bundle / scoop import / pacman
+```
+
+**macOS only:** Open Android Studio once and install **SDK Command-Line Tools**
+via *Settings → Languages & Frameworks → Android SDK → SDK Tools*. This is
+required for `_android-sdk-macos` (run by `just init`) to succeed.
+
+Then run initialization:
+
+```sh
+just init        # one-time setup, then runs update
 ```
 
 Note: You may see a warning about `~/.local/bin` not being in PATH. This is

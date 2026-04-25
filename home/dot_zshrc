@@ -95,6 +95,10 @@ alias lg='lazygit'
 alias chat='ollama run deepseek-r1:7b'
 claude() { caffeinate -i command claude "$@"; }
 
+# Tailscale (Mac App Store install hides the CLI inside the app bundle)
+[ -x "/Applications/Tailscale.app/Contents/MacOS/Tailscale" ] && \
+  alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
+
 # secrets, see template for details
 [ -f "$HOME/.env" ] && source "$HOME/.env"
 

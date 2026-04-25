@@ -27,6 +27,7 @@
     { "Name": "wget", "Source": "main", "_comment": "terminal: download files" },
     { "Name": "hledger", "Source": "main", "_comment": "terminal: plain text accounting" },
     { "Name": "zoxide", "Source": "main", "_comment": "terminal: better cd" },
+    { "Name": "zellij", "Source": "main", "_comment": "terminal: multiplexer with sessions, layouts, web client" },
 
     { "Name": "gh", "Source": "main", "_comment": "git: GitHub CLI" },
     { "Name": "ghq", "Source": "main", "_comment": "git: repo manager" },

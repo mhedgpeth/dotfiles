@@ -1,0 +1,14 @@
+// Sessions and pane contents survive reboot
+session_serialization true
+pane_viewport_serialization true
+
+// Closing the terminal detaches; the session keeps running
+on_force_close "detach"
+
+// Web server starts with zellij; needed for HTTPS remote attach over Tailscale
+web_server true
+
+mouse_mode true
+copy_on_select true
+
+default_layout "default"

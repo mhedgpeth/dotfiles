@@ -99,6 +99,14 @@ claude() { caffeinate -i command claude "$@"; }
 [ -x "/Applications/Tailscale.app/Contents/MacOS/Tailscale" ] && \
   alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
 
+# Zellij — config lives in ~/.config/zellij on every platform (overrides macOS default)
+export ZELLIJ_CONFIG_DIR="$HOME/.config/zellij"
+# Local: create-or-attach a named session
+zj()  { zellij attach -c "${1:-main}"; }
+# Remote: attach over HTTPS via the tailnet — `zjr mini rust` → https://mini.<tailnet>/rust
+# ZELLIJ_TAILNET is set per-machine in ~/.env (e.g. tail-xxxxx.ts.net), not committed
+zjr() { zellij attach "https://${1}.${ZELLIJ_TAILNET}/${2:-main}"; }
+
 # secrets, see template for details
 [ -f "$HOME/.env" ] && source "$HOME/.env"
 
